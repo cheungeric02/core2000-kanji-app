@@ -189,7 +189,7 @@ footer a{color:var(--accent)}
   <div class="controls">
     <div class="search">
       <span class="mag">🔍</span>
-      <input id="q" type="search" autocomplete="off" placeholder="Search kanji, word, reading, or English meaning…">
+      <input id="q" type="search" autocomplete="off" placeholder="Search kanji, word, reading (kana or romaji), or English…">
       <button class="clr" id="clrBtn" aria-label="Clear" style="display:none">✕</button>
     </div>
 
@@ -205,24 +205,6 @@ footer a{color:var(--accent)}
       <span id="searchStat"></span>
     </div>
     <div class="pbar"><i id="pbarFill"></i></div>
-
-    <div class="synctog">
-      <button id="syncTog" aria-expanded="false">
-        <span>☁ Sync across devices &amp; settings</span><span id="chev">▾</span>
-      </button>
-      <div class="syncbody" id="syncBody">
-        <div class="syncrow">
-          <input id="syncKey" type="text" autocomplete="off" placeholder="your sync key (any word)">
-          <button class="btn" id="cloudBtn">Turn on</button>
-        </div>
-        <div class="cloudstatus" id="cloudStatus">Cloud sync is off. Enter a key and press Turn on.</div>
-        <div class="hint">Type the <b>same key</b> on your phone and computer to sync known-marks &amp; progress. It's a shared secret, not a login — pick something only you'd guess.</div>
-        <div class="syncrow" style="margin-top:12px">
-          <button class="btn ghost" id="resetProgBtn">Reset progress slider</button>
-          <button class="btn warn" id="clearKnownBtn">Clear all known-marks</button>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="tabs" role="tablist">
@@ -260,6 +242,24 @@ footer a{color:var(--accent)}
     <div class="mean" id="mean"></div>
     <div class="empty" id="meanEmpty" style="display:none"></div>
   </section>
+
+  <div class="synctog" style="margin-top:26px">
+    <button id="syncTog" aria-expanded="false">
+      <span>☁ Sync across devices &amp; settings</span><span id="chev">▾</span>
+    </button>
+    <div class="syncbody" id="syncBody">
+      <div class="syncrow">
+        <input id="syncKey" type="text" autocomplete="off" placeholder="your sync key (any word)">
+        <button class="btn" id="cloudBtn">Turn on</button>
+      </div>
+      <div class="cloudstatus" id="cloudStatus">Cloud sync is off. Enter a key and press Turn on.</div>
+      <div class="hint">Type the <b>same key</b> on your phone and computer to sync known-marks &amp; progress. It's a shared secret, not a login — pick something only you'd guess.</div>
+      <div class="syncrow" style="margin-top:12px">
+        <button class="btn ghost" id="resetProgBtn">Reset progress slider</button>
+        <button class="btn warn" id="clearKnownBtn">Clear all known-marks</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     Built from the Japanese Core 2000 deck · <span id="kdesc"></span> kanji · <a href="https://cheungeric02.github.io/core2000-kanji-app/">core2000-kanji-app</a>
@@ -333,6 +333,32 @@ function clean(s){
           .replace(/\s+/g," ").trim();
 }
 
+/* ---------- kana → romaji (Hepburn-ish, wapuro long vowels) for romaji search ---------- */
+const ROMA={"あ":"a","い":"i","う":"u","え":"e","お":"o","か":"ka","き":"ki","く":"ku","け":"ke","こ":"ko","が":"ga","ぎ":"gi","ぐ":"gu","げ":"ge","ご":"go","さ":"sa","し":"shi","す":"su","せ":"se","そ":"so","ざ":"za","じ":"ji","ず":"zu","ぜ":"ze","ぞ":"zo","た":"ta","ち":"chi","つ":"tsu","て":"te","と":"to","だ":"da","ぢ":"ji","づ":"zu","で":"de","ど":"do","な":"na","に":"ni","ぬ":"nu","ね":"ne","の":"no","は":"ha","ひ":"hi","ふ":"fu","へ":"he","ほ":"ho","ば":"ba","び":"bi","ぶ":"bu","べ":"be","ぼ":"bo","ぱ":"pa","ぴ":"pi","ぷ":"pu","ぺ":"pe","ぽ":"po","ま":"ma","み":"mi","む":"mu","め":"me","も":"mo","や":"ya","ゆ":"yu","よ":"yo","ら":"ra","り":"ri","る":"ru","れ":"re","ろ":"ro","わ":"wa","ゐ":"wi","ゑ":"we","を":"wo","ん":"n","ぁ":"a","ぃ":"i","ぅ":"u","ぇ":"e","ぉ":"o","ゔ":"vu"};
+const YSTEM={"き":"ky","し":"sh","ち":"ch","に":"ny","ひ":"hy","み":"my","り":"ry","ぎ":"gy","じ":"j","ぢ":"j","び":"by","ぴ":"py"};
+function kanaToRomaji(str){
+  if(!str)return"";
+  let s="";for(const ch of str){const c=ch.codePointAt(0);s+=(c>=0x30A1&&c<=0x30F6)?String.fromCodePoint(c-0x60):ch;} // katakana→hiragana
+  let out="";
+  for(let i=0;i<s.length;i++){
+    const c=s[i],nx=s[i+1];
+    if(c==="っ"){const nr=ROMA[nx]||"";if(nr&&!/^[aiueo]/.test(nr))out+=nr[0];continue;}       // sokuon
+    if((nx==="ゃ"||nx==="ゅ"||nx==="ょ")&&YSTEM[c]){out+=YSTEM[c]+(nx==="ゃ"?"a":nx==="ゅ"?"u":"o");i++;continue;} // youon
+    if(c==="ー"){out+=out.slice(-1)||"";continue;}                                              // long vowel
+    out+=(ROMA[c]!==undefined)?ROMA[c]:"";
+  }
+  return out;
+}
+/* normalize a romaji query's common wapuro/kunrei spellings to the Hepburn we store */
+function normRomaji(q){
+  return q.replace(/sya/g,"sha").replace(/syu/g,"shu").replace(/syo/g,"sho")
+          .replace(/tya/g,"cha").replace(/tyu/g,"chu").replace(/tyo/g,"cho")
+          .replace(/zya/g,"ja").replace(/zyu/g,"ju").replace(/zyo/g,"jo")
+          .replace(/jya/g,"ja").replace(/jyu/g,"ju").replace(/jyo/g,"jo")
+          .replace(/cya/g,"cha").replace(/cyu/g,"chu").replace(/cyo/g,"cho")
+          .replace(/si/g,"shi").replace(/ti/g,"chi").replace(/tu/g,"tsu").replace(/hu/g,"fu").replace(/zi/g,"ji");
+}
+
 /* ---------- build model ---------- */
 const TYPE_ORDER={on:0,kun:1,irregular:2};
 function normType(t){t=(t||"").toLowerCase();return t==="on"||t==="kun"?t:"irregular";}
@@ -359,7 +385,8 @@ const KANJI=[...KMAP.values()].sort((a,b)=>a.minPos-b.minPos);
 for(const e of KANJI){
   let s=e.kanji+" "+e.meaning.toLowerCase();
   for(const ty of ["on","kun","irregular"])for(const[rd,leaves]of e.types[ty]){
-    s+=" "+rd;for(const lf of leaves)s+=" "+lf.word+" "+(lf.reading||"")+" "+lf.mean.toLowerCase();
+    s+=" "+rd+" "+kanaToRomaji(rd);
+    for(const lf of leaves)s+=" "+lf.word+" "+(lf.reading||"")+" "+kanaToRomaji(lf.reading||"")+" "+lf.mean.toLowerCase();
   }
   e.search=s;
 }
@@ -395,7 +422,7 @@ for(const r of parseCSV($("cf-data").textContent)){
   ke.minPos=Math.min(ke.minPos,pos);f.minPos=Math.min(f.minPos,pos);
 }
 const FAMILIES=[...FAM.values()].sort((a,b)=>a.minPos-b.minPos);
-for(const f of FAMILIES){let s=f.comp+" "+f.meaning.toLowerCase();for(const ke of f.kanji.values()){s+=" "+ke.kanji+" "+ke.meaning.toLowerCase();for(const w of ke.words)s+=" "+w.word+" "+(w.reading||"")+" "+w.mean.toLowerCase();}f.search=s;}
+for(const f of FAMILIES){let s=f.comp+" "+f.meaning.toLowerCase();for(const ke of f.kanji.values()){s+=" "+ke.kanji+" "+ke.meaning.toLowerCase();for(const w of ke.words)s+=" "+w.word+" "+(w.reading||"")+" "+kanaToRomaji(w.reading||"")+" "+w.mean.toLowerCase();}f.search=s;}
 
 /* ---------- bonus: meaning cheatsheet ---------- */
 const MEAN=new Map();
@@ -407,7 +434,7 @@ for(const r of parseCSV($("mc-data").textContent)){
   m.minPos=Math.min(m.minPos,pos);if(fig)m.hasFig=true;
 }
 const MEANINGS=[...MEAN.values()].sort((a,b)=>a.minPos-b.minPos);
-for(const m of MEANINGS){let s=m.kanji+" "+m.core.toLowerCase();for(const w of m.words)s+=" "+w.word+" "+(w.reading||"")+" "+w.mean.toLowerCase()+" "+(w.note||"").toLowerCase();m.search=s;}
+for(const m of MEANINGS){let s=m.kanji+" "+m.core.toLowerCase();for(const w of m.words)s+=" "+w.word+" "+(w.reading||"")+" "+kanaToRomaji(w.reading||"")+" "+w.mean.toLowerCase()+" "+(w.note||"").toLowerCase();m.search=s;}
 
 /* ---------- persistent state ---------- */
 const LS="c2k_state_v1";
@@ -457,17 +484,18 @@ function posBadge(pos,cls){
 /* ---------- rendering ---------- */
 let query="",selected=null;
 function reachable(e){return e.minPos<=state.progress;}
-function matches(e,q){return !q||e.search.indexOf(q)>=0;}
+/* match raw query OR its romaji-normalized form; raw keeps English/kana intact, norm enables romaji */
+function hit(blob,q,nq){return !q||blob.indexOf(q)>=0||(nq!==q&&blob.indexOf(nq)>=0);}
 
 function renderGrid(){
-  const q=query.trim().toLowerCase();
+  const q=query.trim().toLowerCase(),nq=normRomaji(q);
   const list=prefs.sort==="freq"?[...KANJI].sort((a,b)=>a.minFreq-b.minFreq):KANJI;
   const frag=document.createDocumentFragment();
   let vis=0,shown=0;
   for(const e of list){
     if(!reachable(e))continue; vis++;
     if(prefs.hideKnown&&state.known[e.kanji])continue;
-    if(!matches(e,q))continue; shown++;
+    if(!hit(e.search,q,nq))continue; shown++;
     const t=document.createElement("div");
     t.className="tile"+(state.known[e.kanji]?" known":"");
     t.innerHTML='<span class="pos">'+e.minPos+'</span><span class="kn"></span><div class="k"></div><div class="m"></div>';
@@ -581,11 +609,11 @@ function updateKnownBtn(){
 
 /* ---------- component families tab ---------- */
 function renderFam(){
-  const q=query.trim().toLowerCase(),host=$("fam");host.innerHTML="";
+  const q=query.trim().toLowerCase(),nq=normRomaji(q),host=$("fam");host.innerHTML="";
   const frag=document.createDocumentFragment();let shown=0;
   for(const f of FAMILIES){
     if(f.minPos>state.progress)continue;
-    if(q&&f.search.indexOf(q)<0)continue;
+    if(!hit(f.search,q,nq))continue;
     const kanji=[...f.kanji.values()].filter(ke=>ke.minPos<=state.progress).sort((a,b)=>a.minPos-b.minPos);
     if(!kanji.length)continue; shown++;
     const card=document.createElement("div");card.className="famcard";
@@ -636,12 +664,12 @@ function openFamKanji(f,ke){
 
 /* ---------- meaning notes tab ---------- */
 function renderMean(){
-  const q=query.trim().toLowerCase(),figOnly=$("figOnly").checked,host=$("mean");host.innerHTML="";
+  const q=query.trim().toLowerCase(),nq=normRomaji(q),figOnly=$("figOnly").checked,host=$("mean");host.innerHTML="";
   const frag=document.createDocumentFragment();let shown=0;
   for(const m of MEANINGS){
     if(figOnly&&!m.hasFig)continue;
     if(m.minPos>state.progress)continue;
-    if(q&&m.search.indexOf(q)<0)continue;
+    if(!hit(m.search,q,nq))continue;
     let words=m.words.filter(w=>w.pos<=state.progress);
     if(figOnly)words=words.filter(w=>w.fig);
     if(!words.length)continue; shown++;
