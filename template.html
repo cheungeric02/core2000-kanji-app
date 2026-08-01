@@ -101,6 +101,47 @@ input[type=range]{width:100%;accent-color:var(--accent);height:26px}
 .leaf .lp{font-size:.68rem;color:var(--muted);margin-left:auto;opacity:.75;white-space:nowrap}
 mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 
+/* tabs */
+.tabs{display:flex;gap:6px;margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:5px;box-shadow:var(--shadow)}
+.tabs button{flex:1;border:none;background:none;color:var(--muted);padding:9px 8px;border-radius:9px;font-size:.9rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.tabs button.active{background:var(--accent);color:var(--accent-ink)}
+.tabs button:not(.active):hover{background:var(--panel2);color:var(--ink)}
+.tabs .ts{display:none}
+.tabhint{font-size:.82rem;color:var(--muted);margin:12px 2px 0}
+.subctl{display:flex;align-items:center;gap:8px;margin:12px 2px 0;font-size:.86rem;color:var(--muted)}
+.subctl input{accent-color:var(--accent)}
+
+/* component families */
+.fam{margin-top:16px;display:flex;flex-direction:column;gap:14px}
+.famcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.famhead{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.famhead .cc{font-size:1.9rem;line-height:1;font-weight:600}
+.famhead .cm{font-size:.9rem;color:var(--muted)}
+.famhead .cn{margin-left:auto;font-size:.75rem;color:var(--muted)}
+.famkanji{display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px}
+.kchip{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:60px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);cursor:pointer;transition:border-color .12s,transform .08s}
+.kchip:hover{border-color:var(--accent);transform:translateY(-1px)}
+.kchip .kc{font-size:1.5rem;line-height:1.1}
+.kchip .km{font-size:.62rem;color:var(--muted);text-align:center;max-width:76px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kchip .kp{font-size:.58rem;color:var(--muted);opacity:.7}
+.kchip.known{border-color:color-mix(in srgb,var(--known) 55%,var(--line))}
+
+/* meaning notes */
+.mean{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px}
+.mhead{display:flex;align-items:baseline;gap:10px;margin-bottom:9px}
+.mhead .mk{font-size:1.7rem;font-weight:600;line-height:1;cursor:pointer}
+.mhead .mkc{font-size:.86rem;color:var(--muted)}
+.mword{border-top:1px solid var(--line);padding:8px 0 2px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.mword .mw{font-size:1.05rem;font-weight:600}
+.mword .mr{font-size:.82rem;color:var(--muted)}
+.mword .me{font-size:.9rem}
+.mword .mp{font-size:.66rem;color:var(--muted);margin-left:auto;opacity:.75}
+.figbadge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--irr);background:var(--irr-bg);border-radius:20px;padding:2px 8px;cursor:pointer}
+.fignote{flex-basis:100%;margin-top:6px;font-size:.86rem;color:var(--ink);background:var(--irr-bg);border-left:3px solid var(--irr);border-radius:0 8px 8px 0;padding:8px 11px;display:none}
+.fignote.show{display:block}
+.mword.figrow .me{color:var(--ink)}
+
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:.88rem;opacity:0;pointer-events:none;transition:.2s;z-index:60}
 .toast.show{opacity:1;transform:translateX(-50%)}
 footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.78rem}
@@ -110,6 +151,10 @@ footer a{color:var(--accent)}
   .grid{grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px}
   .detail{width:100%;border-left:none}
   .dhead .k{font-size:2.5rem}
+  .tabs{gap:3px;padding:4px}
+  .tabs button{padding:9px 4px;font-size:.9rem}
+  .tabs .tl{display:none}
+  .tabs .ts{display:inline}
 }
 </style>
 </head>
@@ -161,8 +206,32 @@ footer a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none"></div>
+  <div class="tabs" role="tablist">
+    <button id="tabTrees" class="active" role="tab">🌳 <span class="tl">Reading trees</span><span class="ts">Trees</span></button>
+    <button id="tabFam" role="tab">🧩 <span class="tl">Component families</span><span class="ts">Families</span></button>
+    <button id="tabMean" role="tab">💡 <span class="tl">Meaning notes</span><span class="ts">Notes</span></button>
+  </div>
+
+  <!-- Reading trees tab -->
+  <section id="viewTrees">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" style="display:none"></div>
+  </section>
+
+  <!-- Component families tab -->
+  <section id="viewFam" hidden>
+    <div class="tabhint">Kanji grouped by a shared visual component. Tap a kanji to open its reading tree.</div>
+    <div class="fam" id="fam"></div>
+    <div class="empty" id="famEmpty" style="display:none"></div>
+  </section>
+
+  <!-- Meaning notes tab -->
+  <section id="viewMean" hidden>
+    <div class="tabhint">How each word's meaning connects to its kanji's core meaning. <b>Figurative</b> links (the interesting leaps) are tagged — tap the tag for the note.</div>
+    <label class="subctl"><input type="checkbox" id="figOnly"> Show only figurative connections</label>
+    <div class="mean" id="mean"></div>
+    <div class="empty" id="meanEmpty" style="display:none"></div>
+  </section>
 
   <footer>
     Built from the Japanese Core 2000 deck · <span id="kdesc"></span> kanji · <a href="https://cheungeric02.github.io/core2000-kanji-app/">core2000-kanji-app</a>
@@ -190,6 +259,12 @@ __RT_CSV__
 </script>
 <script type="text/csv" id="wo-data">
 __WO_CSV__
+</script>
+<script type="text/csv" id="cf-data">
+__CF_CSV__
+</script>
+<script type="text/csv" id="mc-data">
+__MC_CSV__
 </script>
 
 <script>
@@ -271,6 +346,32 @@ const MAXPOS=woRows.length?Math.max(...woRows.map(r=>parseInt(r.Position,10)||0)
 $("totalKanji").textContent=KANJI.length;
 $("kdesc").textContent=KANJI.length;
 $("prog").max=MAXPOS;
+
+/* ---------- bonus: component families ---------- */
+const FAM=new Map();
+for(const r of parseCSV($("cf-data").textContent)){
+  const comp=r.Component;if(!comp)continue;
+  if(!FAM.has(comp))FAM.set(comp,{comp,meaning:clean(r.Component_Meaning),minPos:Infinity,kanji:new Map(),search:""});
+  const f=FAM.get(comp),k=r.Kanji;
+  if(!f.kanji.has(k))f.kanji.set(k,{kanji:k,meaning:clean(r.Kanji_Meaning),minPos:Infinity,words:[]});
+  const ke=f.kanji.get(k),pos=parseInt(r.Position_in_Deck,10)||9999;
+  ke.words.push({word:r.Word,reading:r.Word_Reading,mean:clean(r.English_Meaning),pos});
+  ke.minPos=Math.min(ke.minPos,pos);f.minPos=Math.min(f.minPos,pos);
+}
+const FAMILIES=[...FAM.values()].sort((a,b)=>a.minPos-b.minPos);
+for(const f of FAMILIES){let s=f.comp+" "+f.meaning.toLowerCase();for(const ke of f.kanji.values()){s+=" "+ke.kanji+" "+ke.meaning.toLowerCase();for(const w of ke.words)s+=" "+w.word+" "+(w.reading||"")+" "+w.mean.toLowerCase();}f.search=s;}
+
+/* ---------- bonus: meaning cheatsheet ---------- */
+const MEAN=new Map();
+for(const r of parseCSV($("mc-data").textContent)){
+  const k=r.Kanji;if(!k)continue;
+  if(!MEAN.has(k))MEAN.set(k,{kanji:k,core:clean(r.Kanji_Core_Meaning),minPos:Infinity,words:[],hasFig:false,search:""});
+  const m=MEAN.get(k),pos=parseInt(r.Position_in_Deck,10)||9999,fig=(r.Connection_Type||"").toLowerCase()==="figurative";
+  m.words.push({word:r.Word,reading:r.Word_Reading,mean:clean(r.English_Meaning),pos,fig,note:clean(r.Figurative_Note)});
+  m.minPos=Math.min(m.minPos,pos);if(fig)m.hasFig=true;
+}
+const MEANINGS=[...MEAN.values()].sort((a,b)=>a.minPos-b.minPos);
+for(const m of MEANINGS){let s=m.kanji+" "+m.core.toLowerCase();for(const w of m.words)s+=" "+w.word+" "+(w.reading||"")+" "+w.mean.toLowerCase()+" "+(w.note||"").toLowerCase();m.search=s;}
 
 /* ---------- persistent state ---------- */
 const LS="c2k_state_v1";
@@ -370,6 +471,118 @@ function updateKnownBtn(){
   b.textContent=on?"✓ Known — tap to unmark":"Mark as known";
 }
 
+/* ---------- component families tab ---------- */
+function renderFam(){
+  const q=query.trim().toLowerCase(),host=$("fam");host.innerHTML="";
+  const frag=document.createDocumentFragment();let shown=0;
+  for(const f of FAMILIES){
+    if(f.minPos>state.progress)continue;
+    if(q&&f.search.indexOf(q)<0)continue;
+    const kanji=[...f.kanji.values()].filter(ke=>ke.minPos<=state.progress).sort((a,b)=>a.minPos-b.minPos);
+    if(!kanji.length)continue; shown++;
+    const card=document.createElement("div");card.className="famcard";
+    const head=document.createElement("div");head.className="famhead";
+    head.innerHTML='<span class="cc"></span><span class="cm"></span><span class="cn"></span>';
+    head.querySelector(".cc").textContent=f.comp;
+    head.querySelector(".cm").textContent=f.meaning;
+    head.querySelector(".cn").textContent=kanji.length+" kanji";
+    card.appendChild(head);
+    const kwrap=document.createElement("div");kwrap.className="famkanji";
+    for(const ke of kanji){
+      const chip=document.createElement("div");chip.className="kchip"+(state.known[ke.kanji]?" known":"");
+      chip.innerHTML='<span class="kc"></span><span class="km"></span><span class="kp"></span>';
+      chip.querySelector(".kc").textContent=ke.kanji;
+      chip.querySelector(".km").textContent=ke.meaning;
+      chip.querySelector(".kp").textContent="#"+ke.minPos;
+      chip.onclick=()=>{if(KMAP.has(ke.kanji))openDetail(ke.kanji);else openFamKanji(f,ke);};
+      kwrap.appendChild(chip);
+    }
+    card.appendChild(kwrap);frag.appendChild(card);
+  }
+  host.appendChild(frag);
+  const emp=$("famEmpty");
+  if(shown===0){emp.style.display="block";emp.textContent=q?('No families match "'+query+'" yet.'):"Nothing reachable yet — move the slider up.";}
+  else emp.style.display="none";
+}
+/* fallback detail for a family kanji that isn't in the reading-tree set */
+function openFamKanji(f,ke){
+  selected=ke.kanji;
+  $("dK").textContent=ke.kanji;$("dMn").textContent=ke.meaning;
+  $("dCnt").textContent="shares 「"+f.comp+"」 · "+ke.words.length+" word"+(ke.words.length!==1?"s":"");
+  updateKnownBtn();
+  const tree=$("dTree");tree.innerHTML="";
+  const grp=document.createElement("div");grp.className="branchgroup";
+  const br=document.createElement("div");br.className="branch";
+  ke.words.slice().sort((a,b)=>a.pos-b.pos).forEach(w=>{
+    const leaf=document.createElement("div");leaf.className="leaf";
+    leaf.innerHTML='<span class="lw"></span><span class="lr"></span><span class="lp"></span><span class="le"></span>';
+    leaf.querySelector(".lw").textContent=w.word;
+    leaf.querySelector(".lr").textContent=w.reading||"";
+    leaf.querySelector(".lp").textContent="#"+w.pos;
+    leaf.querySelector(".le").textContent=w.mean;
+    br.appendChild(leaf);
+  });
+  grp.appendChild(br);tree.appendChild(grp);
+  $("scrim").classList.add("show");$("detail").classList.add("show");$("detail").setAttribute("aria-hidden","false");
+}
+
+/* ---------- meaning notes tab ---------- */
+function renderMean(){
+  const q=query.trim().toLowerCase(),figOnly=$("figOnly").checked,host=$("mean");host.innerHTML="";
+  const frag=document.createDocumentFragment();let shown=0;
+  for(const m of MEANINGS){
+    if(figOnly&&!m.hasFig)continue;
+    if(m.minPos>state.progress)continue;
+    if(q&&m.search.indexOf(q)<0)continue;
+    let words=m.words.filter(w=>w.pos<=state.progress);
+    if(figOnly)words=words.filter(w=>w.fig);
+    if(!words.length)continue; shown++;
+    const card=document.createElement("div");card.className="mcard";
+    const head=document.createElement("div");head.className="mhead";
+    const mk=document.createElement("span");mk.className="mk";mk.textContent=m.kanji;
+    if(KMAP.has(m.kanji))mk.onclick=()=>openDetail(m.kanji);else mk.style.cursor="default";
+    const mkc=document.createElement("span");mkc.className="mkc";mkc.textContent=m.core;
+    head.appendChild(mk);head.appendChild(mkc);card.appendChild(head);
+    words.slice().sort((a,b)=>a.pos-b.pos).forEach(w=>{
+      const row=document.createElement("div");row.className="mword"+(w.fig?" figrow":"");
+      const ww=document.createElement("span");ww.className="mw";ww.appendChild(hl(w.word,q));row.appendChild(ww);
+      if(w.reading){const rr=document.createElement("span");rr.className="mr";rr.appendChild(hl(w.reading,q));row.appendChild(rr);}
+      const ee=document.createElement("span");ee.className="me";ee.appendChild(hl(w.mean,q));row.appendChild(ee);
+      const pp=document.createElement("span");pp.className="mp";pp.textContent="#"+w.pos;row.appendChild(pp);
+      if(w.fig&&w.note){
+        const badge=document.createElement("span");badge.className="figbadge";badge.textContent="figurative ▾";row.appendChild(badge);
+        const note=document.createElement("span");note.className="fignote";note.appendChild(hl(w.note,q));row.appendChild(note);
+        badge.onclick=()=>{const open=note.classList.toggle("show");badge.textContent=open?"figurative ▴":"figurative ▾";};
+      }else if(w.fig){const badge=document.createElement("span");badge.className="figbadge";badge.textContent="figurative";badge.style.cursor="default";row.appendChild(badge);}
+      card.appendChild(row);
+    });
+    frag.appendChild(card);
+  }
+  host.appendChild(frag);
+  const emp=$("meanEmpty");
+  if(shown===0){emp.style.display="block";emp.textContent=q?('No kanji match "'+query+'" yet.'):(figOnly?"No figurative connections reachable yet.":"Nothing reachable yet — move the slider up.");}
+  else emp.style.display="none";
+}
+
+/* ---------- tab switching ---------- */
+let activeTab="trees";
+function setTab(t){
+  activeTab=t;
+  $("tabTrees").classList.toggle("active",t==="trees");
+  $("tabFam").classList.toggle("active",t==="families");
+  $("tabMean").classList.toggle("active",t==="meanings");
+  $("viewTrees").hidden=t!=="trees";
+  $("viewFam").hidden=t!=="families";
+  $("viewMean").hidden=t!=="meanings";
+  renderActive();
+}
+function renderActive(){
+  $("knownCount").textContent=Object.values(state.known).filter(Boolean).length;
+  if(activeTab==="trees")renderGrid();
+  else if(activeTab==="families")renderFam();
+  else renderMean();
+}
+
 /* ---------- slider ---------- */
 function renderSlider(){
   const n=state.progress;
@@ -381,21 +594,25 @@ function renderSlider(){
 }
 
 /* ---------- events ---------- */
-$("q").addEventListener("input",e=>{query=e.target.value;$("clrBtn").style.display=query?"block":"none";renderGrid();});
-$("clrBtn").onclick=()=>{$("q").value="";query="";$("clrBtn").style.display="none";renderGrid();$("q").focus();};
-$("prog").addEventListener("input",e=>{state.progress=parseInt(e.target.value,10);renderSlider();renderGrid();if(selected&&!reachable(KMAP.get(selected)))closeDetail();});
+$("q").addEventListener("input",e=>{query=e.target.value;$("clrBtn").style.display=query?"block":"none";renderActive();});
+$("clrBtn").onclick=()=>{$("q").value="";query="";$("clrBtn").style.display="none";renderActive();$("q").focus();};
+$("prog").addEventListener("input",e=>{state.progress=parseInt(e.target.value,10);renderSlider();renderActive();const se=selected&&KMAP.get(selected);if(se&&!reachable(se))closeDetail();});
+$("tabTrees").onclick=()=>setTab("trees");
+$("tabFam").onclick=()=>setTab("families");
+$("tabMean").onclick=()=>setTab("meanings");
+$("figOnly").onchange=renderMean;
 $("prog").addEventListener("change",()=>saveState());
 $("dClose").onclick=closeDetail;$("scrim").onclick=closeDetail;
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetail();});
-$("dKnown").onclick=()=>{if(!selected)return;if(state.known[selected])delete state.known[selected];else state.known[selected]=true;updateKnownBtn();renderGrid();saveState();};
+$("dKnown").onclick=()=>{if(!selected)return;if(state.known[selected])delete state.known[selected];else state.known[selected]=true;updateKnownBtn();renderActive();saveState();};
 
 $("themeBtn").onclick=()=>{const d=document.documentElement.getAttribute("data-theme")==="dark";const nx=d?"light":"dark";document.documentElement.setAttribute("data-theme",nx);try{localStorage.setItem("c2k_theme",nx);}catch(e){}applyThemeIcon();};
 function applyThemeIcon(){const d=(document.documentElement.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"))==="dark";$("themeBtn").textContent=d?"☀":"☾";}
 applyThemeIcon();
 
 $("syncTog").onclick=()=>{const b=$("syncBody");const open=b.classList.toggle("open");$("syncTog").setAttribute("aria-expanded",open);$("chev").textContent=open?"▴":"▾";};
-$("resetProgBtn").onclick=()=>{state.progress=MAXPOS;renderSlider();renderGrid();saveState();toast("Progress reset to all "+MAXPOS+".");};
-$("clearKnownBtn").onclick=()=>{if(Object.keys(state.known).length&&confirm("Clear ALL known-marks? This can't be undone (will also clear on synced devices).")){state.known={};renderGrid();if(selected)updateKnownBtn();saveState();toast("Known-marks cleared.");}};
+$("resetProgBtn").onclick=()=>{state.progress=MAXPOS;renderSlider();renderActive();saveState();toast("Progress reset to all "+MAXPOS+".");};
+$("clearKnownBtn").onclick=()=>{if(Object.keys(state.known).length&&confirm("Clear ALL known-marks? This can't be undone (will also clear on synced devices).")){state.known={};renderActive();if(selected)updateKnownBtn();saveState();toast("Known-marks cleared.");}};
 
 let toastT;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),2400);}
 
@@ -417,7 +634,7 @@ window.__c2kOnRemote=function(remote){
   }
   const before=JSON.stringify(local);
   state={known:merged.known||{},progress:merged.progress||MAXPOS,updatedAt:merged.updatedAt||0};
-  if(JSON.stringify(state)!==before){try{localStorage.setItem(LS,JSON.stringify(state));}catch(e){}renderSlider();renderGrid();if(selected)updateKnownBtn();}
+  if(JSON.stringify(state)!==before){try{localStorage.setItem(LS,JSON.stringify(state));}catch(e){}renderSlider();renderActive();if(selected)updateKnownBtn();}
   if(JSON.stringify(state)!==JSON.stringify(remote)){const c=window.__c2kCloud;if(c&&c.connected)c.push(state);}
 };
 window.__c2kCloudStatus=function(msg,st){const el=$("cloudStatus");if(!el)return;el.textContent=msg;el.classList.remove("on","err");if(st)el.classList.add(st);$("cloudBtn").textContent=(st==="on")?"Turn off":"Turn on";};
@@ -435,7 +652,7 @@ $("cloudBtn").onclick=toggleCloud;
 setTimeout(()=>{if(!window.__c2kCloud)window.__c2kCloudStatus("Cloud sync isn't available in this preview — open your hosted link to use it.","err");},1800);
 
 /* ---------- init ---------- */
-renderSlider();renderGrid();
+renderSlider();renderActive();
 </script>
 
 <!-- ============ CLOUD SYNC (Firebase Realtime DB) — reuses Eric's bon-echo project ============ -->
