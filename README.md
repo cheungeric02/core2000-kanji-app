@@ -4,7 +4,7 @@ A companion reference tool for the **Japanese Core 2000** Anki deck. Search a ka
 reading tree (on-yomi / kun-yomi / irregular, with the words that use each reading), track your
 progress through the deck, and mark kanji as known — synced across phone and computer.
 
-**Live:** https://cheungeric02.github.io/core2000-kanji/
+**Live:** https://cheungeric02.github.io/core2000-kanji-app/
 
 ## Features (v1)
 - **Search + browse reading trees** — match on kanji, word (kanji or kana), reading, or English meaning.
