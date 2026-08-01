@@ -77,6 +77,7 @@ input[type=range]{width:100%;accent-color:var(--accent);height:26px}
 .scrim.show{opacity:1;pointer-events:auto}
 .detail{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--bg);border-left:1px solid var(--line);box-shadow:-8px 0 30px rgba(10,14,20,.18);transform:translateX(100%);transition:transform .22s cubic-bezier(.4,0,.2,1);z-index:50;display:flex;flex-direction:column}
 .detail.show{transform:none}
+.detail.dragging{transition:none}
 .dhead{display:flex;align-items:center;gap:14px;padding:16px;border-bottom:1px solid var(--line);background:var(--panel)}
 .dhead .k{font-size:3rem;line-height:1;font-weight:600}
 .dhead .meta{flex:1;min-width:0}
@@ -464,6 +465,42 @@ function openDetail(k){
   $("dBody")&&($("dBody").scrollTop=0);
 }
 function closeDetail(){selected=null;$("scrim").classList.remove("show");$("detail").classList.remove("show");$("detail").setAttribute("aria-hidden","true");}
+
+/* ---------- swipe-right to dismiss the detail panel (touch/mobile only) ---------- */
+(function initSwipeClose(){
+  const el=$("detail"),scrim=$("scrim");
+  let active=false,decided=false,horiz=false,sx=0,sy=0,dx=0,W=0;
+  el.addEventListener("touchstart",e=>{
+    if(!el.classList.contains("show")||e.touches.length!==1){active=false;return;}
+    const t=e.touches[0];sx=t.clientX;sy=t.clientY;dx=0;W=el.offsetWidth||window.innerWidth;
+    active=true;decided=false;horiz=false;
+  },{passive:true});
+  el.addEventListener("touchmove",e=>{
+    if(!active)return;
+    const t=e.touches[0],mx=t.clientX-sx,my=t.clientY-sy;
+    if(!decided){
+      if(Math.abs(mx)<8&&Math.abs(my)<8)return;      // wait for a clear direction
+      decided=true;
+      horiz=Math.abs(mx)>Math.abs(my)&&mx>0;         // only a rightward, mostly-horizontal drag counts
+      if(horiz){el.classList.add("dragging");scrim.style.transition="none";}
+    }
+    if(!horiz)return;                                // vertical → let the tree scroll normally
+    e.preventDefault();
+    dx=Math.max(0,mx);
+    el.style.transform="translateX("+dx+"px)";
+    scrim.style.opacity=String(Math.max(0,1-dx/W));
+  },{passive:false});
+  function end(){
+    if(!active)return; active=false;
+    if(!horiz)return;
+    el.classList.remove("dragging");scrim.style.transition="";
+    const close=dx>W*0.33;
+    el.style.transform="";scrim.style.opacity="";     // hand control back to CSS (animates to open- or closed-state)
+    if(close)closeDetail();
+  }
+  el.addEventListener("touchend",end);
+  el.addEventListener("touchcancel",end);
+})();
 function updateKnownBtn(){
   const on=!!state.known[selected];
   const b=$("dKnown");
