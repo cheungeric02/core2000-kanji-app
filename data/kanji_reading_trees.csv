@@ -1,0 +1,1351 @@
+Kanji,Kanji_Meaning,Reading_Used,Word,Word_Reading,English_Meaning,Reading_Type,Position_in_Deck
+二,"two, two radical (no. 7)",に,二階,にかい,"second floor, upstairs",on,656
+二,"two, two radical (no. 7)",に,二,に,two,on,1782
+二,"two, two radical (no. 7)",ふた,二つ,ふたつ,two (things),kun,3
+二,"two, two radical (no. 7)",ふた,二人,ふたり,two persons,kun,420
+二,"two, two radical (no. 7)",irregular,二十日,はつか,"20 days, 20th of the month",irregular,22
+二,"two, two radical (no. 7)",irregular,二日,ふつか,"two days, 2nd of the month",irregular,23
+二,"two, two radical (no. 7)",irregular,二十歳,はたち,20 years old,irregular,1009
+三,three,さん,三角,さんかく,triangle,on,979
+三,three,さん,三,さん,three,on,1783
+三,three,みっ,三つ,みっつ,three (things),kun,4
+三,three,みっ,三日,みっか,"three days, 3rd of the month",kun,19
+四,four,し,四季,しき,the four seasons,on,666
+四,four,し,四角,しかく,"square, quadrilateral",on,980
+四,four,し,四角い,しかくい,"square, four-sided",on,981
+四,four,し,四,し,four,on,1784
+四,four,よっ,四つ,よっつ,four (things),kun,5
+四,four,よっ,四日,よっか,"four days, 4th of the month",kun,29
+四,four,よ,四つ角,よつかど,"street corner, intersection",kun,982
+四,four,よん,四,よん,four,kun,1786
+五,five,ご,五,ご,five,on,1787
+五,five,いつ,五つ,いつつ,five (things),kun,6
+五,five,いつ,五日,いつか,"five days, 5th of the month",kun,20
+六,six,ろく,六,ろく,six,on,1788
+六,six,むっ,六つ,むっつ,six (things),kun,7
+六,six,むい,六日,むいか,"six days, 6th of the month",kun,18
+七,seven,しち,七,しち,seven,on,1807
+七,seven,なな,七つ,ななつ,seven (things),kun,8
+七,seven,なな,七,なな,seven,kun,1789
+七,seven,なの,七日,なのか,"seven days, 7th of the month",kun,28
+八,"eight, eight radical (no. 12)",はち,八,はち,eight,on,1790
+八,"eight, eight radical (no. 12)",やっ,八つ,やっつ,eight (things),kun,9
+八,"eight, eight radical (no. 12)",よう,八日,ようか,"eight days, 8th of the month",kun,21
+八,"eight, eight radical (no. 12)",や,八百屋,やおや,"vegetable store, greengrocer",kun,630
+九,nine,きゅう,九,きゅう,nine,on,1791
+九,nine,く,九,く,nine,on,1808
+九,nine,ここの,九つ,ここのつ,nine (things),kun,11
+九,nine,ここの,九日,ここのか,"nine days, 9th of the month",kun,24
+十,ten,じゅう,十分,じゅうぶん,"enough, plenty",on,382
+十,ten,じゅう,十,じゅう,ten,on,1792
+十,ten,とお,十日,とおか,"ten days, 10th of the month",kun,27
+十,ten,irregular,二十日,はつか,"20 days, 20th of the month",irregular,22
+十,ten,irregular,二十歳,はたち,20 years old,irregular,1009
+水,water,すい,水曜日,すいようび,Wednesday,on,41
+水,water,すい,水道,すいどう,"tap water, water supply",on,576
+水,water,すい,水泳,すいえい,swimming,on,1238
+水,water,みず,水,みず,water,kun,31
+金,gold,きん,金曜日,きんようび,Friday,on,36
+金,gold,きん,金,きん,"gold, sum of money, Friday",on,381
+金,gold,きん,資金,しきん,"funds, a fund",on,1115
+金,gold,きん,貯金,ちょきん,"savings, deposit",on,1447
+金,gold,かね,金,かね,money,kun,32
+金,gold,かね,金持ち,かねもち,wealthy person,kun,735
+曜,weekday,よう,日曜日,にちようび,Sunday,on,33
+曜,weekday,よう,土曜日,どようび,Saturday,on,34
+曜,weekday,よう,金曜日,きんようび,Friday,on,36
+曜,weekday,よう,月曜日,げつようび,Monday,on,37
+曜,weekday,よう,木曜日,もくようび,Thursday,on,38
+曜,weekday,よう,曜日,ようび,day of the week,on,39
+曜,weekday,よう,火曜日,かようび,Tuesday,on,40
+曜,weekday,よう,水曜日,すいようび,Wednesday,on,41
+週,week,しゅう,週,しゅう,week,on,42
+週,week,しゅう,今週,こんしゅう,this week,on,51
+週,week,しゅう,先週,せんしゅう,last week,on,390
+週,week,しゅう,来週,らいしゅう,next week,on,393
+週,week,しゅう,毎週,まいしゅう,every week,on,452
+週,week,しゅう,週末,しゅうまつ,weekend,on,637
+週,week,しゅう,週刊誌,しゅうかんし,weekly magazine,on,1342
+週,week,しゅう,再来週,さらいしゅう,the week after next,on,1497
+先,"before, ahead",せん,先生,せんせい,teacher (respectful title),on,210
+先,"before, ahead",せん,先月,せんげつ,last month,on,388
+先,"before, ahead",せん,先週,せんしゅう,last week,on,390
+先,"before, ahead",さき,先,さき,"ahead, first",kun,46
+小,"little, small",しょう,小学生,しょうがくせい,elementary school student,on,752
+小,"little, small",しょう,小学校,しょうがっこう,elementary school,on,756
+小,"little, small",しょう,小説,しょうせつ,"novel, story",on,1095
+小,"little, small",ちい,小さい,ちいさい,small,kun,58
+小,"little, small",こ,小包,こづつみ,"parcel, package",kun,1632
+少,"few, little",しょう,少年,しょうねん,boy,on,401
+少,"few, little",すく,少ない,すくない,"few, little",kun,59
+少,"few, little",すこ,少し,すこし,"a little, a little while (polite)",kun,60
+少,"few, little",すこ,少しも,すこしも,(not) one bit,kun,402
+少,"few, little",irregular,少々,しょうしょう,"a little, a few (formal)",irregular,403
+多,"many, frequent",た,多分,たぶん,"probably, perhaps",on,62
+多,"many, frequent",おお,多い,おおい,lots of,kun,61
+多,"many, frequent",おお,多く,おおく,"many, much",kun,404
+本,"book, present",ほん,本,ほん,"book, volume",on,79
+本,"book, present",ほん,本当に,ほんとうに,"really, truly",on,227
+本,"book, present",ほん,本屋,ほんや,"bookstore, bookseller",on,629
+本,"book, present",ほん,本当,ほんとう,"truth, reality, genuine",on,793
+本,"book, present",ほん,基本,きほん,"basis, foundation",on,1086
+本,"book, present",ほん,本棚,ほんだな,bookshelf,on,1569
+本,"book, present",ほん,本箱,ほんばこ,bookcase,on,1625
+休,"rest, day off",きゅう,休日,きゅうじつ,"holiday, day off",on,426
+休,"rest, day off",きゅう,休校,きゅうこう,temporary school closure,on,760
+休,"rest, day off",きゅう,休憩,きゅうけい,"<div>break (from work, study, etc.)</div>",on,1589
+休,"rest, day off",やす,休む,やすむ,"take a day off, take a break",kun,80
+休,"rest, day off",やす,休み,やすみ,"rest, holiday, absence",kun,427
+休,"rest, day off",やす,昼休み,ひるやすみ,"noon recess, lunch break",kun,523
+休,"rest, day off",やす,夏休み,なつやすみ,summer vacation,kun,664
+休,"rest, day off",やす,冬休み,ふゆやすみ,winter vacation,kun,665
+目,"eye, class",もく,目的,もくてき,"objective, purpose",on,1046
+目,"eye, class",もく,注目,ちゅうもく,"attention, notice",on,1072
+目,"eye, class",め,目,め,eye,kun,82
+目,"eye, class",め,目覚まし時計,めざましどけい,alarm clock,kun,820
+目,"eye, class",め,目立つ,めだつ,"stand out, be conspicuous",kun,890
+目,"eye, class",め,真面目,まじめ,"serious, sober, earnest",kun,963
+口,mouth,こう,人口,じんこう,population,on,430
+口,mouth,く,早口,はやくち,fast talking,on,913
+口,mouth,くち,口,くち,mouth,kun,84
+口,mouth,irregular,出口,でぐち,"exit, exit ramp",irregular,431
+口,mouth,irregular,入り口,いりぐち,entrance,irregular,433
+口,mouth,irregular,改札口,かいさつぐち,ticket barrier,irregular,1396
+足,"leg, foot",あし,足,あし,"leg, foot",kun,88
+足,"leg, foot",た,足りる,たりる,"be enough, be sufficient",kun,438
+足,"leg, foot",た,足す,たす,"add, supplement<div>(the same kind of thing)</div>",kun,439
+足,"leg, foot",た,足し算,たしざん,addition,kun,824
+空,"empty, sky",くう,空気,くうき,"air, atmosphere",on,468
+空,"empty, sky",くう,航空便,こうくうびん,airmail,on,1104
+空,"empty, sky",くう,空港,くうこう,airport,on,1107
+空,"empty, sky",す,空く,すく,"become empty, become less crowded",kun,89
+空,"empty, sky",あ,空く,あく,become available or vacant,kun,443
+空,"empty, sky",から,空手,からて,"karate, empty hand",kun,444
+空,"empty, sky",そら,空,そら,"sky, weather",kun,445
+好,"fond, pleasing",す,好き,すき,"favorite, liked",kun,92
+好,"fond, pleasing",す,大好き,だいすき,love,kun,93
+家,"house, home",か,家内,かない,my wife,on,466
+家,"house, home",か,家族,かぞく,"family, household",on,1007
+家,"house, home",か,家庭,かてい,"home, family",on,1462
+家,"house, home",うち,家,うち,"house, home, my family",kun,96
+家,"house, home",いえ,家,いえ,"house, home",kun,465
+家,"house, home",や,家賃,やちん,rent (money),kun,853
+昨,"yesterday, previous",さく,昨年,さくねん,last year (polite),on,482
+昨,"yesterday, previous",irregular,昨日,きのう,yesterday,irregular,102
+昨,"yesterday, previous",irregular,一昨年,おととし,the year before last,irregular,484
+昨,"yesterday, previous",irregular,一昨日,おととい,day before yesterday,irregular,485
+昨,"yesterday, previous",irregular,昨夜,ゆうべ,"last night, last evening",irregular,529
+開,"open, unfold",かい,開始,かいし,beginning,on,917
+開,"open, unfold",かい,開発,かいはつ,development,on,930
+開,"open, unfold",かい,公開,こうかい,opening (to the public),on,1096
+開,"open, unfold",かい,開催,かいさい,"holding (of an event), opening",on,1510
+開,"open, unfold",あ,開ける,あける,"open, unlock",kun,103
+開,"open, unfold",あ,開く,あく,open が,kun,496
+開,"open, unfold",ひら,開く,ひらく,open を/が,kun,104
+閉,"closed, shut",と,閉じる,とじる,"close (book, eyes, etc.)",kun,105
+閉,"closed, shut",し,閉める,しめる,"shut, close",kun,106
+閉,"closed, shut",し,閉まる,しまる,"be shut, be closed",kun,107
+安,"relax, cheap",あん,安全,あんぜん,"safety, security",on,604
+安,"relax, cheap",あん,安心,あんしん,"peace of mind, relief",on,686
+安,"relax, cheap",やす,安い,やすい,"inexpensive, cheap",kun,112
+前,"in front, before",ぜん,午前,ごぜん,"morning, a.m.",on,118
+前,"in front, before",まえ,前,まえ,"front, before",kun,114
+前,"in front, before",まえ,名前,なまえ,name,kun,197
+前,"in front, before",まえ,昼前,ひるまえ,"in the morning, before noon",kun,524
+後,"behind, back",ご,午後,ごご,"afternoon, p.m.",on,117
+後,"behind, back",ご,今後,こんご,"after this, in the future (formal)",on,509
+後,"behind, back",ご,最後,さいご,"last, final",on,511
+後,"behind, back",あと,後,あと,after,kun,115
+後,"behind, back",うし,後ろ,うしろ,"back, behind",kun,116
+後,"behind, back",のち,後[のち],のち,"after, afterwards (formal)",kun,510
+後,"behind, back",irregular,明後日,あさって,day after tomorrow,irregular,513
+午,"noon, sign of the horse",ご,午後,ごご,"afternoon, p.m.",on,117
+午,"noon, sign of the horse",ご,午前,ごぜん,"morning, a.m.",on,118
+朝,"morning, dynasty",ちょう,朝食,ちょうしょく,breakfast (formal),on,534
+朝,"morning, dynasty",ちょう,朝刊,ちょうかん,morning edition,on,1343
+朝,"morning, dynasty",あさ,朝,あさ,morning,kun,119
+朝,"morning, dynasty",あさ,毎朝,まいあさ,every morning,kun,520
+朝,"morning, dynasty",あさ,朝ご飯,あさごはん,breakfast,kun,715
+朝,"morning, dynasty",irregular,今朝,けさ,this morning,irregular,521
+昼,"daytime, noon",ちゅう,昼食,ちゅうしょく,lunch (formal),on,533
+昼,"daytime, noon",ひる,昼,ひる,"daytime, midday, lunch",kun,120
+昼,"daytime, noon",ひる,昼休み,ひるやすみ,"noon recess, lunch break",kun,523
+昼,"daytime, noon",ひる,昼前,ひるまえ,"in the morning, before noon",kun,524
+昼,"daytime, noon",ひる,昼間,ひるま,"daytime, day",kun,525
+昼,"daytime, noon",ひる,昼過ぎ,ひるすぎ,just past noon,kun,927
+昼,"daytime, noon",ひる,昼寝,ひるね,nap,kun,1325
+晩,"nightfall, night",ばん,晩,ばん,evening (usually from sunset to bedtime),on,122
+晩,"nightfall, night",ばん,今晩,こんばん,"this evening, tonight",on,123
+晩,"nightfall, night",ばん,毎晩,まいばん,every evening,on,526
+夜,"night, evening",や,今夜,こんや,"tonight, this evening",on,528
+夜,"night, evening",よる,夜,よる,night (from sunset to sunrise),kun,124
+夜,"night, evening",よ,夜中,よなか,"midnight, dead of night",kun,530
+夜,"night, evening",irregular,昨夜,ゆうべ,"last night, last evening",irregular,529
+食,"eat, food",しょく,昼食,ちゅうしょく,lunch (formal),on,533
+食,"eat, food",しょく,朝食,ちょうしょく,breakfast (formal),on,534
+食,"eat, food",しょく,夕食,ゆうしょく,supper (polite),on,535
+食,"eat, food",しょく,食事,しょくじ,"meal, dinner (formal)",on,562
+食,"eat, food",しょく,食堂,しょくどう,"dining hall, restaurant",on,1708
+食,"eat, food",た,食べる,たべる,eat,kun,125
+食,"eat, food",た,食べ物,たべもの,food,kun,198
+飲,"drink, smoke",の,飲む,のむ,drink,kun,126
+飲,"drink, smoke",の,飲み物,のみもの,"beverage, drink",kun,200
+言,"say, word",げん,言語,げんご,"language, speech",on,545
+言,"say, word",げん,発言,はつげん,"statement, remark",on,932
+言,"say, word",い,言う,いう,"say, tell",kun,135
+言,"say, word",い,言い方,いいかた,"way of speaking, expression",kun,539
+言,"say, word",こと,言葉,ことば,"word, language",kun,343
+話,"tale, talk",わ,会話,かいわ,conversation,on,553
+話,"tale, talk",わ,電話,でんわ,"telephone, phone call",on,568
+話,"tale, talk",わ,電話帳,でんわちょう,telephone book,on,1637
+話,"tale, talk",はな,話す,はなす,"speak, tell",kun,136
+話,"tale, talk",はな,話し合う,はなしあう,"discuss, talk about",kun,554
+話,"tale, talk",はなし,話,はなし,"talk, story",kun,540
+読,read,よ,読む,よむ,read,kun,137
+読,read,よ,読み,よみ,"reading, judgment, foresight",kun,542
+読,read,よ,読み方,よみかた,"way to read, reading",kun,543
+字,"character, letter",じ,漢字,かんじ,Chinese character,on,138
+字,"character, letter",じ,文字,もじ,"character, letter",on,546
+字,"character, letter",じ,字,じ,"character, letter, handwriting",on,547
+字,"character, letter",じ,名字,みょうじ,"surname, family name",on,709
+字,"character, letter",じ,数字,すうじ,"figure, numeral",on,783
+字,"character, letter",じ,ローマ字,ろーまじ,Roman alphabet,on,1828
+覚,"memorize, learn",おぼ,覚える,おぼえる,"memorize, learn",kun,140
+覚,"memorize, learn",さ,覚める,さめる,"awake, wake up (目が)",kun,549
+覚,"memorize, learn",さ,覚ます,さます,"awaken, wake up 目を",kun,550
+覚,"memorize, learn",irregular,目覚まし時計,めざましどけい,alarm clock,irregular,820
+場,"location, place",じょう,工場,こうじょう,"factory, plant",on,567
+場,"location, place",じょう,入場券,にゅうじょうけん,entrance ticket,on,852
+場,"location, place",じょう,飛行場,ひこうじょう,"airport, airfield",on,1103
+場,"location, place",じょう,駐車場,ちゅうしゃじょう,parking area,on,1527
+場,"location, place",ば,場合,ばあい,"situation, case",kun,144
+場,"location, place",ば,売り場,うりば,"sales floor, department",kun,650
+場,"location, place",ば,場所,ばしょ,"place, space",kun,702
+場,"location, place",ば,立場,たちば,"standpoint, position",kun,889
+合,"fit, suit",ごう,合格,ごうかく,"passing an examination, eligibility",on,663
+合,"fit, suit",ごう,都合,つごう,circumstances,on,714
+合,"fit, suit",ごう,結合,けつごう,"combination, joining",on,1015
+合,"fit, suit",あい,場合,ばあい,"situation, case",kun,144
+合,"fit, suit",あ,話し合う,はなしあう,"discuss, talk about",kun,554
+合,"fit, suit",あ,合う,あう,fit,kun,555
+合,"fit, suit",あ,間に合う,まにあう,"be in time, serve (my) purpose<br>なくても〜 do without",kun,556
+電,electricity,でん,電車,でんしゃ,train,on,146
+電,electricity,でん,電話,でんわ,"telephone, phone call",on,568
+電,electricity,でん,電気,でんき,"electricity, electric light",on,569
+電,electricity,でん,電池,でんち,"electric cell, battery",on,1231
+電,electricity,でん,電話帳,でんわちょう,telephone book,on,1637
+道,"road-way, street",どう,水道,すいどう,"tap water, water supply",on,576
+道,"road-way, street",どう,車道,しゃどう,"road, roadway (for vehicles)",on,577
+道,"road-way, street",どう,道路,どうろ,"road, street",on,579
+道,"road-way, street",どう,歩道,ほどう,"sidewalk, footpath",on,585
+道,"road-way, street",どう,横断歩道,おうだんほどう,crosswalk,on,1298
+道,"road-way, street",どう,柔道,じゅうどう,judo,on,1538
+道,"road-way, street",みち,道,みち,"way, road, street",kun,148
+道,"road-way, street",みち,片道,かたみち,one-way,kun,1333
+止,"stop, halt",や,止める,やめる,"stop, give up, abolish",kun,150
+止,"stop, halt",や,止む,やむ,"<!--anki-->cease, stop,&nbsp;let up",kun,584
+止,"stop, halt",と,止める,とめる,"stop (sth), turn off",kun,582
+止,"stop, halt",と,止まる,とまる,"come to a stop, cease",kun,583
+近,"near, early",きん,最近,さいきん,"lately, recent",on,593
+近,"near, early",きん,近所,きんじょ,neighborhood,on,703
+近,"near, early",ちか,近く,ちかく,"near, close to",kun,154
+近,"near, early",ちか,近い,ちかい,"near, close",kun,155
+近,"near, early",ちか,近く,ちかく,"vicinity, nearby",kun,156
+近,"near, early",ちか,近付く,ちかづく,"approach, get acquainted",kun,1359
+長,"long, leader",ちょう,社長,しゃちょう,president (of a company),on,595
+長,"long, leader",ちょう,会長,かいちょう,"chairman, president",on,596
+長,"long, leader",ちょう,長男,ちょうなん,eldest son,on,598
+長,"long, leader",ちょう,長女,ちょうじょ,eldest daughter,on,599
+長,"long, leader",ちょう,校長,こうちょう,principal,on,758
+長,"long, leader",なが,長い,ながい,long,kun,158
+長,"long, leader",なが,長さ,ながさ,length,kun,597
+長,"long, leader",なが,長袖,ながそで,clothes with long sleeves,kun,1752
+部,"section, bureau",ぶ,全部,ぜんぶ,"all, wholly",on,162
+部,"section, bureau",ぶ,一部,いちぶ,part,on,605
+部,"section, bureau",ぶ,部分,ぶぶん,"part, section",on,606
+部,"section, bureau",irregular,部屋,へや,room,irregular,166
+全,"whole, entire",ぜん,全部,ぜんぶ,"all, wholly",on,162
+全,"whole, entire",ぜん,全体,ぜんたい,"whole, total",on,602
+全,"whole, entire",ぜん,安全,あんぜん,"safety, security",on,604
+全,"whole, entire",ぜん,全国,ぜんこく,the whole country,on,609
+全,"whole, entire",ぜん,全然,ぜんぜん,"(not) at all, totally (not)",on,795
+全,"whole, entire",まった,全く,まったく,"entirely, truly, indeed",kun,603
+白,white,しろ,白い,しろい,"white, blank (for paper)",kun,164
+白,white,しろ,面白い,おもしろい,"interesting, amusing",kun,958
+白,white,しろ,真っ白,まっしろ,pure-white,kun,964
+白,white,しろ,白,しろ,white,kun,1840
+赤,red,あか,赤い,あかい,red,kun,165
+赤,red,あか,赤ちゃん,あかちゃん,baby,kun,618
+赤,red,あか,赤,あか,red,kun,619
+赤,red,irregular,真っ赤,まっか,deep red,irregular,962
+作,"make, production",さく,作文,さくぶん,"composition, essay",on,643
+作,"make, production",さく,作品,さくひん,"work of art, piece",on,654
+作,"make, production",さ,作業,さぎょう,"work, operation",on,807
+作,"make, production",つく,作る,つくる,"make, create",kun,170
+消,"extinguish, blow out",しょう,消防車,しょうぼうしゃ,fire truck,on,1552
+消,"extinguish, blow out",しょう,消防署,しょうぼうしょ,fire station,on,1679
+消,"extinguish, blow out",け,消す,けす,"erase, turn off",kun,172
+消,"extinguish, blow out",け,消しゴム,けしごむ,(rubber) eraser,kun,648
+消,"extinguish, blow out",き,消える,きえる,"be extinguished, disappear",kun,647
+売,sell,ばい,売店,ばいてん,"kiosk, store",on,652
+売,sell,ばい,販売,はんばい,"sale, selling",on,655
+売,sell,う,売る,うる,sell を,kun,173
+売,sell,う,売れる,うれる,"be sold, be in demand",kun,649
+売,sell,う,売り場,うりば,"sales floor, department",kun,650
+売,sell,う,売り切れる,うりきれる,"be sold out, go out of stock",kun,848
+売,sell,う,売り切れ,うりきれ,sold out,kun,849
+店,"store, shop",てん,店員,てんいん,"clerk, salesperson",on,651
+店,"store, shop",てん,売店,ばいてん,"kiosk, store",on,652
+店,"store, shop",てん,喫茶店,きっさてん,"coffee shop, tea house, café",on,1585
+店,"store, shop",みせ,店,みせ,"shop, store",kun,174
+暖,warmth,だん,暖房,だんぼう,heating,on,1303
+暖,warmth,あたた,暖かい,あたたかい,warm,kun,183
+暖,warmth,あたた,暖める,あたためる,"warm up (something), heat up を",kun,671
+暖,warmth,あたた,暖まる,あたたまる, get warm が,kun,672
+新,new,しん,新聞,しんぶん,newspaper,on,682
+新,new,しん,新年,しんねん,New Year,on,683
+新,new,しん,新幹線,しんかんせん,"Shinkansen, Bullet Train",on,1459
+新,new,あたら,新しい,あたらしい,new,kun,184
+思,think,おも,思う,おもう,think,kun,188
+思,think,おも,思い出す,おもいだす,"recollect, recall",kun,687
+思,think,おも,思い出,おもいで,"recollections, memory",kun,688
+決,"decide, fix",けつ,解決,かいけつ,"solution, settlement",on,690
+決,"decide, fix",き,決める,きめる,"decide, agree upon",kun,192
+決,"decide, fix",き,決まる,きまる,be decided,kun,193
+決,"decide, fix",irregular,決定,けってい,decision,irregular,858
+番,"turn, number in a series",ばん,一番,いちばん,most,on,195
+番,"turn, number in a series",ばん,交番,こうばん,police box,on,699
+番,"turn, number in a series",ばん,番地,ばんち,"house number, address",on,700
+番,"turn, number in a series",ばん,番号,ばんごう,number,on,701
+番,"turn, number in a series",ばん,番組,ばんぐみ,"program (TV, radio)",on,1166
+名,"name, noted",めい,有名,ゆうめい,famous,on,707
+名,"name, noted",めい,氏名,しめい,full name,on,710
+名,"name, noted",みょう,名字,みょうじ,"surname, family name",on,709
+名,"name, noted",な,名前,なまえ,name,kun,197
+名,"name, noted",な,片仮名,かたかな,katakana,kun,349
+名,"name, noted",な,平仮名,ひらがな,hiragana,kun,350
+名,"name, noted",な,仮名,かな,"kana, Japanese syllabary",kun,1500
+名,"name, noted",な,送り仮名,おくりがな,kana suffix,kun,1501
+送,"escort, send",そう,放送,ほうそう,broadcasting,on,1498
+送,"escort, send",おく,送る,おくる,send,kun,203
+送,"escort, send",おく,見送る,みおくる,see (someone) off,kun,726
+送,"escort, send",おく,見送り,みおくり,seeing someone off,kun,727
+送,"escort, send",おく,送り仮名,おくりがな,kana suffix,kun,1501
+取,"take, fetch",と,取る,とる,"take, get",kun,204
+取,"take, fetch",と,受け取る,うけとる,"get (st from so), receive<div>take (as in take as an insult)</div>",kun,729
+取,"take, fetch",と,取れる,とれる,"come off, be removed",kun,730
+取,"take, fetch",と,書き取る,かきとる,"write down, note down",kun,731
+取,"take, fetch",とり,取引,とりひき,"transaction, dealings",kun,768
+持,"hold, have",も,持つ,もつ,"have, possess",kun,206
+持,"hold, have",も,気持ち,きもち,"feeling (about something, emotion)",kun,207
+持,"hold, have",も,持つ,もつ,"last long, keep well",kun,734
+持,"hold, have",も,金持ち,かねもち,wealthy person,kun,735
+持,"hold, have",も,持って行く,もっていく,take (somewhere),kun,736
+持,"hold, have",も,持って来る,もってくる,bring (something),kun,738
+校,"exam, school",こう,学校,がっこう,school,on,214
+校,"exam, school",こう,高校生,こうこうせい,high school student,on,215
+校,"exam, school",こう,高校,こうこう,high school,on,755
+校,"exam, school",こう,小学校,しょうがっこう,elementary school,on,756
+校,"exam, school",こう,中学校,ちゅうがっこう,middle school,on,757
+校,"exam, school",こう,校長,こうちょう,principal,on,758
+校,"exam, school",こう,休校,きゅうこう,temporary school closure,on,760
+校,"exam, school",こう,高等学校,こうとうがっこう,senior high school,on,1051
+教,"teach, faith",きょう,教会,きょうかい,church,on,761
+教,"teach, faith",きょう,教育,きょういく,education,on,762
+教,"teach, faith",きょう,教室,きょうしつ,"classroom, class",on,1001
+教,"teach, faith",きょう,教科書,きょうかしょ,"textbook, schoolbook",on,1061
+教,"teach, faith",きょう,教師,きょうし,"teacher, instructor",on,1515
+教,"teach, faith",きょう,教授,きょうじゅ,professor,on,1516
+教,"teach, faith",おし,教える,おしえる,"teach, tell",kun,216
+強,strong,きょう,勉強,べんきょう,study,on,217
+強,strong,きょう,強化,きょうか,strengthening,on,873
+強,strong,きょう,強調,きょうちょう,"emphasis, stress",on,1126
+強,strong,つよ,強い,つよい,strong,kun,218
+強,strong,つよ,強さ,つよさ,"strength, power",kun,767
+引,"pull, tug",ひ,引く,ひく,"pull, draw",kun,221
+引,"pull, tug",ひ,取引,とりひき,"transaction, dealings",kun,768
+引,"pull, tug",ひ,引き出し,ひきだし,"drawer, withdrawal",kun,770
+引,"pull, tug",ひ,引き算,ひきざん,subtraction,kun,823
+引,"pull, tug",ひ,引っ越す,ひっこす,move (houses),kun,1391
+引,"pull, tug",ひ,引っ越し,ひっこし,moving (houses),kun,1393
+引,"pull, tug",ひ,引っ張る,ひっぱる,"pull, drag",kun,1542
+数,"number, strength",すう,数字,すうじ,"figure, numeral",on,783
+数,"number, strength",すう,数学,すうがく,mathematics,on,784
+数,"number, strength",かず,数,かず,(the) number,kun,224
+数,"number, strength",かぞ,数える,かぞえる,to count,kun,785
+要,"need, main point",よう,必要,ひつよう,"need, necessity",on,817
+要,"need, main point",よう,重要,じゅうよう,"important, essential",on,818
+要,"need, main point",よう,要求,ようきゅう,"requirement, demand",on,819
+要,"need, main point",い,要る,いる,"need, require",kun,228
+計,"plot, plan",けい,時計,とけい,"clock, watch",on,229
+計,"plot, plan",けい,目覚まし時計,めざましどけい,alarm clock,on,820
+計,"plot, plan",けい,計算,けいさん,calculation,on,822
+計,"plot, plan",けい,計画,けいかく,"plan, project",on,955
+計,"plot, plan",けい,設計,せっけい,"design, plan",on,1091
+計,"plot, plan",けい,腕時計,うでどけい,wrist watch,on,1615
+払,"pay, clear out",はら,払う,はらう,pay,kun,230
+払,"pay, clear out",irregular,酔っ払い,よっぱらい,drunk person,irregular,1067
+払,"pay, clear out",irregular,酔っ払う,よっぱらう,get drunk,irregular,1068
+変,"unusual, change",へん,大変,たいへん,"awful, serious",on,870
+変,"unusual, change",へん,変,へん,"strange, weird, funny",on,871
+変,"unusual, change",へん,変化,へんか,change,on,872
+変,"unusual, change",か,変える,かえる,to change (st),kun,232
+変,"unusual, change",か,変わる,かわる,change が,kun,868
+乗,"ride, power",の,乗る,のる,"ride, take",kun,233
+乗,"ride, power",の,乗り物,のりもの,"vehicle, means of transportation",kun,879
+乗,"ride, power",の,乗り換える,のりかえる,"change, transfer (trainなど)",kun,1205
+乗,"ride, power",の,乗り換え,のりかえ,"change (trainなど), transfer",kun,1206
+着,"don, arrive",き,着る,きる,"wear, put on",kun,234
+着,"don, arrive",き,着物,きもの,"kimono, clothes",kun,884
+着,"don, arrive",き,着せる,きせる,"dress (sb), put clothes on (sb)",kun,887
+着,"don, arrive",き,着替える,きがえる,change clothes,kun,1209
+着,"don, arrive",つ,着く,つく,"arrive, touch, take one's place",kun,883
+着,"don, arrive",ぎ,下着,したぎ,underwear,kun,885
+着,"don, arrive",ぎ,上着,うわぎ,outerwear,kun,886
+立,"stand up, rise",りつ,対立,たいりつ,"opposition, antagonism",on,1037
+立,"stand up, rise",た,立つ,たつ,"stand, rise",kun,235
+立,"stand up, rise",た,立場,たちば,"standpoint, position",kun,889
+立,"stand up, rise",た,立てる,たてる,"stand (sth) up, set (sth) up, establish",kun,891
+立,"stand up, rise",た,役に立つ,やくにたつ,"be useful, be helpful",kun,892
+立,"stand up, rise",た,組み立てる,くみたてる,"put together, assemble, construct",kun,1167
+立,"stand up, rise",だ,目立つ,めだつ,"stand out, be conspicuous",kun,890
+立,"stand up, rise",irregular,立派,りっぱ,"fine, excellent",irregular,1217
+次,"next, order",じ,次男,じなん,second son,on,897
+次,"next, order",じ,次女,じじょ,second daughter,on,898
+次,"next, order",つぎ,次,つぎ,next,kun,237
+早,"early, fast",はや,早い,はやい,early,kun,241
+早,"early, fast",はや,早く,はやく,"early, soon",kun,912
+早,"early, fast",はや,早口,はやくち,fast talking,kun,913
+早,"early, fast",はや,早起き,はやおき,early rising,kun,1324
+速,"quick, fast",そく,速達,そくたつ,express mail,on,915
+速,"quick, fast",はや,速い,はやい,fast,kun,242
+速,"quick, fast",はや,速さ,はやさ,speed,kun,914
+始,"commence, begin",し,開始,かいし,beginning,on,917
+始,"commence, begin",はじ,始める,はじめる,"begin, start を",kun,244
+始,"commence, begin",はじ,始まる,はじまる,begin が,kun,245
+始,"commence, begin",はじ,始めに,はじめに,in the beginning,kun,918
+終,"end, finish",お,終わる,おわる,"finish, end",kun,246
+終,"end, finish",お,終わり,おわり,"end, conclusion",kun,247
+楽,"music, comfort",がく,音楽,おんがく,music,on,949
+楽,"music, comfort",たの,楽しむ,たのしむ,enjoy,kun,250
+楽,"music, comfort",たの,楽しい,たのしい,"fun, enjoyable",kun,251
+歌,"song, sing",か,歌手,かしゅ,singer,on,953
+歌,"song, sing",うた,歌う,うたう,sing,kun,252
+歌,"song, sing",うた,歌,うた,song,kun,951
+色,color,しき,景色,けしき,"scene, landscape",on,1257
+色,color,いろ,色,いろ,color,kun,254
+色,color,いろ,茶色,ちゃいろ,light brown,kun,255
+色,color,いろ,黄色い,きいろい,yellow,kun,318
+色,color,いろ,黄色,きいろ,yellow,kun,1293
+色,color,いろ,緑色,みどりいろ,green,kun,1306
+色,color,いろ,灰色,はいいろ,"ash color, gray",kun,1599
+色,color,irregular,色々,いろいろ,various,irregular,968
+茶,tea,ちゃ,茶色,ちゃいろ,light brown,on,255
+茶,tea,ちゃ,お茶,おちゃ,tea (polite),on,633
+茶,tea,ちゃ,茶わん,ちゃわん,"rice bowl, tea cup",on,634
+茶,tea,ちゃ,紅茶,こうちゃ,black tea,on,1726
+茶,tea,ちゃ,茶,ちゃ,tea (plain form),on,1845
+茶,tea,さ,喫茶店,きっさてん,"coffee shop, tea house, café",on,1585
+直,"straightaway, honesty",ちょく,直接,ちょくせつ,directly,on,976
+直,"straightaway, honesty",じき,正直,しょうじき,"honest, upright",on,1121
+直,"straightaway, honesty",なお,書き直す,かきなおす,rewrite,kun,257
+直,"straightaway, honesty",なお,直る,なおる,"be repaired, return to normal",kun,258
+直,"straightaway, honesty",なお,直す,なおす,"repair, cure, alter",kun,974
+直,"straightaway, honesty",す,真っ直ぐ,まっすぐ,"dead straight, honestly",kun,975
+曲,"bend, music",きょく,曲,きょく,"song, melody, tune",on,983
+曲,"bend, music",ま,曲がる,まがる,turn,kun,260
+曲,"bend, music",ま,曲げる,まげる,"bend, curve",kun,984
+曲,"bend, music",ま,曲がり角,まがりかど,street corner,kun,985
+違,"difference, differ",ちが,違う,ちがう,"differ, be wrong",kun,262
+違,"difference, differ",ちが,間違い,まちがい,"mistake, error",kun,987
+違,"difference, differ",ちが,間違える,まちがえる,"make a mistake (in something), confuse (を)",kun,988
+違,"difference, differ",ちが,間違う,まちがう,"be mistaken, be incorrect",kun,989
+館,"building, mansion",かん,図書館,としょかん,library,on,263
+館,"building, mansion",かん,大使館,たいしかん,embassy,on,994
+館,"building, mansion",かん,旅館,りょかん,Japanese inn,on,995
+館,"building, mansion",かん,映画館,えいがかん,movie theater,on,996
+館,"building, mansion",かん,美術館,びじゅつかん,art museum,on,1505
+館,"building, mansion",かん,博物館,はくぶつかん,museum,on,1509
+父,father,ふ,祖父,そふ,grandfather,on,1717
+父,father,ちち,父,ちち,(speaker's)father,kun,269
+父,father,irregular,お父さん,おとうさん,father,irregular,268
+父,father,irregular,お祖父さん,おじいさん,grandfather,irregular,1714
+母,mother,ぼ,祖母,そぼ,grandmother,on,1718
+母,mother,はは,母,はは,(speaker's) mother,kun,271
+母,mother,irregular,お母さん,おかあさん,mother,irregular,270
+母,mother,irregular,お祖母さん,おばあさん,grandmother,irregular,1715
+親,"parent, intimacy",しん,親切,しんせつ,"kind, friendly",on,1005
+親,"parent, intimacy",しん,不親切,ふしんせつ,"unkind, inattentive",on,1006
+親,"parent, intimacy",しん,両親,りょうしん,parents,on,1332
+親,"parent, intimacy",おや,親,おや,parent,kun,272
+親,"parent, intimacy",した,親しい,したしい,"intimate, close",kun,1004
+姉,elder sister,あね,姉,あね,older sister,kun,273
+姉,elder sister,irregular,お姉さん,おねえさん,older sister,irregular,274
+姉,elder sister,irregular,姉さん,ねえさん,"older sister, girl, miss",irregular,1010
+兄,"elder brother, big brother",きょう,兄弟,きょうだい,siblings,on,1011
+兄,"elder brother, big brother",あに,兄,あに,older brother,kun,277
+兄,"elder brother, big brother",irregular,お兄さん,おにいさん,older brother,irregular,278
+兄,"elder brother, big brother",irregular,兄さん,にいさん,older brother,irregular,1905
+彼,"he, that",かの,彼女,かのじょ,"she, one's girlfriend",kun,283
+彼,"he, that",かれ,彼,かれ,"he, one's boyfriend",kun,284
+彼,"he, that",かれ,彼ら,かれら,they,kun,1013
+女,"woman, female",じょ,彼女,かのじょ,"she, one's girlfriend",on,283
+女,"woman, female",じょ,長女,ちょうじょ,eldest daughter,on,599
+女,"woman, female",じょ,女性,じょせい,"female, woman (formal)",on,743
+女,"woman, female",じょ,次女,じじょ,second daughter,on,898
+女,"woman, female",おんな,女の子,おんなのこ,"girl, baby girl",kun,461
+女,"woman, female",おんな,女,おんな,"woman, girl",kun,1799
+結,"tie, bind",けつ,結合,けつごう,"combination, joining",on,1015
+結,"tie, bind",irregular,結婚,けっこん,marriage,irregular,285
+結,"tie, bind",irregular,結果,けっか,"result, outcome",irregular,1016
+転,"revolve, turn around",てん,自転車,じてんしゃ,bicycle,on,286
+転,"revolve, turn around",てん,運転,うんてん,drive,on,900
+転,"revolve, turn around",てん,運転手,うんてんしゅ,driver,on,901
+転,"revolve, turn around",ころ,転ぶ,ころぶ,"tumble down, fall over",kun,902
+別,"separate, branch off",べつ,別,べつ,"another, different",on,290
+別,"separate, branch off",べつ,特別,とくべつ,"special, extraordinary",on,1042
+別,"separate, branch off",わか,別れる,わかれる,"separate, part from",kun,1044
+別,"separate, branch off",irregular,別々,べつべつ,separately,irregular,1043
+飛,"fly, skip (pages)",ひ,飛行機,ひこうき,airplane,on,298
+飛,"fly, skip (pages)",ひ,飛行場,ひこうじょう,"airport, airfield",on,1103
+飛,"fly, skip (pages)",と,飛ぶ,とぶ,fly,kun,297
+機,"loom, mechanism",き,飛行機,ひこうき,airplane,on,298
+機,"loom, mechanism",き,機能,きのう,"function, feature",on,1080
+機,"loom, mechanism",き,ジェット機,ジェットき,jet (plane),on,1081
+機,"loom, mechanism",き,機械,きかい,machine,on,1082
+機,"loom, mechanism",き,洗濯機,せんたくき,washing machine,on,1582
+機,"loom, mechanism",き,扇風機,せんぷうき,electric fan,on,1610
+機,"loom, mechanism",き,掃除機,そうじき,vacuum cleaner,on,1654
+記,"scribe, account",き,日記,にっき,diary,on,301
+記,"scribe, account",き,記者,きしゃ,"journalist, reporter",on,1139
+記,"scribe, account",き,記録,きろく,"record, documentation",on,1140
+記,"scribe, account",き,記念日,きねんび,"memorial day, anniversary",on,1363
+首,"neck, counter for songs and poems",しゅ,首相,しゅしょう,prime minister,on,1161
+首,"neck, counter for songs and poems",しゅ,首都,しゅと,capital,on,1162
+首,"neck, counter for songs and poems",くび,首,くび,neck,kun,302
+洗,"wash, inquire into",せん,洗面所,せんめんじょ,"washroom, bathroom",on,1242
+洗,"wash, inquire into",せん,洗濯機,せんたくき,washing machine,on,1582
+洗,"wash, inquire into",せん,洗濯,せんたく,"laundering, washing",on,1583
+洗,"wash, inquire into",あら,お手洗い,おてあらい,bathroom (polite),kun,308
+洗,"wash, inquire into",あら,洗う,あらう,wash,kun,1241
+冷,"cool, cold (beer, person)",れい,冷蔵庫,れいぞうこ,refrigerator,on,1251
+冷,"cool, cold (beer, person)",れい,冷房,れいぼう,air conditioning,on,1302
+冷,"cool, cold (beer, person)",つめ,冷たい,つめたい,"cold (things, touch)",kun,309
+冷,"cool, cold (beer, person)",ひ,冷える,ひえる,"get cold, get chilly",kun,1247
+冷,"cool, cold (beer, person)",ひ,冷やす,ひやす,"cool (sth), chill (を)",kun,1248
+冷,"cool, cold (beer, person)",さ,冷める,さめる,"cool down (from hot to room temp), subside",kun,1249
+汚,"dirty, pollute",きたな,汚い,きたない,dirty,kun,310
+汚,"dirty, pollute",よご,汚す,よごす,"make dirty, soil",kun,1254
+汚,"dirty, pollute",よご,汚れ,よごれ,"dirt, filth",kun,1255
+汚,"dirty, pollute",よご,汚れる,よごれる,"become dirty, become defiled",kun,1256
+太,"plump, thick",たい,太陽,たいよう,sun,on,1261
+太,"plump, thick",ふと,太い,ふとい,"thick, fat",kun,311
+太,"plump, thick",ふと,太る,ふとる,"grow fat, fatten",kun,1260
+建,build,けん,建設,けんせつ,"construction, establishment",on,1278
+建,build,た,建てる,たてる,"build, erect",kun,315
+建,build,た,建物,たてもの,"building, structure",kun,1279
+建,build,た,建つ,たつ,"be built, be erected",kun,1280
+留,"detain, fasten",りゅう,留学生,りゅうがくせい,student studying abroad,on,322
+留,"detain, fasten",りゅう,留学,りゅうがく,studying abroad,on,1315
+留,"detain, fasten",りゅう,停留所,ていりゅうじょ,"stop, station",on,1316
+留,"detain, fasten",る,留守,るす,not at home,on,1320
+留,"detain, fasten",と,書留,かきとめ,registered mail,kun,1317
+起,"rouse, wake up",お,起きる,おきる,"get up, get out of bed",kun,325
+起,"rouse, wake up",お,起こる,おこる,happen,kun,326
+起,"rouse, wake up",お,起こす,おこす,wake up (someone),kun,327
+起,"rouse, wake up",お,起きる,おきる,occur,kun,328
+起,"rouse, wake up",お,早起き,はやおき,early rising,kun,1324
+細,"dainty, get thin",ほそ,細い,ほそい,"thin, slender, narrow",kun,330
+細,"dainty, get thin",こま,細かい,こまかい,"minute, elaborate",kun,1346
+細,"dainty, get thin",こま,細か,こまか,"minute, elaborate",kun,1347
+夫,"husband, man",ぶ,大丈夫,だいじょうぶ,"alright, okay",on,369
+夫,"husband, man",ぶ,丈夫,じょうぶ,"healthy, stout",on,1712
+夫,"husband, man",ふう,夫婦,ふうふ,"husband and wife, married couple",on,1414
+夫,"husband, man",おっと,夫,おっと,husband,kun,337
+愛,"love, affection",あい,愛する,あいする,"love, care for",on,340
+愛,"love, affection",あい,愛,あい,love,on,1422
+愛,"love, affection",irregular,可愛い,かわいい,"cute, charming, sweet",irregular,1423
+葉,"leaf, plane",は,葉,は,leaf,kun,1475
+葉,"leaf, plane",は,絵葉書,えはがき,picture postcard,kun,1476
+葉,"leaf, plane",irregular,言葉,ことば,"word, language",irregular,343
+片,"one-sided, leaf",かた,片仮名,かたかな,katakana,kun,349
+片,"one-sided, leaf",かた,片道,かたみち,one-way,kun,1333
+片,"one-sided, leaf",かた,片付ける,かたづける,"put in order, clear (st) away, put (st) back",kun,1356
+片,"one-sided, leaf",かた,片付く,かたづく,"be in order, be settled",kun,1360
+仮,"sham, temporary",か,片仮名,かたかな,katakana,on,349
+仮,"sham, temporary",か,仮名,かな,"kana, Japanese syllabary",on,1500
+仮,"sham, temporary",irregular,平仮名,ひらがな,hiragana,irregular,350
+仮,"sham, temporary",irregular,送り仮名,おくりがな,kana suffix,irregular,1501
+平,"even, flat",へい,平和,へいわ,"peace, harmony",on,1050
+平,"even, flat",へい,平成,へいせい,Heisei era,on,1111
+平,"even, flat",ひら,平仮名,ひらがな,hiragana,kun,350
+美,"beauty, beautiful",び,美術館,びじゅつかん,art museum,on,1505
+美,"beauty, beautiful",び,美人,びじん,beautiful woman,on,1506
+美,"beauty, beautiful",び,美容院,びよういん,hair salon,on,1507
+美,"beauty, beautiful",うつく,美しい,うつくしい,beautiful,kun,352
+嫌,"dislike, detest",きら,嫌い,きらい,dislike,kun,358
+嫌,"dislike, detest",きら,大嫌い,だいきらい,hate,kun,1554
+嫌,"dislike, detest",いや,嫌,いや,"dislike, have a dislike for",kun,1553
+毛,"fur, hair",もう,毛布,もうふ,blanket,on,1630
+毛,"fur, hair",け,髪の毛,かみのけ,hair,kun,361
+毛,"fur, hair",け,毛,け,"hair, wool",kun,1602
+風,"wind, air",ふう,台風,たいふう,typhoon,on,677
+風,"wind, air",ふ,風呂屋,ふろや,"bathhouse, public bath",on,1721
+風,"wind, air",ふ,風呂,ふろ,bath,on,1722
+風,"wind, air",かぜ,風邪,かぜ,cold (illness),kun,370
+風,"wind, air",かぜ,風,かぜ,wind,kun,676
+風,"wind, air",かぜ,風邪薬,かぜぐすり,remedy for a cold,kun,1720
+風,"wind, air",irregular,扇風機,せんぷうき,electric fan,irregular,1610
+邪,"wicked, injustice",じゃ,邪魔,じゃま,"obstacle, interruption",on,1719
+邪,"wicked, injustice",irregular,風邪,かぜ,cold (illness),irregular,370
+邪,"wicked, injustice",irregular,風邪薬,かぜぐすり,remedy for a cold,irregular,1720
+中,"in, inside",ちゅう,中心,ちゅうしん,"center, middle, core",on,685
+中,"in, inside",ちゅう,中学,ちゅうがく,middle school (abbrev.),on,749
+中,"in, inside",ちゅう,中学生,ちゅうがくせい,middle school sudent,on,751
+中,"in, inside",ちゅう,中学校,ちゅうがっこう,middle school,on,757
+中,"in, inside",なか,中,なか,"in, inside, middle",kun,400
+中,"in, inside",なか,夜中,よなか,"midnight, dead of night",kun,530
+中,"in, inside",なか,真ん中,まんなか,"center, middle",kun,1896
+外,outside,がい,外人,がいじん,"foreigner, alien (less polite)",on,424
+外,outside,がい,海外,かいがい,"overseas, abroad",on,446
+外,outside,がい,外国,がいこく,foreign country,on,610
+外,outside,がい,外国人,がいこくじん,foreigner (polite),on,613
+外,outside,がい,外国語,がいこくご,foreign language,on,614
+外,outside,そと,外,そと,"outside, open air",kun,425
+外,outside,そと,外側,そとがわ,"exterior, outside",kun,1336
+外,outside,はず,外れる,はずれる,come off,kun,1776
+力,"power, strength",りょく,協力,きょうりょく,"cooperation, collaboration",on,429
+力,"power, strength",りょく,能力,のうりょく,"ability, capacity",on,692
+力,"power, strength",りょく,努力,どりょく,"<!--anki-->effort,&nbsp;endeavor",on,1406
+力,"power, strength",ちから,力,ちから,"strength, power",kun,428
+海,"sea, ocean",かい,海外,かいがい,"overseas, abroad",on,446
+海,"sea, ocean",かい,海岸,かいがん,"coast, seashore",on,1461
+海,"sea, ocean",うみ,海,うみ,"sea, ocean",kun,448
+毎,every,まい,毎日,まいにち,every day,on,449
+毎,every,まい,毎年,まいとし,every year (less formal),on,450
+毎,every,まい,毎週,まいしゅう,every week,on,452
+毎,every,まい,毎月,まいつき,every month,on,453
+毎,every,まい,毎朝,まいあさ,every morning,on,520
+毎,every,まい,毎晩,まいばん,every evening,on,526
+毎,every,まい,毎年,まいねん,every year (more formal),on,1820
+花,flower,はな,花,はな,flower,kun,457
+花,flower,はな,花見,はなみ,cherry blossom viewing,kun,538
+男,male,なん,長男,ちょうなん,eldest son,on,598
+男,male,なん,次男,じなん,second son,on,897
+男,male,おとこ,男の子,おとこのこ,"boy, baby boy",kun,462
+男,male,おとこ,男,おとこ,"man, male",kun,1798
+青,"blue, green",あお,青い,あおい,blue,kun,474
+青,"blue, green",あお,青,あお,"blue, green, green light",kun,475
+青,"blue, green",irregular,真っ青,まっさお,"deep-blue, pale (skin)",irregular,967
+明,"bright, light",めい,説明,せつめい,"explanation, description",on,1094
+明,"bright, light",あき,明らか,あきらか,"clear, obvious",kun,477
+明,"bright, light",あか,明るい,あかるい,"bright, cheerful",kun,479
+明,"bright, light",あ,明日,あした,tomorrow,kun,480
+明,"bright, light",あ,明後日,あさって,day after tomorrow,kun,513
+向,"yonder, facing",こう,方向,ほうこう,"direction, course",on,491
+向,"yonder, facing",こう,傾向,けいこう,"tendency, inclination",on,1536
+向,"yonder, facing",む,向かう,むかう,"face, head toward, confront",kun,492
+向,"yonder, facing",む,向こう,むこう,"the other side, the other party, opponent",kun,494
+向,"yonder, facing",む,向く,むく,"turn, face, look",kun,495
+向,"yonder, facing",む,向こう側,むこうがわ,other side,kun,1335
+最,"utmost, most",さい,最大,さいだい,"biggest, largest",on,505
+最,"utmost, most",さい,最初,さいしょ,"the beginning, first",on,507
+最,"utmost, most",さい,最後,さいご,"last, final",on,511
+最,"utmost, most",さい,最近,さいきん,"lately, recent",on,593
+初,"first time, beginning",しょ,最初,さいしょ,"the beginning, first",on,507
+初,"first time, beginning",はじ,初めて,はじめて,"first, for the first time",kun,506
+初,"first time, beginning",はじ,初め,はじめ,"beginning, start",kun,508
+半,"half, middle",はん,半分,はんぶん,half,on,515
+半,"half, middle",はん,半年,はんとし,half a year,on,516
+半,"half, middle",はん,半月,はんつき,half a month,on,518
+半,"half, middle",はん,半日,はんにち,half a day,on,519
+半,"half, middle",はん,半袖,はんそで,short-sleeved shirt,on,1753
+夕,evening,ゆう,夕方,ゆうがた,evening,kun,531
+夕,evening,ゆう,夕食,ゆうしょく,supper (polite),kun,535
+夕,evening,ゆう,夕飯,ゆうはん,"evening meal, supper (かたい)",kun,536
+夕,evening,ゆう,夕刊,ゆうかん,evening edition,kun,1344
+語,"word, speech",ご,言語,げんご,"language, speech",on,545
+語,"word, speech",ご,外国語,がいこくご,foreign language,on,614
+語,"word, speech",ご,敬語,けいご,"honorific language, polite speech",on,1694
+語,"word, speech",ご,英語,えいご,English,on,1827
+語,"word, speech",かた,語る,かたる,"tell (a story), talk about",kun,544
+文,"sentence, literature",ぶん,作文,さくぶん,"composition, essay",on,643
+文,"sentence, literature",ぶん,文化,ぶんか,culture,on,874
+文,"sentence, literature",ぶん,文房具,ぶんぼうぐ,"stationery, writing materials",on,1304
+文,"sentence, literature",ぶん,例文,れいぶん,example sentence,on,1366
+文,"sentence, literature",ぶん,文章,ぶんしょう,"writing, prose",on,1710
+文,"sentence, literature",もん,注文,ちゅうもん,"order, request",on,1073
+文,"sentence, literature",irregular,文字,もじ,"character, letter",irregular,546
+社,"company, firm",しゃ,会社,かいしゃ,"company, corporation",on,557
+社,"company, firm",しゃ,社会,しゃかい,society,on,558
+社,"company, firm",しゃ,社員,しゃいん,"staff member, employee",on,559
+社,"company, firm",しゃ,社長,しゃちょう,president (of a company),on,595
+社,"company, firm",irregular,神社,じんじゃ,Shinto shrine,irregular,1271
+員,"employee, member",いん,社員,しゃいん,"staff member, employee",on,559
+員,"employee, member",いん,駅員,えきいん,station attendant,on,571
+員,"employee, member",いん,店員,てんいん,"clerk, salesperson",on,651
+員,"employee, member",いん,議員,ぎいん,legislator,on,1034
+故,"happenstance, especially",こ,事故,じこ,"accident, incident",on,565
+故,"happenstance, especially",こ,交通事故,こうつうじこ,traffic accident,on,575
+故,"happenstance, especially",こ,故障,こしょう,"malfunction, fault, breakdown",on,1203
+工,"craft, construction",こう,工事,こうじ,construction work,on,566
+工,"craft, construction",こう,工場,こうじょう,"factory, plant",on,567
+工,"craft, construction",こう,工業,こうぎょう,manufacturing industry,on,809
+工,"craft, construction",こう,加工,かこう,"processing, manufacturing<div>(turning st into st else)</div>",on,1198
+交,"mingle, mixing",こう,交通事故,こうつうじこ,traffic accident,on,575
+交,"mingle, mixing",こう,交通費,こうつうひ,"traveling expense, transportation cost",on,646
+交,"mingle, mixing",こう,交番,こうばん,police box,on,699
+交,"mingle, mixing",こう,交差点,こうさてん,"intersection, crossing",on,825
+交,"mingle, mixing",こう,交渉,こうしょう,"negotiation, bargaining",on,1191
+地,"ground, earth",ち,土地,とち,land,on,580
+地,"ground, earth",ち,地図,ちず,"map, atlas",on,581
+地,"ground, earth",ち,地下鉄,ちかてつ,subway,on,623
+地,"ground, earth",ち,番地,ばんち,"house number, address",on,700
+地,"ground, earth",ち,地球,ちきゅう,the Earth,on,1263
+地,"ground, earth",ち,地域,ちいき,"region, area",on,1441
+地,"ground, earth",じ,地震,じしん,earthquake,on,1267
+渡,"transit, ford",わた,渡す,わたす,"<!--anki-->hand over, carry across",kun,587
+渡,"transit, ford",わた,渡る,わたる,"cross, ford, go across",kun,588
+度,"degrees, occurrence",ど,年度,ねんど,"fiscal year, school year",on,589
+度,"degrees, occurrence",ど,今度,こんど,"this time, next time",on,590
+度,"degrees, occurrence",ど,何度,なんど,"how many degrees, how many times",on,592
+度,"degrees, occurrence",ど,温度,おんど,temperature,on,673
+度,"degrees, occurrence",ど,制度,せいど,"system, organization",on,766
+度,"degrees, occurrence",ど,程度,ていど,"degree, extent",on,1402
+黒,black,こく,黒板,こくばん,blackboard,on,1471
+黒,black,くろ,黒い,くろい,black<div><br /></div>,kun,616
+黒,black,くろ,黒,くろ,black,kun,617
+黒,black,くろ,真っ黒,まっくろ,"deep-black, jet-black",kun,966
+銀,silver,ぎん,銀行,ぎんこう,bank,on,621
+銀,silver,ぎん,銀,ぎん,silver,on,622
+肉,meat,にく,牛肉,ぎゅうにく,beef,on,624
+肉,meat,にく,肉,にく,"meat, flesh",on,625
+肉,meat,にく,豚肉,ぶたにく,"pork, hog meat",on,1612
+野,"plains, field",や,分野,ぶんや,"field, sphere",on,627
+野,"plains, field",や,野菜,やさい,vegetable,on,628
+野,"plains, field",や,野球,やきゅう,baseball,on,1264
+料,"fee, materials",りょう,料理,りょうり,"cooking;<br>handling, management",on,638
+料,"fee, materials",りょう,材料,ざいりょう,"ingredients, material",on,1083
+料,"fee, materials",りょう,給料,きゅうりょう,"salary, pay",on,1186
+理,"logic, arrangement",り,料理,りょうり,"cooking;<br>handling, management",on,638
+理,"logic, arrangement",り,無理,むり,"unreasonable, impossible, forced",on,639
+理,"logic, arrangement",り,理由,りゆう,"reason, cause",on,1025
+理,"logic, arrangement",り,理科,りか,science,on,1062
+理,"logic, arrangement",り,修理,しゅうり,"repair, mending",on,1204
+理,"logic, arrangement",り,管理,かんり,"management, administration",on,1219
+理,"logic, arrangement",り,処理,しょり,"processing,&nbsp;management<div>(unlike 加工, a new thing is not created)</div>",on,1410
+無,"nothingness, none",む,無理,むり,"unreasonable, impossible, forced",on,639
+無,"nothingness, none",な,無くなる,なくなる,"disappear, run short, get lost",kun,642
+無,"nothingness, none",な,無い,ない,to not be,kun,1801
+用,"utilize, business",よう,用事,ようじ,"things to do, errand, business",on,645
+用,"utilize, business",よう,利用,りよう,"utilization, usage",on,811
+用,"utilize, business",よう,用意,ようい,"prepare, ready oneself",on,1077
+用,"utilize, business",よう,採用,さいよう,employment,on,1185
+用,"utilize, business",もち,用いる,もちいる,"use, make use of",kun,644
+品,"goods, refinement",ひん,商品,しょうひん,"goods, commodities",on,653
+品,"goods, refinement",ひん,作品,さくひん,"work of art, piece",on,654
+品,"goods, refinement",しな,品物,しなもの,"article, thing",kun,718
+階,"storey, stair",かい,二階,にかい,"second floor, upstairs",on,656
+階,"storey, stair",かい,段階,だんかい,"stage, step",on,658
+階,"storey, stair",かい,階段,かいだん,"steps, flight of stairs",on,659
+段,"grade, steps",だん,段階,だんかい,"stage, step",on,658
+段,"grade, steps",だん,階段,かいだん,"steps, flight of stairs",on,659
+段,"grade, steps",だん,値段,ねだん,price,on,661
+段,"grade, steps",irregular,段々,だんだん,"gradually, one after another",irregular,660
+格,"status, rank",かく,価格,かかく,"price, cost (formal)",on,662
+格,"status, rank",かく,合格,ごうかく,"passing an examination, eligibility",on,663
+温,warm,おん,温度,おんど,temperature,on,673
+温,warm,おん,気温,きおん,atmospheric temperature,on,674
+台,"pedestal, a stand",だい,台,だい,"stand, platform",on,675
+台,"pedestal, a stand",だい,台所,だいどころ,kitchen,on,704
+台,"pedestal, a stand",たい,台風,たいふう,typhoon,on,677
+情,"feelings, emotion",じょう,事情,じじょう,"circumstances, conditions",on,678
+情,"feelings, emotion",じょう,情報,じょうほう,information,on,680
+報,"report, news",ほう,情報,じょうほう,information,on,680
+報,"report, news",ほう,報告,ほうこく,report,on,681
+報,"report, news",ほう,天気予報,てんきよほう,weather forecast,on,863
+心,"heart, mind",しん,中心,ちゅうしん,"center, middle, core",on,685
+心,"heart, mind",しん,安心,あんしん,"peace of mind, relief",on,686
+心,"heart, mind",しん,心配,しんぱい,"anxiety, worry, assistance",on,725
+能,"ability, talent",のう,能力,のうりょく,"ability, capacity",on,692
+能,"ability, talent",のう,可能,かのう,"possible, potential",on,693
+能,"ability, talent",のう,機能,きのう,"function, feature",on,1080
+可,"can, passable",か,可能,かのう,"possible, potential",on,693
+可,"can, passable",か,可,か,"permitted, OK",on,694
+可,"can, passable",か,可愛い,かわいい,"cute, charming, sweet",on,1423
+郵,"mail, stagecoach stop",ゆう,郵便,ゆうびん,mail,on,695
+郵,"mail, stagecoach stop",ゆう,郵便屋さん,ゆうびんやさん,mailman,on,697
+郵,"mail, stagecoach stop",ゆう,郵便局,ゆうびんきょく,post office,on,698
+便,"convenience, facility",びん,郵便,ゆうびん,mail,on,695
+便,"convenience, facility",びん,郵便屋さん,ゆうびんやさん,mailman,on,697
+便,"convenience, facility",びん,郵便局,ゆうびんきょく,post office,on,698
+便,"convenience, facility",びん,航空便,こうくうびん,airmail,on,1104
+便,"convenience, facility",びん,船便,ふなびん,surface mail&nbsp;(ship),on,1105
+便,"convenience, facility",べん,不便,ふべん,inconvenient,on,696
+便,"convenience, facility",べん,便所,べんじょ,"bathroom, lavatory",on,706
+便,"convenience, facility",べん,便利,べんり,"convenience, handiness",on,812
+所,"place, extent",しょ,場所,ばしょ,"place, space",on,702
+所,"place, extent",しょ,住所,じゅうしょ,"address, one's dwelling",on,705
+所,"place, extent",しょ,事務所,じむしょ,"office, one's place of business",on,1179
+所,"place, extent",どころ,台所,だいどころ,kitchen,kun,704
+所,"place, extent",irregular,近所,きんじょ,neighborhood,irregular,703
+所,"place, extent",irregular,便所,べんじょ,"bathroom, lavatory",irregular,706
+所,"place, extent",irregular,洗面所,せんめんじょ,"washroom, bathroom",irregular,1242
+所,"place, extent",irregular,停留所,ていりゅうじょ,"stop, station",irregular,1316
+都,"metropolis, capital",と,都市,とし,"city, urban community",on,713
+都,"metropolis, capital",と,首都,しゅと,capital,on,1162
+都,"metropolis, capital",つ,都合,つごう,circumstances,on,714
+配,"distribute, spouse",はい,配達,はいたつ,delivery,on,724
+配,"distribute, spouse",くば,配る,くばる,"hand out, distribute",kun,723
+配,"distribute, spouse",irregular,心配,しんぱい,"anxiety, worry, assistance",irregular,725
+受,"accept, undergo",う,受ける,うける,"receive, accept",kun,728
+受,"accept, undergo",う,受け取る,うけとる,"get (st from so), receive<div>take (as in take as an insult)</div>",kun,729
+受,"accept, undergo",う,受け付ける,うけつける,"accept, receive",kun,1355
+受,"accept, undergo",う,受付,うけつけ,"receptionist, front desk",kun,1358
+届,"deliver, reach",とど,届く,とどく,"reach, be delivered",kun,732
+届,"deliver, reach",とど,届ける,とどける,"deliver, notify",kun,733
+産,"products, bear",さん,生産,せいさん,production,on,744
+産,"products, bear",さん,産業,さんぎょう,industry,on,808
+産,"products, bear",さん,不動産屋,ふどうさんや,"real estate agent, realtor",on,911
+産,"products, bear",irregular,お土産,おみやげ,souvenir,irregular,745
+育,"bring up, grow up",いく,教育,きょういく,education,on,762
+育,"bring up, grow up",そだ,育てる,そだてる,"raise, bring up",kun,763
+育,"bring up, grow up",そだ,育つ,そだつ,"grow, be raised",kun,765
+押,"push, stop",お,押さえる,おさえる,"hold down, hold back",kun,771
+押,"push, stop",お,押し入れ,おしいれ,closet,kun,772
+習,learn,しゅう,練習,れんしゅう,"practice, training",on,773
+習,learn,しゅう,習慣,しゅうかん,"custom, habit",on,777
+習,learn,しゅう,予習,よしゅう,preparation for class,on,865
+習,learn,しゅう,自習,じしゅう,"self-study, self-teaching",on,1024
+習,learn,しゅう,復習,ふくしゅう,review,on,1312
+習,learn,なら,習う,ならう,"learn, practice",kun,775
+慣,"accustomed, get used to",かん,習慣,しゅうかん,"custom, habit",on,777
+慣,"accustomed, get used to",な,慣れる,なれる,grow accustomed to,kun,776
+験,"verification, effect",けん,試験,しけん,"exam, test",on,779
+験,"verification, effect",けん,経験,けいけん,experience,on,800
+験,"verification, effect",けん,実験,じっけん,experiment,on,924
+回,"-times, round",かい,今回,こんかい,this time,on,786
+回,"-times, round",まわ,回る,まわる,"turn round, go round, detour",kun,787
+回,"-times, round",まわ,回す,まわす,"turn, rotate",kun,788
+然,"sort of thing, so",ぜん,当然,とうぜん,"naturally, of course",on,794
+然,"sort of thing, so",ぜん,全然,ぜんぜん,"(not) at all, totally (not)",on,795
+然,"sort of thing, so",ぜん,自然,しぜん,nature,on,1022
+然,"sort of thing, so",ぜん,自然,しぜん,"natural, naturally",on,1023
+法,"method, law",ほう,方法,ほうほう,"way, method, procedure",on,796
+法,"method, law",ほう,法律,ほうりつ,law,on,797
+経,"sutra, longitude",けい,経験,けいけん,experience,on,800
+経,"sutra, longitude",けい,経済,けいざい,"economy, economics",on,802
+経,"sutra, longitude",けい,経営,けいえい,"management, operation",on,803
+経,"sutra, longitude",た,経つ,たつ,"pass, elapse",kun,801
+利,"profit, advantage",り,利用,りよう,"utilization, usage",on,811
+利,"profit, advantage",り,便利,べんり,"convenience, handiness",on,812
+術,"art, technique",じゅつ,技術,ぎじゅつ,"skill, technology",on,813
+術,"art, technique",じゅつ,手術,しゅじゅつ,surgical operation,on,814
+術,"art, technique",じゅつ,美術館,びじゅつかん,art museum,on,1505
+必,"invariably, certain",ひつ,必要,ひつよう,"need, necessity",on,817
+必,"invariably, certain",かなら,必ず,かならず,"without fail, certainly",kun,816
+算,"calculate, divining",さん,計算,けいさん,calculation,on,822
+算,"calculate, divining",irregular,引き算,ひきざん,subtraction,irregular,823
+算,"calculate, divining",irregular,足し算,たしざん,addition,irregular,824
+算,"calculate, divining",irregular,割り算,わりざん,division,irregular,828
+算,"calculate, divining",irregular,掛け算,かけざん,multiplication,irregular,1649
+割,"proportion, comparatively",わ,割る,わる,"divide (st), crack, split",kun,826
+割,"proportion, comparatively",わ,割れる,われる,"(st) cracks, splits, breaks (が)",kun,827
+割,"proportion, comparatively",わ,割り算,わりざん,division,kun,828
+残,"remainder, leftover",ざん,残念,ざんねん,"regretful, disappointing",on,1364
+残,"remainder, leftover",のこ,残る,のこる,"remain, be left over",kun,829
+残,"remainder, leftover",のこ,残す,のこす,"leave, reserve, leave undone",kun,830
+返,"return, answer",へん,返事,へんじ,"answer, reply",on,832
+返,"return, answer",かえ,返す,かえす,"return, repay",kun,831
+返,"return, answer",かえ,繰り返す,くりかえす,repeat を,kun,1314
+返,"return, answer",irregular,裏返す,うらがえす,"turn over, turn inside out",irregular,1341
+貸,lend,か,貸す,かす,"lend, rent",kun,834
+貸,lend,か,貸し出す,かしだす,lend out<br>(used for businesses/banks),kun,835
+期,"period, time",き,期待,きたい,"expectation, anticipation",on,837
+期,"period, time",き,期間,きかん,period (of time),on,839
+期,"period, time",き,時期,じき,"time, period, season",on,840
+期,"period, time",き,定期券,ていきけん,commuter pass,on,861
+急,"hurry, emergency",きゅう,急に,きゅうに,"suddenly, unexpectedly",on,843
+急,"hurry, emergency",きゅう,急,きゅう,"urgent, sudden, steep",on,844
+急,"hurry, emergency",きゅう,急行,きゅうこう,"express train, going in a hurry",on,845
+急,"hurry, emergency",きゅう,特急,とっきゅう,limited express (train),on,1041
+急,"hurry, emergency",きゅう,救急車,きゅうきゅうしゃ,ambulance,on,1215
+急,"hurry, emergency",いそ,急ぐ,いそぐ,"hurry, hasten",kun,842
+券,ticket,けん,入場券,にゅうじょうけん,entrance ticket,on,852
+券,ticket,けん,定期券,ていきけん,commuter pass,on,861
+代,"substitute, change",だい,時代,じだい,"age, era, antiquity",on,854
+代,"substitute, change",だい,代表,だいひょう,representative,on,939
+代,"substitute, change",か,代わる,かわる,"take (st/sb's) place, substitute for",kun,855
+代,"substitute, change",か,代える,かえる,"replace (O1を) with (O2に), substitute",kun,856
+定,"determine, fix",てい,決定,けってい,decision,on,858
+定,"determine, fix",てい,一定,いってい,"constant, fixed",on,860
+定,"determine, fix",てい,定期券,ていきけん,commuter pass,on,861
+定,"determine, fix",てい,予定,よてい,"schedule, plan",on,862
+予,"beforehand, previous",よ,予定,よてい,"schedule, plan",on,862
+予,"beforehand, previous",よ,天気予報,てんきよほう,weather forecast,on,863
+予,"beforehand, previous",よ,予習,よしゅう,preparation for class,on,865
+予,"beforehand, previous",よ,予約,よやく,"reservation, subscription, appointment",on,866
+約,"promise, approximately",やく,予約,よやく,"reservation, subscription, appointment",on,866
+約,"promise, approximately",やく,約束,やくそく,"promise, vow",on,867
+約,"promise, approximately",やく,契約,けいやく,"contract, agreement",on,1190
+化,"change, take the form of",か,変化,へんか,change,on,872
+化,"change, take the form of",か,強化,きょうか,strengthening,on,873
+化,"change, take the form of",か,文化,ぶんか,culture,on,874
+化,"change, take the form of",け,化粧,けしょう,"makeup, put on makeup",on,1593
+増,"increase, add",ぞう,増加,ぞうか,"increase, gain",on,1196
+増,"increase, add",ふ,増える,ふえる,"increase, accrue が",kun,875
+増,"increase, add",ふ,増やす,ふやす,"increase (something), add を",kun,876
+減,"dwindle, decrease",へ,減る,へる,"decrease, diminish が",kun,877
+減,"dwindle, decrease",へ,減らす,へらす,"decrease (something), reduce を",kun,878
+降,"descend, precipitate",お,降りる,おりる,"get off, land",kun,880
+降,"descend, precipitate",お,降ろす,おろす,"unload, lower",kun,881
+降,"descend, precipitate",ふ,降る,ふる,"fall, come down, rain",kun,882
+席,"seat, mat",せき,出席,しゅっせき,"attendance, presence",on,893
+席,"seat, mat",せき,席,せき,"seat, one's place",on,895
+席,"seat, mat",せき,欠席,けっせき,"absence, non-attendance",on,896
+運,"carry, luck",うん,運転,うんてん,drive,on,900
+運,"carry, luck",うん,運転手,うんてんしゅ,driver,on,901
+運,"carry, luck",うん,運動,うんどう,"exercise, movement",on,906
+運,"carry, luck",はこ,運ぶ,はこぶ,"carry, transport",kun,899
+移,"shift, move",うつ,移る,うつる,"move, shift が",kun,903
+移,"shift, move",うつ,移す,うつす,"move (something), shift, transfer",kun,904
+現,"present, existing",げん,現在,げんざい,"the present, present time",on,919
+現,"present, existing",げん,実現,じつげん,"realization, fulfillment",on,920
+現,"present, existing",げん,表現,ひょうげん,"expression (of views, feelings, etc.)",on,938
+実,"reality, truth",じつ,実現,じつげん,"realization, fulfillment",on,920
+実,"reality, truth",じつ,事実,じじつ,"fact, truth",on,922
+実,"reality, truth",irregular,実施,じっし,"being in effect, implementation",irregular,921
+実,"reality, truth",irregular,実行,じっこう,"(putting into) practice, execution",irregular,923
+実,"reality, truth",irregular,実験,じっけん,experiment,irregular,924
+実,"reality, truth",irregular,実際,じっさい,"reality, truth, the actual situation",irregular,1102
+過,"overdo, exceed",か,通過,つうか,"passing, passage",on,925
+過,"overdo, exceed",か,過去,かこ,the past,on,929
+過,"overdo, exceed",す,過ぎる,すぎる,"pass by, exceed",kun,926
+過,"overdo, exceed",す,昼過ぎ,ひるすぎ,just past noon,kun,927
+発,"departure, discharge",はつ,開発,かいはつ,development,on,930
+発,"departure, discharge",はつ,発言,はつげん,"statement, remark",on,932
+発,"departure, discharge",irregular,発生,はっせい,"occurrence, happening",irregular,931
+発,"departure, discharge",irregular,発見,はっけん,"discovery, revelation",irregular,933
+発,"departure, discharge",irregular,出発,しゅっぱつ,"departure, starting",irregular,934
+発,"departure, discharge",irregular,発車,はっしゃ,"depart, leave (for vehicles)",irregular,935
+発,"departure, discharge",irregular,発表,はっぴょう,announcement,irregular,936
+表,"surface, table",ひょう,表現,ひょうげん,"expression (of views, feelings, etc.)",on,938
+表,"surface, table",ひょう,代表,だいひょう,representative,on,939
+表,"surface, table",ひょう,表,ひょう,"list, table",on,941
+表,"surface, table",おもて,表,おもて,"front side, face, outside",kun,940
+表,"surface, table",irregular,発表,はっぴょう,announcement,irregular,936
+音,"sound, noise",おん,音楽,おんがく,music,on,949
+音,"sound, noise",おん,録音,ろくおん,audio recording,on,1141
+音,"sound, noise",おと,音,おと,"sound, noise",kun,946
+音,"sound, noise",おと,音,おと,sound,kun,948
+袋,"sack, bag",ふくろ,袋,ふくろ,"bag, sack",kun,1627
+袋,"sack, bag",irregular,ビニール袋,ビニールぶくろ,plastic bag,irregular,952
+袋,"sack, bag",irregular,手袋,てぶくろ,gloves,irregular,1626
+画,"brush-stroke, picture",かく,計画,けいかく,"plan, project",on,955
+画,"brush-stroke, picture",が,映画,えいが,movie,on,956
+画,"brush-stroke, picture",が,映画館,えいがかん,movie theater,on,996
+映,"reflect, reflection",えい,映画,えいが,movie,on,956
+映,"reflect, reflection",えい,映画館,えいがかん,movie theater,on,996
+面,"mask, face",めん,洗面所,せんめんじょ,"washroom, bathroom",on,1242
+面,"mask, face",おも,面白い,おもしろい,"interesting, amusing",kun,958
+面,"mask, face",irregular,真面目,まじめ,"serious, sober, earnest",irregular,963
+写,"copy, be photographed",しゃ,写真,しゃしん,photograph,on,961
+写,"copy, be photographed",うつ,写る,うつる,"<div>to appear in a photo, (picture) to come out well</div>",kun,959
+写,"copy, be photographed",うつ,写す,うつす,"copy, photograph",kun,960
+形,"shape, form",ぎょう,人形,にんぎょう,doll,on,969
+形,"shape, form",かたち,形,かたち,"shape, form",kun,970
+角,"angle, corner",かく,三角,さんかく,triangle,on,979
+角,"angle, corner",かく,四角,しかく,"square, quadrilateral",on,980
+角,"angle, corner",かく,四角い,しかくい,"square, four-sided",on,981
+角,"angle, corner",かど,角,かど,"corner, edge, angle",kun,977
+角,"angle, corner",かど,四つ角,よつかど,"street corner, intersection",kun,982
+角,"angle, corner",かど,曲がり角,まがりかど,street corner,kun,985
+旅,"trip, travel",りょ,旅行,りょこう,"travel, trip",on,993
+旅,"trip, travel",りょ,旅館,りょかん,Japanese inn,on,995
+室,"room, apartment",しつ,教室,きょうしつ,"classroom, class",on,1001
+室,"room, apartment",しつ,図書室,としょしつ,library room,on,1002
+室,"room, apartment",しつ,事務室,じむしつ,office,on,1180
+歳,"year-end, age",irregular,万歳,ばんざい,Banzai! Hurrah! Long live...!,irregular,1008
+歳,"year-end, age",irregular,二十歳,はたち,20 years old,irregular,1009
+者,"someone, person",しゃ,医者,いしゃ,doctor,on,1055
+者,"someone, person",しゃ,お医者さん,おいしゃさん,doctor,on,1056
+者,"someone, person",しゃ,歯医者,はいしゃ,dentist,on,1057
+者,"someone, person",しゃ,記者,きしゃ,"journalist, reporter",on,1139
+者,"someone, person",しゃ,業者,ぎょうしゃ,business man,on,1907
+者,"someone, person",もの,若者,わかもの,"young person, youth",kun,1012
+者,"someone, person",irregular,患者,かんじゃ,patient,irregular,1435
+果,"fruit, reward",か,結果,けっか,"result, outcome",on,1016
+果,"fruit, reward",か,効果,こうか,"effect, result",on,1020
+果,"fruit, reward",irregular,果物,くだもの,fruit,irregular,1017
+課,"chapter, lesson",か,課題,かだい,"task, problem",on,1018
+課,"chapter, lesson",か,課,か,"section, division, lesson",on,1019
+由,"wherefore, a reason",ゆう,理由,りゆう,"reason, cause",on,1025
+由,"wherefore, a reason",ゆう,自由,じゆう,"freedom, free",on,1026
+信,"faith, truth",しん,信じる,しんじる,"believe, trust, have faith in",on,1027
+信,"faith, truth",しん,信号,しんごう,"signal, traffic light",on,1028
+民,"people, nation",みん,市民,しみん,"citizens, townsmen",on,1030
+民,"people, nation",みん,住民,じゅうみん,"residents, inhabitants",on,1032
+議,"deliberation, consultation",ぎ,議員,ぎいん,legislator,on,1034
+議,"deliberation, consultation",ぎ,会議,かいぎ,"conference, meeting",on,1035
+対,"vis-a-vis, opposite",たい,対する,たいする,"in response to, face",on,1036
+対,"vis-a-vis, opposite",たい,対立,たいりつ,"opposition, antagonism",on,1037
+対,"vis-a-vis, opposite",たい,反対,はんたい,"oppose, the opposite",on,1038
+対,"vis-a-vis, opposite",たい,対策,たいさく,"measure, countermeasure",on,1155
+対,"vis-a-vis, opposite",たい,対象,たいしょう,"target, subject",on,1202
+対,"vis-a-vis, opposite",たい,絶対に,ぜったいに,"absolutely, unconditionally",on,1551
+特,special,とく,特に,とくに,"specially, particularly",on,1040
+特,special,とく,特別,とくべつ,"special, extraordinary",on,1042
+特,special,とく,特徴,とくちょう,distinguishing characteristic,on,1511
+特,special,irregular,特急,とっきゅう,limited express (train),irregular,1041
+的,"bull's eye, mark",てき,目的,もくてき,"objective, purpose",on,1046
+的,"bull's eye, mark",てき,具体的,ぐたいてき,"specific, concrete",on,1084
+並,"row, and",なら,並ぶ,ならぶ,"line up, be parallel",kun,1048
+並,"row, and",なら,並べる,ならべる,"line (st) up, display, set up",kun,1049
+院,"inst., institution",いん,病院,びょういん,hospital,on,1052
+院,"inst., institution",いん,入院,にゅういん,be hospitalized,on,1053
+院,"inst., institution",いん,大学院,だいがくいん,graduate school,on,1054
+院,"inst., institution",いん,退院,たいいん,discharge from a hospital,on,1189
+院,"inst., institution",いん,美容院,びよういん,hair salon,on,1507
+医,"doctor, medicine",い,医者,いしゃ,doctor,on,1055
+医,"doctor, medicine",い,お医者さん,おいしゃさん,doctor,on,1056
+医,"doctor, medicine",い,歯医者,はいしゃ,dentist,on,1057
+歯,"tooth, cog",し,歯医者,はいしゃ,dentist,on,1057
+歯,"tooth, cog",は,歯,は,"tooth, cog",kun,1058
+歯,"tooth, cog",は,歯ブラシ,はぶらし,toothbrush,kun,1059
+歯,"tooth, cog",は,歯磨き,はみがき,"toothpaste, brushing one's teeth",kun,1746
+科,"department, course",か,科学,かがく,science,on,1060
+科,"department, course",か,教科書,きょうかしょ,"textbook, schoolbook",on,1061
+科,"department, course",か,理科,りか,science,on,1062
+酔,"drunk, feel sick",よ,酔っ払い,よっぱらい,drunk person,kun,1067
+酔,"drunk, feel sick",よ,酔っ払う,よっぱらう,get drunk,kun,1068
+危,"dangerous, fear",き,危険,きけん,"danger, dangerous",on,1070
+危,"dangerous, fear",あぶ,危ない,あぶない,"dangerous, uncertain",kun,1069
+注,"pour, irrigate",ちゅう,注目,ちゅうもく,"attention, notice",on,1072
+注,"pour, irrigate",ちゅう,注文,ちゅうもん,"order, request",on,1073
+注,"pour, irrigate",ちゅう,注意,ちゅうい,"attention, care, watch out",on,1076
+注,"pour, irrigate",ちゅう,注射,ちゅうしゃ,"shot, injection",on,1401
+意,"idea, mind",い,意味,いみ,"meaning, significance",on,1074
+意,"idea, mind",い,意見,いけん,opinion,on,1075
+意,"idea, mind",い,注意,ちゅうい,"attention, care, watch out",on,1076
+意,"idea, mind",い,用意,ようい,"prepare, ready oneself",on,1077
+意,"idea, mind",い,得意,とくい,"one's forte, pride, frequent customer",on,1450
+確,"assurance, firm",かく,確認,かくにん,confirmation,on,1079
+確,"assurance, firm",かく,正確,せいかく,"accurate, precise",on,1118
+確,"assurance, firm",たし,確か,たしか,"for sure, for certain",kun,1078
+基,"fundamentals, radical (chem)",き,基本,きほん,"basis, foundation",on,1086
+基,"fundamentals, radical (chem)",き,基準,きじゅん,"standard, criteria",on,1087
+基,"fundamentals, radical (chem)",もと,基づく,もとづく,be based on,kun,1085
+準,"semi-, correspond to",じゅん,基準,きじゅん,"standard, criteria",on,1087
+準,"semi-, correspond to",じゅん,準備,じゅんび,"prepare for, ready for",on,1090
+備,"equip, provision",び,準備,じゅんび,"prepare for, ready for",on,1090
+備,"equip, provision",そな,備える,そなえる,"prepare for (disaster), equip (st) with",kun,1089
+設,"establishment, provision",せつ,施設,しせつ,"facilities, institution",on,1092
+設,"establishment, provision",せつ,建設,けんせつ,"construction, establishment",on,1278
+設,"establishment, provision",もう,設ける,もうける,"set up, establish, prepare",kun,1093
+設,"establishment, provision",irregular,設計,せっけい,"design, plan",irregular,1091
+説,"opinion, theory",せつ,説明,せつめい,"explanation, description",on,1094
+説,"opinion, theory",せつ,小説,しょうせつ,"novel, story",on,1095
+公,"public, prince",こう,公開,こうかい,opening (to the public),on,1096
+公,"public, prince",こう,公園,こうえん,"park, public garden",on,1098
+園,"park, garden",えん,公園,こうえん,"park, public garden",on,1098
+園,"park, garden",えん,動物園,どうぶつえん,zoo,on,1099
+園,"park, garden",えん,幼稚園,ようちえん,kindergarten,on,1670
+際,"occasion, side",さい,国際,こくさい,international,on,1101
+際,"occasion, side",さい,実際,じっさい,"reality, truth, the actual situation",on,1102
+船,"ship, boat",ふな,船便,ふなびん,surface mail&nbsp;(ship),kun,1105
+船,"ship, boat",ふね,船,ふね,"ship, boat, vessel",kun,1106
+港,harbor,こう,空港,くうこう,airport,on,1107
+港,harbor,みなと,港,みなと,"port, harbor",kun,1108
+成,"turn into, become",せい,完成,かんせい,"completion, finish",on,1110
+成,"turn into, become",せい,平成,へいせい,Heisei era,on,1111
+成,"turn into, become",せい,成功,せいこう,success,on,1112
+成,"turn into, become",せい,成績,せいせき,"grade (school), results, record",on,1182
+成,"turn into, become",せい,構成,こうせい,"organization, makeup",on,1281
+資,"assets, resources",し,資金,しきん,"funds, a fund",on,1115
+資,"assets, resources",し,投資,とうし,investment,on,1116
+正,"correct, justice",せい,正確,せいかく,"accurate, precise",on,1118
+正,"correct, justice",しょう,正月,しょうがつ,New Year,on,1120
+正,"correct, justice",しょう,正直,しょうじき,"honest, upright",on,1121
+正,"correct, justice",ただ,正しい,ただしい,"correct, righteous, lawful",kun,1119
+常,"usual, ordinary",じょう,通常,つうじょう,"common, ordinary",on,1123
+常,"usual, ordinary",じょう,非常に,ひじょうに,"very, extremely",on,1124
+調,"tune, tone",ちょう,強調,きょうちょう,"emphasis, stress",on,1126
+調,"tune, tone",ちょう,調査,ちょうさ,"investigation, examination",on,1128
+調,"tune, tone",しら,調べる,しらべる,"search (for), examine",kun,1125
+提,"propose, take along",てい,提供,ていきょう,"offer, provide",on,1129
+提,"propose, take along",てい,提案,ていあん,"proposition, proposal",on,1130
+案,"plan, suggestion",あん,提案,ていあん,"proposition, proposal",on,1130
+案,"plan, suggestion",あん,案内,あんない,"guide, inform",on,1131
+連,"take along, lead",れん,関連,かんれん,"connection, relation",on,1145
+連,"take along, lead",つ,連れて行く,つれていく,take (a person) along,kun,1133
+連,"take along, lead",つ,連れて来る,つれてくる,bring (a person),kun,1134
+相,"inter-, mutual",そう,相談,そうだん,"consultation, advice",on,1138
+相,"inter-, mutual",しょう,首相,しゅしょう,prime minister,on,1161
+相,"inter-, mutual",あい,相手,あいて,"opponent, partner",kun,1136
+談,"discuss, talk",だん,会談,かいだん,"conference, talk",on,1137
+談,"discuss, talk",だん,相談,そうだん,"consultation, advice",on,1138
+談,"discuss, talk",だん,冗談,じょうだん,joke,on,1662
+録,record,ろく,記録,きろく,"record, documentation",on,1140
+録,record,ろく,録音,ろくおん,audio recording,on,1141
+関,"connection, barrier",かん,関する,かんする,"concern, relate to",on,1144
+関,"connection, barrier",かん,関連,かんれん,"connection, relation",on,1145
+関,"connection, barrier",かん,関係,かんけい,"relation, relationship",on,1146
+関,"connection, barrier",かん,玄関,げんかん,"entrance, doorway",on,1640
+状,"status quo, conditions",じょう,状況,じょうきょう,"situation, conditions&nbsp;",on,1147
+状,"status quo, conditions",じょう,状態,じょうたい,"state, appearance (of a thing)",on,1149
+状,"status quo, conditions",じょう,年賀状,ねんがじょう,New Year's card,on,1736
+治,"reign, be at peace",じ,政治,せいじ,politics,on,1151
+治,"reign, be at peace",なお,治る,なおる,"get better,&nbsp;be cured",kun,1150
+治,"reign, be at peace",なお,治す,なおす,"cure, heal",kun,1152
+政,"politics, government",せい,政治,せいじ,politics,on,1151
+政,"politics, government",せい,政府,せいふ,"government, administration",on,1153
+政,"politics, government",せい,政策,せいさく,"policy, political measures",on,1156
+政,"politics, government",せい,政権,せいけん,"political power, government, administration",on,1442
+策,"scheme, plan",さく,対策,たいさく,"measure, countermeasure",on,1155
+策,"scheme, plan",さく,政策,せいさく,"policy, political measures",on,1156
+選,"elect, select",せん,選手,せんしゅ,player (in a game); team member,on,1158
+選,"elect, select",せん,選挙,せんきょ,election,on,1159
+選,"elect, select",えら,選ぶ,えらぶ,"choose, elect",kun,1157
+革,"leather, skin",かく,改革,かいかく,reform,on,1163
+革,"leather, skin",かわ,革,かわ,leather,kun,1164
+組,"association, braid",そ,組織,そしき,"organization, structure, tissue",on,1168
+組,"association, braid",ぐみ,番組,ばんぐみ,"program (TV, radio)",kun,1166
+組,"association, braid",く,組み立てる,くみたてる,"put together, assemble, construct",kun,1167
+進,"advance, proceed",しん,進学,しんがく,entering the next level of school,on,1171
+進,"advance, proceed",すす,進める,すすめる,"advance, promote, speed (st) up",kun,1169
+進,"advance, proceed",すす,進む,すすむ,"advance, move forward",kun,1170
+辞,"resign, word",じ,辞書,じしょ,dictionary,on,1176
+辞,"resign, word",じ,お辞儀,おじぎ,"bow, bowing",on,1617
+辞,"resign, word",や,辞める,やめる,"resign, retire",kun,1175
+勤,"diligence, become employed",きん,通勤,つうきん,commute,on,1177
+勤,"diligence, become employed",つと,勤める,つとめる,to work for (~に),kun,1178
+務,"task, duties",む,事務所,じむしょ,"office, one's place of business",on,1179
+務,"task, duties",む,事務室,じむしつ,office,on,1180
+集,"gather, meet",あつ,集める,あつめる,"collect, gather",kun,1183
+集,"gather, meet",あつ,集まる,あつまる,"gather, be collected",kun,1184
+件,"affair, case",けん,事件,じけん,"event, incident, case",on,1192
+件,"affair, case",けん,条件,じょうけん,"condition, terms",on,1193
+加,"add, addition",か,参加,さんか,"participation, taking part in",on,1195
+加,"add, addition",か,増加,ぞうか,"increase, gain",on,1196
+加,"add, addition",か,加工,かこう,"processing, manufacturing<div>(turning st into st else)</div>",on,1198
+加,"add, addition",くわ,加える,くわえる,add (one thing to another)<div>(can be the same or a different kind of thing)</div>,kun,1197
+換,"interchange, period",か,乗り換える,のりかえる,"change, transfer (trainなど)",kun,1205
+換,"interchange, period",か,乗り換え,のりかえ,"change (trainなど), transfer",kun,1206
+換,"interchange, period",か,換える,かえる,"swap, convert",kun,1208
+替,"exchange, spare",irregular,着替える,きがえる,change clothes,irregular,1209
+替,"exchange, spare",irregular,両替,りょうがえ,"exchanging currency, break (a 1万 note)",irregular,1331
+破,"rend, rip",やぶ,破る,やぶる,"tear (st), break (through) （~を）",kun,1211
+破,"rend, rip",やぶ,破れる,やぶれる,"(st) rips, gets torn",kun,1212
+壊,"demolition, break",こわ,壊す,こわす,"break, destroy, smash",kun,1213
+壊,"demolition, break",こわ,壊れる,こわれる,"break, break down, get out of order",kun,1214
+争,"contend, dispute",そう,戦争,せんそう,"war, battle",on,1224
+争,"contend, dispute",そう,競争,きょうそう,competition,on,1225
+池,"pond, cistern",ち,電池,でんち,"electric cell, battery",on,1231
+池,"pond, cistern",いけ,池,いけ,pond,kun,1230
+深,"deep, heighten",ふか,深い,ふかい,"deep, profound, intimate",kun,1232
+深,"deep, heighten",ふか,深さ,ふかさ,"depth, profundity",kun,1233
+泳,swim,えい,水泳,すいえい,swimming,on,1238
+泳,swim,およ,泳ぐ,およぐ,swim,kun,1237
+流,"current, a sink",なが,流れる,ながれる,"flow, drift away",kun,1239
+流,"current, a sink",irregular,流行る,はやる,"be in fashion, be popular",irregular,1240
+球,"ball, sphere",きゅう,地球,ちきゅう,the Earth,on,1263
+球,"ball, sphere",きゅう,野球,やきゅう,baseball,on,1264
+震,"quake, shake",しん,地震,じしん,earthquake,on,1267
+震,"quake, shake",ふる,震える,ふるえる,"tremble, quiver, shake",kun,1268
+構,"posture, build",こう,構成,こうせい,"organization, makeup",on,1281
+構,"posture, build",こう,構造,こうぞう,"structure, the construction",on,1282
+停,"halt, stopping",てい,停車,ていしゃ,"a stop (train), stopping",on,1288
+停,"halt, stopping",てい,バス停,ばすてい,bus stop,on,1289
+停,"halt, stopping",てい,停留所,ていりゅうじょ,"stop, station",on,1316
+横,"sideways, side",おう,横断歩道,おうだんほどう,crosswalk,on,1298
+横,"sideways, side",よこ,横,よこ,"side, width across",kun,1294
+横,"sideways, side",よこ,横書き,よこがき,horizontal writing,kun,1295
+断,"severance, decline",だん,判断,はんだん,"judgment, decision",on,1296
+断,"severance, decline",だん,横断歩道,おうだんほどう,crosswalk,on,1298
+断,"severance, decline",ことわ,断る,ことわる,"refuse, turn down",kun,1297
+訪,"call on, visit",おとず,訪れる,おとずれる,"visit, go to see",kun,1300
+訪,"call on, visit",たず,訪ねる,たずねる,"visit (place or person), drop in",kun,1301
+房,"tassel, tuft",ぼう,冷房,れいぼう,air conditioning,on,1302
+房,"tassel, tuft",ぼう,暖房,だんぼう,heating,on,1303
+房,"tassel, tuft",ぼう,文房具,ぶんぼうぐ,"stationery, writing materials",on,1304
+輸,"transport, send",ゆ,輸入,ゆにゅう,import,on,1308
+輸,"transport, send",しゅ,輸出,ゆしゅつ,export,on,1309
+復,"restore, return to",ふく,往復,おうふく,"&nbsp;round trip, going and returning",on,1311
+復,"restore, return to",ふく,復習,ふくしゅう,review,on,1312
+守,"guard, protect",す,留守,るす,not at home,on,1320
+守,"guard, protect",まも,守る,まもる,"protect, observe",kun,1319
+宅,"home, house",たく,住宅,じゅうたく,"housing, residence",on,1321
+宅,"home, house",たく,自宅,じたく,"one's house, one's home",on,1322
+宅,"home, house",たく,お宅,おたく,your home (敬語),on,1323
+両,"both, old japanese coin",りょう,両方,りょうほう,both,on,1330
+両,"both, old japanese coin",りょう,両替,りょうがえ,"exchanging currency, break (a 1万 note)",on,1331
+両,"both, old japanese coin",りょう,両親,りょうしん,parents,on,1332
+側,"side, lean",がわ,内側,うちがわ,"inside, interior",kun,1334
+側,"side, lean",がわ,向こう側,むこうがわ,other side,kun,1335
+側,"side, lean",がわ,外側,そとがわ,"exterior, outside",kun,1336
+側,"side, lean",がわ,左側,ひだりがわ,left side,kun,1337
+側,"side, lean",がわ,右側,みぎがわ,right side,kun,1338
+裏,"back, amidst",うら,裏,うら,"rear, reverse (side), inside",kun,1339
+裏,"back, amidst",うら,裏返す,うらがえす,"turn over, turn inside out",kun,1341
+刊,"publish, carve",かん,週刊誌,しゅうかんし,weekly magazine,on,1342
+刊,"publish, carve",かん,朝刊,ちょうかん,morning edition,on,1343
+刊,"publish, carve",かん,夕刊,ゆうかん,evening edition,on,1344
+訳,"translate, reason",やく,訳,やく,translation,on,1349
+訳,"translate, reason",やく,訳す,やくす,translate,on,1350
+付,"adhere, attach",つ,付く,つく,"stick to, be attached to, accompany",kun,1353
+付,"adhere, attach",つ,付ける,つける,"attach, apply (st to st), add",kun,1354
+付,"adhere, attach",つ,受け付ける,うけつける,"accept, receive",kun,1355
+付,"adhere, attach",つ,受付,うけつけ,"receptionist, front desk",kun,1358
+付,"adhere, attach",つ,気を付ける,きをつける,"take care of, pay attention to",kun,1361
+付,"adhere, attach",づ,片付ける,かたづける,"put in order, clear (st) away, put (st) back",kun,1356
+付,"adhere, attach",づ,近付く,ちかづく,"approach, get acquainted",kun,1359
+付,"adhere, attach",づ,片付く,かたづく,"be in order, be settled",kun,1360
+念,"wish, sense",ねん,記念日,きねんび,"memorial day, anniversary",on,1363
+念,"wish, sense",ねん,残念,ざんねん,"regretful, disappointing",on,1364
+例,"example, custom",れい,例文,れいぶん,example sentence,on,1366
+例,"example, custom",れい,例,れい,"example, precedent",on,1367
+例,"example, custom",たと,例えば,たとえば,for example,kun,1365
+除,"exclude, division (x/3)",じ,掃除,そうじ,cleaning,on,1651
+除,"exclude, division (x/3)",じ,掃除機,そうじき,vacuum cleaner,on,1654
+除,"exclude, division (x/3)",のぞ,除く,のぞく,"exclude, get rid of",kun,1369
+苦,"suffering, trial",くる,苦しい,くるしい,"painful, difficult",kun,1373
+苦,"suffering, trial",にが,苦い,にがい,"bitter, sour",kun,1374
+苦,"suffering, trial",にが,苦手,にがて,"weak point, (sb) hard to deal with",kun,1375
+幸,"happiness, blessing",こう,不幸,ふこう,"unhappiness, misfortune, a death",on,1378
+幸,"happiness, blessing",しあわ,幸せ,しあわせ,"happiness, good fortune",kun,1379
+塩,salt,しお,塩,しお,salt,kun,1380
+塩,salt,しお,塩辛い,しおからい,salty,kun,1381
+厚,"thick, heavy",あつ,厚い,あつい,"thick, bulky",kun,1387
+厚,"thick, heavy",あつ,厚さ,あつさ,thickness,kun,1388
+越,"surpass, cross over",こ,引っ越す,ひっこす,move (houses),kun,1391
+越,"surpass, cross over",こ,越える,こえる,"go over, go across, go beyond",kun,1392
+越,"surpass, cross over",こ,引っ越し,ひっこし,moving (houses),kun,1393
+越,"surpass, cross over",こ,追い越す,おいこす,"pass, outdo",kun,1394
+礼,"salute, bow",れい,失礼,しつれい,"impoliteness, bad manners, I beg your parden/Goodbye",on,1397
+礼,"salute, bow",れい,お礼,おれい,"thanks, reward, return present",on,1399
+身,"somebody, person",しん,独身,どくしん,"single, unmarried",on,1408
+身,"somebody, person",み,刺身,さしみ,"sashimi, sliced raw meat",kun,1530
+招,"beckon, invite",しょう,招待,しょうたい,invitation,on,1413
+招,"beckon, invite",まね,招く,まねく,"invite, beckon",kun,1412
+奥,"heart, interior",おく,奥,おく,"inner part, the back, inner chamber",kun,1415
+奥,"heart, interior",おく,奥さん,おくさん,"(sb's) wife,&nbsp;married lady",kun,1416
+皆,"all, everything",みな,皆さん,みなさん,everybody (丁寧語),kun,1417
+皆,"all, everything",みな,皆様,みなさま,everyone (敬語),kun,1418
+祝,"celebrate, congratulate",しゅく,祝日,しゅくじつ,"holiday, festival day",on,1426
+祝,"celebrate, congratulate",いわ,お祝い,おいわい,celebrate,kun,1427
+師,"expert, teacher",し,看護師,かんごし,nurse,on,1434
+師,"expert, teacher",し,教師,きょうし,"teacher, instructor",on,1515
+迷,"astray, be perplexed",めい,迷惑,めいわく,"trouble, annoyance",on,1440
+迷,"astray, be perplexed",まよ,迷う,まよう,"hesitate, get lost, be unable to decide",kun,1439
+贈,"presents, send",おく,贈る,おくる,"offer, give (presentとか)",kun,1443
+贈,"presents, send",おく,贈り物,おくりもの,"present, gift (和語)",kun,1444
+預,"deposit, custody",あず,預ける,あずける,"deposit, entrust",kun,1448
+預,"deposit, custody",あず,預かる,あずかる,keep (st) for (sb); take care of (st),kun,1449
+焼,"bake, burning",や,焼ける,やける,"burn, be grilled, be baked が",kun,1453
+焼,"bake, burning",や,焼く,やく,"burn (st), grill, bake を",kun,1454
+焼,"bake, burning",や,すき焼き,すきやき,sukiyaki,kun,1986
+乾,"drought, dry",かん,乾杯,かんぱい,a toast,on,1457
+乾,"drought, dry",かわ,乾く,かわく,"(st) drys, gets dry (が)",kun,1456
+乾,"drought, dry",かわ,乾かす,かわかす,dry (st) を,kun,1458
+庭,"courtyard, garden",てい,家庭,かてい,"home, family",on,1462
+庭,"courtyard, garden",にわ,庭,にわ,"garden, court",kun,1463
+板,"plank, board",ばん,黒板,こくばん,blackboard,on,1471
+板,"plank, board",ばん,掲示板,けいじばん,"notice board, bulletin board",on,1472
+皿,"dish, a helping",さら,皿,さら,"plate, counter for plates or servings",kun,1482
+皿,"dish, a helping",irregular,灰皿,はいざら,ashtray,irregular,1597
+容,"contain, form",よう,内容,ないよう,contents,on,1485
+容,"contain, form",よう,美容院,びよういん,hair salon,on,1507
+折,"fold, break",お,折れる,おれる,"snap/break, be folded, give in (to)",kun,1489
+折,"fold, break",お,折る,おる,"break off, fold, bend",kun,1490
+再,"again, twice",さ,再来年,さらいねん,the year after next,on,1495
+再,"again, twice",さ,再来月,さらいげつ,the month after next,on,1496
+再,"again, twice",さ,再来週,さらいしゅう,the week after next,on,1497
+再,"again, twice",ふたた,再び,ふたたび,"again, a second time (somewhat formal)",kun,1494
+許,"permit, approve",きょ,免許証,めんきょしょう,license,on,1514
+許,"permit, approve",ゆる,許す,ゆるす,"forgive, permit",kun,1512
+鳴,"chirp, cry",な,鳴る,なる,"sound, ring, thunder",kun,1520
+鳴,"chirp, cry",な,鳴く,なく,"make sound (animal); chirp, meow, etc.",kun,1521
+刺,"thorn, pierce",し,刺身,さしみ,"sashimi, sliced raw meat",on,1530
+刺,"thorn, pierce",さ,刺す,さす,"stab, prick, sting",kun,1529
+倒,"overthrow, fall",たお,倒れる,たおれる,"fall down, succumb (to)",kun,1534
+倒,"overthrow, fall",たお,倒す,たおす,"knock down, overthrow, defeat",kun,1535
+柔,"tender, weakness",じゅう,柔道,じゅうどう,judo,on,1538
+柔,"tender, weakness",やわ,柔らかい,やわらかい,soft,kun,1539
+柔,"tender, weakness",やわ,柔らか,やわらか,"soft, tender, gentle",kun,1540
+張,"lengthen, counter for bows & stringed instruments",ちょう,主張,しゅちょう,"argument, case, one's point",on,1541
+張,"lengthen, counter for bows & stringed instruments",ば,頑張る,がんばる,"persist, be tenacious",kun,1675
+張,"lengthen, counter for bows & stringed instruments",irregular,引っ張る,ひっぱる,"pull, drag",irregular,1542
+突,"stab, protruding",つ,突き当たる,つきあたる,"come to the end of (street), run into (st)",kun,1543
+突,"stab, protruding",つ,突き当たり,つきあたり,end of a street,kun,1544
+丸,"round, full (month)",まる,丸い,まるい,round,kun,1547
+丸,"round, full (month)",まる,丸,まる,"circle, wholeness",kun,1548
+勢,"forces, energy",ぜい,大勢,おおぜい,"many (people), a crowd",on,1556
+勢,"forces, energy",せい,姿勢,しせい,"posture, attitude",on,1558
+姿,"figure, form",し,姿勢,しせい,"posture, attitude",on,1558
+姿,"figure, form",すがた,姿,すがた,"figure, appearance",kun,1557
+棚,"shelf, ledge",たな,棚,たな,"shelf, rack",kun,1568
+棚,"shelf, ledge",だな,本棚,ほんだな,bookshelf,kun,1569
+釣,"angling, fish",つ,釣る,つる,"to fish, to catch (a fish)",kun,1571
+釣,"angling, fish",つ,お釣り,おつり,change,kun,1573
+沸,"seethe, boil",わ,沸く,わく,"boil, be excited",kun,1579
+沸,"seethe, boil",わ,沸かす,わかす,"boil, excite",kun,1580
+濯,"laundry, wash",たく,洗濯機,せんたくき,washing machine,on,1582
+濯,"laundry, wash",たく,洗濯,せんたく,"laundering, washing",on,1583
+炊,"cook, boil",すい,自炊,じすい,cooking for oneself,on,1596
+炊,"cook, boil",た,炊く,たく,cook (by boiling),kun,1595
+灰,"ashes, puckery juice",はい,灰皿,はいざら,ashtray,kun,1597
+灰,"ashes, puckery juice",はい,灰,はい,ashes,kun,1598
+灰,"ashes, puckery juice",はい,灰色,はいいろ,"ash color, gray",kun,1599
+豚,"pork, pig",ぶた,豚,ぶた,"pig, pork",kun,1611
+豚,"pork, pig",ぶた,豚肉,ぶたにく,"pork, hog meat",kun,1612
+筆,"writing brush, writing",ひつ,万年筆,まんねんひつ,fountain pen,on,1622
+筆,"writing brush, writing",irregular,鉛筆,えんぴつ,pencil,irregular,1621
+箱,"box, chest",はこ,箱,はこ,"box, case",kun,1624
+箱,"box, chest",irregular,本箱,ほんばこ,bookcase,irregular,1625
+布,"linen, cloth",ふ,財布,さいふ,"purse, wallet",on,1629
+布,"linen, cloth",ふ,毛布,もうふ,blanket,on,1630
+布,"linen, cloth",ふ,布団,ふとん,"futon, bedquilt",on,1631
+包,"wrap, pack up",つつ,包む,つつむ,"wrap, pack",kun,1634
+包,"wrap, pack up",irregular,小包,こづつみ,"parcel, package",irregular,1632
+帳,"notebook, account book",ちょう,手帳,てちょう,"pocketbook, memo",on,1636
+帳,"notebook, account book",ちょう,電話帳,でんわちょう,telephone book,on,1637
+眠,"sleep, die",ねむ,眠い,ねむい,sleepy,kun,1642
+眠,"sleep, die",ねむ,眠る,ねむる,sleep,kun,1644
+掃,"sweep, brush",そう,掃除,そうじ,cleaning,on,1651
+掃,"sweep, brush",そう,掃除機,そうじき,vacuum cleaner,on,1654
+掃,"sweep, brush",は,掃く,はく,"sweep, brush",kun,1652
+握,"grip, hold",あく,握手,あくしゅ,"handshake, handshaking",on,1656
+握,"grip, hold",にぎ,握る,にぎる,"grasp, to press into shape (onigiri, sushi)",kun,1655
+我,"ego, i",が,怪我,けが,injury,on,1668
+我,"ego, i",が,我慢,がまん,"patience, self-restraint",on,1669
+頃,"time, about",ころ,頃,ころ,"when~, about~, time",kun,1676
+頃,"time, about",ごろ,この頃,このごろ,"these days, recently",kun,1678
+缶,"tin can, container",かん,缶詰,かんづめ,canned goods,on,1681
+缶,"tin can, container",かん,缶,かん,"can, tin",on,1683
+腐,"rot, decay",ふ,豆腐,とうふ,tofu,on,1685
+腐,"rot, decay",くさ,腐る,くさる,"rot, corrode",kun,1684
+床,"bed, counter for beds",ゆか,床,ゆか,floor,kun,1686
+床,"bed, counter for beds",とこ,床屋,とこや,"barber, barbershop",kun,1687
+畳,"tatami mat, counter for tatami mats",たたみ,畳,たたみ,"tatami, mat",kun,1688
+畳,"tatami mat, counter for tatami mats",たた,畳む,たたむ,"fold up, shut (umbrella)",kun,1689
+敬,"awe, respect",けい,敬語,けいご,"honorific language, polite speech",on,1694
+敬,"awe, respect",けい,尊敬,そんけい,"respect, honor",on,1695
+踊,"jump, dance",おど,踊る,おどる,dance,kun,1702
+踊,"jump, dance",おど,踊り,おどり,"dance, dancing",kun,1703
+踏,"step, trample",ふ,踏む,ふむ,"step on, tread on",kun,1704
+踏,"step, trample",ふ,踏切,ふみきり,railroad crossing,kun,1705
+祖,"ancestor, pioneer",そ,祖父,そふ,grandfather,on,1717
+祖,"ancestor, pioneer",そ,祖母,そぼ,grandmother,on,1718
+祖,"ancestor, pioneer",irregular,お祖父さん,おじいさん,grandfather,irregular,1714
+祖,"ancestor, pioneer",irregular,お祖母さん,おばあさん,grandmother,irregular,1715
+呂,"spine, backbone",ろ,風呂屋,ふろや,"bathhouse, public bath",on,1721
+呂,"spine, backbone",ろ,風呂,ふろ,bath,on,1722
+靴,shoes,くつ,靴,くつ,"shoes, boots",kun,1743
+靴,shoes,くつ,靴下,くつした,"socks, stockings",kun,1744
+磨,"grind, polish",みが,磨く,みがく,"polish, grind",kun,1745
+磨,"grind, polish",みが,歯磨き,はみがき,"toothpaste, brushing one's teeth",kun,1746
+袖,"sleeve, wing (building)",そで,袖,そで,sleeve,kun,1751
+袖,"sleeve, wing (building)",そで,長袖,ながそで,clothes with long sleeves,kun,1752
+袖,"sleeve, wing (building)",そで,半袖,はんそで,short-sleeved shirt,kun,1753
+含,"contain, include",ふく,含める,ふくめる,include,kun,1778
+含,"contain, include",ふく,含む,ふくむ,"contain, include",kun,1779

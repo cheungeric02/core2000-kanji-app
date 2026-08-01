@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core 2000 Kanji Trees</title>
+<script>
+/* anti-flash theme: apply saved theme before first paint */
+(function(){try{var t=localStorage.getItem("c2k_theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --panel2:#f0f2f5; --ink:#1b1f24; --muted:#6b7480;
+  --line:#e2e6ea; --accent:#3b5bdb; --accent-ink:#fff;
+  --on:#2f6fed; --on-bg:#eaf1ff; --kun:#1f9d55; --kun-bg:#e7f7ee; --irr:#c47f16; --irr-bg:#fdf3e0;
+  --known:#1f9d55; --lock:#aab2bd; --shadow:0 1px 3px rgba(20,30,50,.08),0 6px 22px rgba(20,30,50,.06);
+  --r:14px;
+}
+:root[data-theme="dark"]{
+  --bg:#0f1216; --panel:#171b21; --panel2:#1e242c; --ink:#e8ecf1; --muted:#9aa4b0;
+  --line:#2a313a; --accent:#5c7cfa; --accent-ink:#0b1220;
+  --on:#6ea0ff; --on-bg:#132038; --kun:#5fd08a; --kun-bg:#122a1c; --irr:#e6b24a; --irr-bg:#2c2413;
+  --known:#5fd08a; --lock:#4a545f; --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 26px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP",sans-serif;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 64px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-weight:700;font-size:1.12rem;letter-spacing:.2px;display:flex;align-items:center;gap:9px}
+.brand .jp{font-size:1.35rem}
+.spacer{flex:1}
+.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--ink);width:38px;height:38px;border-radius:10px;font-size:1.05rem;cursor:pointer;display:grid;place-items:center}
+.iconbtn:hover{border-color:var(--accent)}
+.controls{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
+.search{position:relative}
+.search input{width:100%;padding:13px 14px 13px 42px;font-size:1rem;border:1px solid var(--line);border-radius:11px;background:var(--panel2);color:var(--ink)}
+.search input:focus{outline:none;border-color:var(--accent);background:var(--panel)}
+.search .mag{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search .clr{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:none;background:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:6px}
+.sliderrow{margin-top:16px}
+.sliderrow label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.86rem;color:var(--muted);margin-bottom:8px}
+.sliderrow label b{color:var(--ink);font-size:.92rem}
+input[type=range]{width:100%;accent-color:var(--accent);height:26px}
+.posword{margin-top:8px;font-size:.9rem;color:var(--muted);min-height:1.3em}
+.posword .w{color:var(--ink);font-weight:600}
+.statbar{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:.85rem;color:var(--muted)}
+.statbar b{color:var(--ink)}
+.statbar .dot{color:var(--known)}
+.synctog{margin-top:12px}
+.synctog>button{width:100%;text-align:left;border:1px dashed var(--line);background:var(--panel2);color:var(--muted);padding:10px 12px;border-radius:10px;cursor:pointer;font-size:.9rem;display:flex;justify-content:space-between;align-items:center}
+.syncbody{display:none;padding:12px;border:1px solid var(--line);border-top:none;border-radius:0 0 10px 10px;background:var(--panel2)}
+.syncbody.open{display:block}
+.syncrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.syncrow input{flex:1;min-width:150px;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);font-size:.92rem}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);padding:9px 14px;border-radius:9px;cursor:pointer;font-size:.9rem;font-weight:600}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.warn{border-color:#d9534f;color:#d9534f;background:transparent}
+.cloudstatus{margin-top:9px;font-size:.82rem;color:var(--muted)}
+.cloudstatus.on{color:var(--known)} .cloudstatus.err{color:#d9534f}
+.hint{font-size:.8rem;color:var(--muted);margin-top:8px;line-height:1.45}
+
+.grid{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.tile{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 8px 10px;text-align:center;cursor:pointer;transition:transform .08s,border-color .12s,box-shadow .12s;box-shadow:var(--shadow)}
+.tile:hover{transform:translateY(-2px);border-color:var(--accent)}
+.tile .k{font-size:2rem;line-height:1.1;font-weight:600}
+.tile .m{font-size:.68rem;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .kn{position:absolute;top:6px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--known);opacity:0;transition:opacity .12s}
+.tile.known .kn{opacity:1}
+.tile.known{border-color:color-mix(in srgb,var(--known) 55%,var(--line))}
+.tile .pos{position:absolute;top:6px;left:8px;font-size:.6rem;color:var(--muted);opacity:.7}
+.empty{margin-top:40px;text-align:center;color:var(--muted)}
+
+/* detail panel */
+.scrim{position:fixed;inset:0;background:rgba(10,14,20,.45);opacity:0;pointer-events:none;transition:opacity .18s;z-index:40}
+.scrim.show{opacity:1;pointer-events:auto}
+.detail{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--bg);border-left:1px solid var(--line);box-shadow:-8px 0 30px rgba(10,14,20,.18);transform:translateX(100%);transition:transform .22s cubic-bezier(.4,0,.2,1);z-index:50;display:flex;flex-direction:column}
+.detail.show{transform:none}
+.dhead{display:flex;align-items:center;gap:14px;padding:16px;border-bottom:1px solid var(--line);background:var(--panel)}
+.dhead .k{font-size:3rem;line-height:1;font-weight:600}
+.dhead .meta{flex:1;min-width:0}
+.dhead .meta .mn{font-size:.95rem;color:var(--muted)}
+.dhead .meta .cnt{font-size:.78rem;color:var(--muted);margin-top:3px}
+.dclose{border:none;background:var(--panel2);color:var(--ink);width:36px;height:36px;border-radius:9px;font-size:1.1rem;cursor:pointer}
+.dbody{overflow-y:auto;padding:16px;flex:1;-webkit-overflow-scrolling:touch}
+.knownbtn{width:100%;margin-bottom:16px;padding:12px;border-radius:11px;font-size:.95rem;font-weight:600;cursor:pointer;border:1px solid var(--known);background:transparent;color:var(--known)}
+.knownbtn.is{background:var(--known);color:#fff}
+
+.branchgroup{margin-bottom:18px}
+.btype{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;margin-bottom:9px;display:inline-block;padding:3px 9px;border-radius:20px}
+.btype.on{color:var(--on);background:var(--on-bg)} .btype.kun{color:var(--kun);background:var(--kun-bg)} .btype.irregular{color:var(--irr);background:var(--irr-bg)}
+.branch{border-left:2.5px solid var(--line);margin-left:8px;padding-left:14px;margin-bottom:12px;position:relative}
+.branch.on{border-color:var(--on)} .branch.kun{border-color:var(--kun)} .branch.irregular{border-color:var(--irr)}
+.reading{font-size:1.02rem;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.reading .rk{font-size:.68rem;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.leaf{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin-bottom:7px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.leaf .lw{font-size:1.12rem;font-weight:600}
+.leaf .lr{font-size:.85rem;color:var(--muted)}
+.leaf .le{font-size:.9rem;flex-basis:100%;color:var(--ink)}
+.leaf .lp{font-size:.68rem;color:var(--muted);margin-left:auto;opacity:.75;white-space:nowrap}
+mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:.88rem;opacity:0;pointer-events:none;transition:.2s;z-index:60}
+.toast.show{opacity:1;transform:translateX(-50%)}
+footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.78rem}
+footer a{color:var(--accent)}
+@media(max-width:560px){
+  .tile .k{font-size:1.7rem}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px}
+  .detail{width:100%;border-left:none}
+  .dhead .k{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hbar">
+    <div class="brand"><span class="jp">木</span><span>Core 2000 Kanji Trees</span></div>
+    <div class="spacer"></div>
+    <button class="iconbtn" id="themeBtn" aria-label="Toggle theme">☾</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="search">
+      <span class="mag">🔍</span>
+      <input id="q" type="search" autocomplete="off" placeholder="Search kanji, word, reading, or English meaning…">
+      <button class="clr" id="clrBtn" aria-label="Clear" style="display:none">✕</button>
+    </div>
+
+    <div class="sliderrow">
+      <label for="prog"><span>I've studied up through…</span><b id="progLbl">position 2007 / 2007</b></label>
+      <input id="prog" type="range" min="1" max="2007" value="2007" step="1">
+      <div class="posword" id="posWord"></div>
+    </div>
+
+    <div class="statbar">
+      <span><span class="dot">●</span> known: <b id="knownCount">0</b> / <b id="totalKanji">0</b></span>
+      <span>reachable now: <b id="visCount">0</b></span>
+      <span id="searchStat"></span>
+    </div>
+
+    <div class="synctog">
+      <button id="syncTog" aria-expanded="false">
+        <span>☁ Sync across devices &amp; settings</span><span id="chev">▾</span>
+      </button>
+      <div class="syncbody" id="syncBody">
+        <div class="syncrow">
+          <input id="syncKey" type="text" autocomplete="off" placeholder="your sync key (any word)">
+          <button class="btn" id="cloudBtn">Turn on</button>
+        </div>
+        <div class="cloudstatus" id="cloudStatus">Cloud sync is off. Enter a key and press Turn on.</div>
+        <div class="hint">Type the <b>same key</b> on your phone and computer to sync known-marks &amp; progress. It's a shared secret, not a login — pick something only you'd guess.</div>
+        <div class="syncrow" style="margin-top:12px">
+          <button class="btn ghost" id="resetProgBtn">Reset progress slider</button>
+          <button class="btn warn" id="clearKnownBtn">Clear all known-marks</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none"></div>
+
+  <footer>
+    Built from the Japanese Core 2000 deck · <span id="kdesc"></span> kanji · <a href="https://cheungeric02.github.io/core2000-kanji/">core2000-kanji</a>
+  </footer>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="detail" id="detail" aria-hidden="true">
+  <div class="dhead">
+    <div class="k" id="dK"></div>
+    <div class="meta"><div class="mn" id="dMn"></div><div class="cnt" id="dCnt"></div></div>
+    <button class="dclose" id="dClose" aria-label="Close">✕</button>
+  </div>
+  <div class="dbody">
+    <button class="knownbtn" id="dKnown"></button>
+    <div id="dTree"></div>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<!-- ============ EMBEDDED DATA (raw CSV, parsed in-browser) ============ -->
+<script type="text/csv" id="rt-data">
+__RT_CSV__
+</script>
+<script type="text/csv" id="wo-data">
+__WO_CSV__
+</script>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+
+/* ---------- CSV parser (quote-aware, handles embedded commas/newlines) ---------- */
+function parseCSV(text){
+  text=text.replace(/^﻿/,"").replace(/\r\n/g,"\n").replace(/\r/g,"\n").trim();
+  const rows=[];let field="",row=[],inQ=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(inQ){
+      if(c==='"'){ if(text[i+1]==='"'){field+='"';i++;} else inQ=false; }
+      else field+=c;
+    }else{
+      if(c==='"')inQ=true;
+      else if(c===','){row.push(field);field="";}
+      else if(c==='\n'){row.push(field);rows.push(row);row=[];field="";}
+      else field+=c;
+    }
+  }
+  if(field.length||row.length){row.push(field);rows.push(row);}
+  const head=rows.shift();
+  return rows.filter(r=>r.length>1||(r[0]&&r[0].length)).map(r=>{
+    const o={};head.forEach((h,i)=>o[h.trim()]=(r[i]==null?"":r[i]));return o;
+  });
+}
+
+/* ---------- sanitize the Anki HTML cruft in English meanings ---------- */
+function clean(s){
+  if(!s)return"";
+  return s.replace(/<!--.*?-->/g,"")
+          .replace(/<br\s*\/?>/gi," / ")
+          .replace(/<\/?div>/gi," ")
+          .replace(/<[^>]+>/g,"")
+          .replace(/&nbsp;/gi," ").replace(/&amp;/gi,"&").replace(/&lt;/gi,"<").replace(/&gt;/gi,">")
+          .replace(/\s+/g," ").trim();
+}
+
+/* ---------- build model ---------- */
+const TYPE_ORDER={on:0,kun:1,irregular:2};
+function normType(t){t=(t||"").toLowerCase();return t==="on"||t==="kun"?t:"irregular";}
+
+const rtRows=parseCSV($("rt-data").textContent);
+const woRows=parseCSV($("wo-data").textContent);
+
+const KMAP=new Map();
+for(const r of rtRows){
+  const k=r.Kanji;if(!k)continue;
+  if(!KMAP.has(k))KMAP.set(k,{kanji:k,meaning:clean(r.Kanji_Meaning),minPos:Infinity,types:{on:new Map(),kun:new Map(),irregular:new Map()},words:0,search:""});
+  const e=KMAP.get(k);
+  const ty=normType(r.Reading_Type);
+  const reading=(r.Reading_Used||"—").trim();
+  if(!e.types[ty].has(reading))e.types[ty].set(reading,[]);
+  const pos=parseInt(r.Position_in_Deck,10)||9999;
+  const leaf={word:r.Word,reading:r.Word_Reading,mean:clean(r.English_Meaning),pos};
+  e.types[ty].get(reading).push(leaf);
+  e.minPos=Math.min(e.minPos,pos);
+  e.words++;
+}
+const KANJI=[...KMAP.values()].sort((a,b)=>a.minPos-b.minPos);
+// build a lowercase search blob per kanji
+for(const e of KANJI){
+  let s=e.kanji+" "+e.meaning.toLowerCase();
+  for(const ty of ["on","kun","irregular"])for(const[rd,leaves]of e.types[ty]){
+    s+=" "+rd;for(const lf of leaves)s+=" "+lf.word+" "+(lf.reading||"")+" "+lf.mean.toLowerCase();
+  }
+  e.search=s;
+}
+// word_order: position -> {word, kana, english}
+const WORD_AT=new Map();
+for(const r of woRows){
+  const p=parseInt(r.Position,10);if(!p)continue;
+  WORD_AT.set(p,{word:r.Word_Kanji,kana:r.Reading_Kana,en:clean(r.English_Meaning)});
+}
+const MAXPOS=woRows.length?Math.max(...woRows.map(r=>parseInt(r.Position,10)||0)):2007;
+
+$("totalKanji").textContent=KANJI.length;
+$("kdesc").textContent=KANJI.length;
+$("prog").max=MAXPOS;
+
+/* ---------- persistent state ---------- */
+const LS="c2k_state_v1";
+let state=loadState();
+function loadState(){try{const s=JSON.parse(localStorage.getItem(LS));if(s&&s.known)return s;}catch(e){}return{known:{},progress:MAXPOS,updatedAt:0};}
+function saveState(push){
+  state.updatedAt=Date.now();
+  try{localStorage.setItem(LS,JSON.stringify(state));}catch(e){}
+  if(push!==false)cloudPush();
+}
+
+/* ---------- rendering ---------- */
+let query="",selected=null;
+function reachable(e){return e.minPos<=state.progress;}
+function matches(e,q){return !q||e.search.indexOf(q)>=0;}
+
+function renderGrid(){
+  const q=query.trim().toLowerCase();
+  const frag=document.createDocumentFragment();
+  let vis=0,shown=0;
+  for(const e of KANJI){
+    if(!reachable(e))continue; vis++;
+    if(!matches(e,q))continue; shown++;
+    const t=document.createElement("div");
+    t.className="tile"+(state.known[e.kanji]?" known":"");
+    t.innerHTML='<span class="pos">'+e.minPos+'</span><span class="kn"></span><div class="k"></div><div class="m"></div>';
+    t.querySelector(".k").textContent=e.kanji;
+    t.querySelector(".m").textContent=e.meaning;
+    t.onclick=()=>openDetail(e.kanji);
+    frag.appendChild(t);
+  }
+  const g=$("grid");g.innerHTML="";g.appendChild(frag);
+  $("visCount").textContent=vis;
+  $("knownCount").textContent=Object.values(state.known).filter(Boolean).length;
+  $("searchStat").textContent=q?("matching: "+shown):"";
+  const emp=$("empty");
+  if(shown===0){emp.style.display="block";emp.textContent=q?('No reachable kanji match "'+query+'".'):"No kanji reachable yet — move the slider up.";}
+  else emp.style.display="none";
+}
+
+function hl(text,q){
+  if(!q)return document.createTextNode(text);
+  const i=text.toLowerCase().indexOf(q);
+  if(i<0)return document.createTextNode(text);
+  const f=document.createDocumentFragment();
+  f.appendChild(document.createTextNode(text.slice(0,i)));
+  const m=document.createElement("mark");m.textContent=text.slice(i,i+q.length);f.appendChild(m);
+  f.appendChild(document.createTextNode(text.slice(i+q.length)));
+  return f;
+}
+
+function openDetail(k){
+  const e=KMAP.get(k);if(!e)return;
+  selected=k;
+  const q=query.trim().toLowerCase();
+  $("dK").textContent=e.kanji;
+  $("dMn").textContent=e.meaning;
+  $("dCnt").textContent=e.words+" word"+(e.words!==1?"s":"")+" · first at position "+e.minPos;
+  updateKnownBtn();
+  const tree=$("dTree");tree.innerHTML="";
+  for(const ty of ["on","kun","irregular"]){
+    const branches=e.types[ty];if(!branches.size)continue;
+    const grp=document.createElement("div");grp.className="branchgroup";
+    const lbl=document.createElement("span");lbl.className="btype "+ty;
+    lbl.textContent=ty==="on"?"on-yomi":ty==="kun"?"kun-yomi":"irregular";
+    grp.appendChild(lbl);
+    // sort readings by their earliest word position
+    const rds=[...branches.entries()].sort((a,b)=>Math.min(...a[1].map(l=>l.pos))-Math.min(...b[1].map(l=>l.pos)));
+    for(const[rd,leaves]of rds){
+      const br=document.createElement("div");br.className="branch "+ty;
+      const rh=document.createElement("div");rh.className="reading";
+      const rspan=document.createElement("span");rspan.appendChild(hl(rd,q));rh.appendChild(rspan);
+      const tag=document.createElement("span");tag.className="rk";tag.textContent=ty==="irregular"?"irr":ty;rh.appendChild(tag);
+      br.appendChild(rh);
+      leaves.sort((a,b)=>a.pos-b.pos);
+      for(const lf of leaves){
+        const leaf=document.createElement("div");leaf.className="leaf";
+        const w=document.createElement("span");w.className="lw";w.appendChild(hl(lf.word,q));leaf.appendChild(w);
+        if(lf.reading){const r=document.createElement("span");r.className="lr";r.appendChild(hl(lf.reading,q));leaf.appendChild(r);}
+        const p=document.createElement("span");p.className="lp";p.textContent="#"+lf.pos;leaf.appendChild(p);
+        const en=document.createElement("span");en.className="le";en.appendChild(hl(lf.mean,q));leaf.appendChild(en);
+        br.appendChild(leaf);
+      }
+      grp.appendChild(br);
+    }
+    tree.appendChild(grp);
+  }
+  $("scrim").classList.add("show");
+  $("detail").classList.add("show");$("detail").setAttribute("aria-hidden","false");
+  $("dBody")&&($("dBody").scrollTop=0);
+}
+function closeDetail(){selected=null;$("scrim").classList.remove("show");$("detail").classList.remove("show");$("detail").setAttribute("aria-hidden","true");}
+function updateKnownBtn(){
+  const on=!!state.known[selected];
+  const b=$("dKnown");
+  b.className="knownbtn"+(on?" is":"");
+  b.textContent=on?"✓ Known — tap to unmark":"Mark as known";
+}
+
+/* ---------- slider ---------- */
+function renderSlider(){
+  const n=state.progress;
+  $("prog").value=n;
+  $("progLbl").textContent="position "+n+" / "+MAXPOS;
+  const w=WORD_AT.get(n);
+  $("posWord").innerHTML=w?('now at: <span class="w"></span> <span></span>'):"";
+  if(w){const sp=$("posWord").querySelectorAll("span");sp[0].textContent=w.word+(w.kana?"（"+w.kana+"）":"");sp[1].textContent="— "+w.en;}
+}
+
+/* ---------- events ---------- */
+$("q").addEventListener("input",e=>{query=e.target.value;$("clrBtn").style.display=query?"block":"none";renderGrid();});
+$("clrBtn").onclick=()=>{$("q").value="";query="";$("clrBtn").style.display="none";renderGrid();$("q").focus();};
+$("prog").addEventListener("input",e=>{state.progress=parseInt(e.target.value,10);renderSlider();renderGrid();if(selected&&!reachable(KMAP.get(selected)))closeDetail();});
+$("prog").addEventListener("change",()=>saveState());
+$("dClose").onclick=closeDetail;$("scrim").onclick=closeDetail;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetail();});
+$("dKnown").onclick=()=>{if(!selected)return;if(state.known[selected])delete state.known[selected];else state.known[selected]=true;updateKnownBtn();renderGrid();saveState();};
+
+$("themeBtn").onclick=()=>{const d=document.documentElement.getAttribute("data-theme")==="dark";const nx=d?"light":"dark";document.documentElement.setAttribute("data-theme",nx);try{localStorage.setItem("c2k_theme",nx);}catch(e){}applyThemeIcon();};
+function applyThemeIcon(){const d=(document.documentElement.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"))==="dark";$("themeBtn").textContent=d?"☀":"☾";}
+applyThemeIcon();
+
+$("syncTog").onclick=()=>{const b=$("syncBody");const open=b.classList.toggle("open");$("syncTog").setAttribute("aria-expanded",open);$("chev").textContent=open?"▴":"▾";};
+$("resetProgBtn").onclick=()=>{state.progress=MAXPOS;renderSlider();renderGrid();saveState();toast("Progress reset to all "+MAXPOS+".");};
+$("clearKnownBtn").onclick=()=>{if(Object.keys(state.known).length&&confirm("Clear ALL known-marks? This can't be undone (will also clear on synced devices).")){state.known={};renderGrid();if(selected)updateKnownBtn();saveState();toast("Known-marks cleared.");}};
+
+let toastT;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),2400);}
+
+/* ---------- cloud sync bridge (Firebase module attaches window.__c2kCloud) ---------- */
+const SYNC_LS="c2k_synckey";
+function cloudPush(){const c=window.__c2kCloud;if(c&&c.ready&&c.connected)c.push(state);}
+let connectSeeded=false;
+window.__c2kOnRemote=function(remote){
+  if(!remote||typeof remote!=="object")return;
+  const local=state;
+  let merged;
+  if(!connectSeeded){
+    connectSeeded=true;
+    merged={known:Object.assign({},remote.known||{},local.known||{}),
+            progress:((remote.updatedAt||0)>(local.updatedAt||0))?(remote.progress||MAXPOS):local.progress,
+            updatedAt:Math.max(local.updatedAt||0,remote.updatedAt||0)};
+  }else{
+    merged=((remote.updatedAt||0)>=(local.updatedAt||0))?remote:local;
+  }
+  const before=JSON.stringify(local);
+  state={known:merged.known||{},progress:merged.progress||MAXPOS,updatedAt:merged.updatedAt||0};
+  if(JSON.stringify(state)!==before){try{localStorage.setItem(LS,JSON.stringify(state));}catch(e){}renderSlider();renderGrid();if(selected)updateKnownBtn();}
+  if(JSON.stringify(state)!==JSON.stringify(remote)){const c=window.__c2kCloud;if(c&&c.connected)c.push(state);}
+};
+window.__c2kCloudStatus=function(msg,st){const el=$("cloudStatus");if(!el)return;el.textContent=msg;el.classList.remove("on","err");if(st)el.classList.add(st);$("cloudBtn").textContent=(st==="on")?"Turn off":"Turn on";};
+function toggleCloud(){
+  const c=window.__c2kCloud;
+  if(!c||!c.ready){toast("Cloud sync needs the online (hosted) version.");return;}
+  if(c.connected){c.disconnect();try{localStorage.removeItem(SYNC_LS);}catch(e){}return;}
+  let key=$("syncKey").value.trim();
+  if(!key){toast("Enter a sync key first.");return;}
+  try{localStorage.setItem(SYNC_LS,key);}catch(e){}
+  connectSeeded=false;c.connect(key);
+}
+$("cloudBtn").onclick=toggleCloud;
+(function(){try{const k=localStorage.getItem(SYNC_LS);if(k)$("syncKey").value=k;}catch(e){}})();
+setTimeout(()=>{if(!window.__c2kCloud)window.__c2kCloudStatus("Cloud sync isn't available in this preview — open your hosted link to use it.","err");},1800);
+
+/* ---------- init ---------- */
+renderSlider();renderGrid();
+</script>
+
+<!-- ============ CLOUD SYNC (Firebase Realtime DB) — reuses Eric's bon-echo project ============ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getDatabase, ref, onValue, set, off } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+  const firebaseConfig={
+    apiKey:"AIzaSyD9AJbPC9M4gpTyvfIoRcqILq0ZOom1OBs",
+    authDomain:"bon-echo-bd946.firebaseapp.com",
+    databaseURL:"https://bon-echo-bd946-default-rtdb.firebaseio.com",
+    projectId:"bon-echo-bd946",
+    storageBucket:"bon-echo-bd946.firebasestorage.app",
+    messagingSenderId:"196437731482",
+    appId:"1:196437731482:web:3ac836962ce7d89e735723"
+  };
+  const status=(m,s)=>{if(window.__c2kCloudStatus)window.__c2kCloudStatus(m,s);};
+  const sanitize=k=>k.replace(/[.#$\[\]\/\s]+/g,"_").slice(0,64);
+  try{
+    const app=initializeApp(firebaseConfig);
+    const db=getDatabase(app);
+    let curRef=null;
+    window.__c2kCloud={
+      ready:true,connected:false,
+      connect(key){
+        const safe=sanitize(key);if(!safe){status("Enter a sync key first.","err");return;}
+        if(curRef)off(curRef);
+        curRef=ref(db,"core2000/"+safe+"/state");
+        this.connected=true;status("Connecting…");
+        onValue(curRef,snap=>{
+          this.connected=true;status("Cloud sync on · key “"+key+"”","on");
+          const v=snap.val();
+          if(v){try{const obj=typeof v==="string"?JSON.parse(v):v;if(window.__c2kOnRemote)window.__c2kOnRemote(obj);}catch(e){}}
+          else{this.push(null);} // seed from this device
+        },err=>{this.connected=false;status("Sync error — check the database rules in Firebase.","err");console.warn("[C2K] read error",err);});
+      },
+      disconnect(){if(curRef)off(curRef);curRef=null;this.connected=false;status("Cloud sync is off.","");},
+      push(st){
+        if(!curRef||!this.connected)return;
+        let payload=st; if(payload==null){try{payload=JSON.parse(localStorage.getItem("c2k_state_v1")||"null");}catch(e){}}
+        if(payload==null)return;
+        set(curRef,JSON.stringify(payload)).catch(e=>{status("Sync error — check the database rules.","err");console.warn("[C2K] write error",e);});
+      }
+    };
+    let saved="";try{saved=localStorage.getItem("c2k_synckey")||"";}catch(e){}
+    if(saved){window.__c2kCloud.connect(saved);}
+    else status("Cloud sync is off. Enter a key and press Turn on.","");
+  }catch(e){console.error("[C2K] Firebase init failed",e);status("Cloud sync couldn't start here.","err");}
+</script>
+</body>
+</html>
