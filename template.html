@@ -99,7 +99,8 @@ input[type=range]{width:100%;accent-color:var(--accent);height:26px}
 .leaf .lw{font-size:1.12rem;font-weight:600}
 .leaf .lr{font-size:.85rem;color:var(--muted)}
 .leaf .le{font-size:.9rem;flex-basis:100%;color:var(--ink)}
-.leaf .lp{font-size:.68rem;color:var(--muted);margin-left:auto;opacity:.75;white-space:nowrap}
+.leaf .lp{font-size:.68rem;color:var(--muted);opacity:.85;white-space:nowrap}
+.leaf .spk{margin-left:auto}
 mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 
 /* tabs */
@@ -111,6 +112,21 @@ mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;b
 .tabhint{font-size:.82rem;color:var(--muted);margin:12px 2px 0}
 .subctl{display:flex;align-items:center;gap:8px;margin:12px 2px 0;font-size:.86rem;color:var(--muted)}
 .subctl input{accent-color:var(--accent)}
+.subctl select{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:4px 6px;font-size:.84rem}
+.viewctl{display:flex;align-items:center;gap:14px;margin:14px 2px 0;font-size:.86rem;color:var(--muted);flex-wrap:wrap}
+.viewctl label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.viewctl .push{margin-left:auto;display:flex;align-items:center;gap:6px}
+/* slim progress bar */
+.pbar{height:6px;border-radius:6px;background:var(--panel2);overflow:hidden;margin-top:10px}
+.pbar i{display:block;height:100%;width:0;background:var(--known);border-radius:6px;transition:width .25s}
+/* tap-to-hear button */
+.spk{border:1px solid var(--line);background:var(--panel);border-radius:8px;cursor:pointer;font-size:.82rem;line-height:1;padding:4px 7px;color:var(--ink)}
+.spk:hover{border-color:var(--accent)}
+.spk:disabled{opacity:.35;cursor:default}
+.spk:active{transform:scale(.92)}
+/* clickable position chip (set progress) */
+.lp.set,.mp.set{cursor:pointer;border:1px solid transparent;border-radius:7px;padding:1px 6px}
+.lp.set:hover,.mp.set:hover{border-color:var(--accent);color:var(--accent)}
 
 /* component families */
 .fam{margin-top:16px;display:flex;flex-direction:column;gap:14px}
@@ -137,7 +153,8 @@ mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;b
 .mword .mw{font-size:1.05rem;font-weight:600}
 .mword .mr{font-size:.82rem;color:var(--muted)}
 .mword .me{font-size:.9rem}
-.mword .mp{font-size:.66rem;color:var(--muted);margin-left:auto;opacity:.75}
+.mword .mp{font-size:.66rem;color:var(--muted);opacity:.85}
+.mword .spk{margin-left:auto}
 .figbadge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--irr);background:var(--irr-bg);border-radius:20px;padding:2px 8px;cursor:pointer}
 .fignote{flex-basis:100%;margin-top:6px;font-size:.86rem;color:var(--ink);background:var(--irr-bg);border-left:3px solid var(--irr);border-radius:0 8px 8px 0;padding:8px 11px;display:none}
 .fignote.show{display:block}
@@ -183,10 +200,11 @@ footer a{color:var(--accent)}
     </div>
 
     <div class="statbar">
-      <span><span class="dot">●</span> known: <b id="knownCount">0</b> / <b id="totalKanji">0</b></span>
+      <span><span class="dot">●</span> known: <b id="knownCount">0</b> / <b id="totalKanji">0</b> <b id="knownPct" style="color:var(--known)"></b></span>
       <span>reachable now: <b id="visCount">0</b></span>
       <span id="searchStat"></span>
     </div>
+    <div class="pbar"><i id="pbarFill"></i></div>
 
     <div class="synctog">
       <button id="syncTog" aria-expanded="false">
@@ -215,6 +233,15 @@ footer a{color:var(--accent)}
 
   <!-- Reading trees tab -->
   <section id="viewTrees">
+    <div class="viewctl">
+      <label><input type="checkbox" id="hideKnown"> Hide known</label>
+      <span class="push">Sort
+        <select id="sortMode" aria-label="Sort order">
+          <option value="deck">deck order</option>
+          <option value="freq">by frequency</option>
+        </select>
+      </span>
+    </div>
     <div class="grid" id="grid"></div>
     <div class="empty" id="empty" style="display:none"></div>
   </section>
@@ -336,13 +363,21 @@ for(const e of KANJI){
   }
   e.search=s;
 }
-// word_order: position -> {word, kana, english}
-const WORD_AT=new Map();
+// word_order: position -> {word, kana, english, step, freq}
+const WORD_AT=new Map(),POS_FREQ=new Map();
 for(const r of woRows){
   const p=parseInt(r.Position,10);if(!p)continue;
-  WORD_AT.set(p,{word:r.Word_Kanji,kana:r.Reading_Kana,en:clean(r.English_Meaning)});
+  const fr=parseInt(r.Frequency_Rank,10);
+  WORD_AT.set(p,{word:r.Word_Kanji,kana:r.Reading_Kana,en:clean(r.English_Meaning),freq:isFinite(fr)?fr:null});
+  if(isFinite(fr))POS_FREQ.set(p,fr);
 }
 const MAXPOS=woRows.length?Math.max(...woRows.map(r=>parseInt(r.Position,10)||0)):2007;
+// per-kanji frequency = rank of its most common word (lower = more frequent)
+for(const e of KANJI){
+  let mf=Infinity;
+  for(const ty of ["on","kun","irregular"])for(const[,leaves]of e.types[ty])for(const lf of leaves){const fr=POS_FREQ.get(lf.pos);if(fr!=null)mf=Math.min(mf,fr);}
+  e.minFreq=isFinite(mf)?mf:Infinity;
+}
 
 $("totalKanji").textContent=KANJI.length;
 $("kdesc").textContent=KANJI.length;
@@ -384,6 +419,41 @@ function saveState(push){
   if(push!==false)cloudPush();
 }
 
+/* ---------- view prefs (local only, not synced) ---------- */
+const PREFS_LS="c2k_prefs";
+let prefs={hideKnown:false,sort:"deck"};
+try{const p=JSON.parse(localStorage.getItem(PREFS_LS));if(p)prefs=Object.assign(prefs,p);}catch(e){}
+function savePrefs(){try{localStorage.setItem(PREFS_LS,JSON.stringify(prefs));}catch(e){}}
+
+/* ---------- tap-to-hear (Web Speech API — free, on-device, no backend) ---------- */
+const ttsOK=("speechSynthesis"in window)&&("SpeechSynthesisUtterance"in window);
+let jpVoice=null;
+function pickVoice(){try{const vs=speechSynthesis.getVoices();jpVoice=vs.find(v=>/ja[-_]?JP/i.test(v.lang))||vs.find(v=>/^ja/i.test(v.lang))||null;}catch(e){}}
+if(ttsOK){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}}
+function speak(text){
+  if(!ttsOK||!text)return;
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="ja-JP";if(jpVoice)u.voice=jpVoice;u.rate=.95;speechSynthesis.speak(u);}catch(e){}
+}
+function spkBtn(text,label){
+  const b=document.createElement("button");b.type="button";b.className="spk";b.textContent="🔊";
+  b.title="Play pronunciation";b.setAttribute("aria-label","Play "+(label||text));
+  if(!ttsOK)b.disabled=true;
+  b.onclick=ev=>{ev.stopPropagation();speak(text);};
+  return b;
+}
+
+/* ---------- set deck progress from a tapped word ---------- */
+function setProgress(n,wordLabel){
+  state.progress=n;renderSlider();renderActive();saveState();
+  toast("Progress set to #"+n+(wordLabel?" · "+wordLabel:""));
+}
+function posBadge(pos,cls){
+  const p=document.createElement("span");p.className=(cls||"lp")+" set";p.textContent="#"+pos;
+  p.title="Tap to set your deck progress to here";
+  p.onclick=ev=>{ev.stopPropagation();const w=WORD_AT.get(pos);setProgress(pos,w?w.word:"");};
+  return p;
+}
+
 /* ---------- rendering ---------- */
 let query="",selected=null;
 function reachable(e){return e.minPos<=state.progress;}
@@ -391,10 +461,12 @@ function matches(e,q){return !q||e.search.indexOf(q)>=0;}
 
 function renderGrid(){
   const q=query.trim().toLowerCase();
+  const list=prefs.sort==="freq"?[...KANJI].sort((a,b)=>a.minFreq-b.minFreq):KANJI;
   const frag=document.createDocumentFragment();
   let vis=0,shown=0;
-  for(const e of KANJI){
+  for(const e of list){
     if(!reachable(e))continue; vis++;
+    if(prefs.hideKnown&&state.known[e.kanji])continue;
     if(!matches(e,q))continue; shown++;
     const t=document.createElement("div");
     t.className="tile"+(state.known[e.kanji]?" known":"");
@@ -406,10 +478,9 @@ function renderGrid(){
   }
   const g=$("grid");g.innerHTML="";g.appendChild(frag);
   $("visCount").textContent=vis;
-  $("knownCount").textContent=Object.values(state.known).filter(Boolean).length;
   $("searchStat").textContent=q?("matching: "+shown):"";
   const emp=$("empty");
-  if(shown===0){emp.style.display="block";emp.textContent=q?('No reachable kanji match "'+query+'".'):"No kanji reachable yet — move the slider up.";}
+  if(shown===0){emp.style.display="block";emp.textContent=q?('No reachable kanji match "'+query+'".'):(prefs.hideKnown&&vis>0?"All reachable kanji are marked known. 🎉":"No kanji reachable yet — move the slider up.");}
   else emp.style.display="none";
 }
 
@@ -445,14 +516,14 @@ function openDetail(k){
       const br=document.createElement("div");br.className="branch "+ty;
       const rh=document.createElement("div");rh.className="reading";
       const rspan=document.createElement("span");rspan.appendChild(hl(rd,q));rh.appendChild(rspan);
-      const tag=document.createElement("span");tag.className="rk";tag.textContent=ty==="irregular"?"irr":ty;rh.appendChild(tag);
       br.appendChild(rh);
       leaves.sort((a,b)=>a.pos-b.pos);
       for(const lf of leaves){
         const leaf=document.createElement("div");leaf.className="leaf";
         const w=document.createElement("span");w.className="lw";w.appendChild(hl(lf.word,q));leaf.appendChild(w);
         if(lf.reading){const r=document.createElement("span");r.className="lr";r.appendChild(hl(lf.reading,q));leaf.appendChild(r);}
-        const p=document.createElement("span");p.className="lp";p.textContent="#"+lf.pos;leaf.appendChild(p);
+        leaf.appendChild(spkBtn(lf.reading||lf.word,lf.word));
+        leaf.appendChild(posBadge(lf.pos));
         const en=document.createElement("span");en.className="le";en.appendChild(hl(lf.mean,q));leaf.appendChild(en);
         br.appendChild(leaf);
       }
@@ -552,11 +623,11 @@ function openFamKanji(f,ke){
   const br=document.createElement("div");br.className="branch";
   ke.words.slice().sort((a,b)=>a.pos-b.pos).forEach(w=>{
     const leaf=document.createElement("div");leaf.className="leaf";
-    leaf.innerHTML='<span class="lw"></span><span class="lr"></span><span class="lp"></span><span class="le"></span>';
-    leaf.querySelector(".lw").textContent=w.word;
-    leaf.querySelector(".lr").textContent=w.reading||"";
-    leaf.querySelector(".lp").textContent="#"+w.pos;
-    leaf.querySelector(".le").textContent=w.mean;
+    const lw=document.createElement("span");lw.className="lw";lw.textContent=w.word;leaf.appendChild(lw);
+    if(w.reading){const lr=document.createElement("span");lr.className="lr";lr.textContent=w.reading;leaf.appendChild(lr);}
+    leaf.appendChild(spkBtn(w.reading||w.word,w.word));
+    leaf.appendChild(posBadge(w.pos));
+    const le=document.createElement("span");le.className="le";le.textContent=w.mean;leaf.appendChild(le);
     br.appendChild(leaf);
   });
   grp.appendChild(br);tree.appendChild(grp);
@@ -585,7 +656,8 @@ function renderMean(){
       const ww=document.createElement("span");ww.className="mw";ww.appendChild(hl(w.word,q));row.appendChild(ww);
       if(w.reading){const rr=document.createElement("span");rr.className="mr";rr.appendChild(hl(w.reading,q));row.appendChild(rr);}
       const ee=document.createElement("span");ee.className="me";ee.appendChild(hl(w.mean,q));row.appendChild(ee);
-      const pp=document.createElement("span");pp.className="mp";pp.textContent="#"+w.pos;row.appendChild(pp);
+      row.appendChild(spkBtn(w.reading||w.word,w.word));
+      row.appendChild(posBadge(w.pos,"mp"));
       if(w.fig&&w.note){
         const badge=document.createElement("span");badge.className="figbadge";badge.textContent="figurative ▾";row.appendChild(badge);
         const note=document.createElement("span");note.className="fignote";note.appendChild(hl(w.note,q));row.appendChild(note);
@@ -613,8 +685,15 @@ function setTab(t){
   $("viewMean").hidden=t!=="meanings";
   renderActive();
 }
+function updateStats(){
+  const kn=Object.values(state.known).filter(Boolean).length;
+  $("knownCount").textContent=kn;
+  const pct=KANJI.length?Math.round(kn/KANJI.length*100):0;
+  $("knownPct").textContent="("+pct+"%)";
+  $("pbarFill").style.width=pct+"%";
+}
 function renderActive(){
-  $("knownCount").textContent=Object.values(state.known).filter(Boolean).length;
+  updateStats();
   if(activeTab==="trees")renderGrid();
   else if(activeTab==="families")renderFam();
   else renderMean();
@@ -624,8 +703,9 @@ function renderActive(){
 function renderSlider(){
   const n=state.progress;
   $("prog").value=n;
-  $("progLbl").textContent="position "+n+" / "+MAXPOS;
   const w=WORD_AT.get(n);
+  const pct=Math.round(n/MAXPOS*100);
+  $("progLbl").textContent="#"+n+" / "+MAXPOS+" · "+pct+"%";
   $("posWord").innerHTML=w?('now at: <span class="w"></span> <span></span>'):"";
   if(w){const sp=$("posWord").querySelectorAll("span");sp[0].textContent=w.word+(w.kana?"（"+w.kana+"）":"");sp[1].textContent="— "+w.en;}
 }
@@ -638,6 +718,10 @@ $("tabTrees").onclick=()=>setTab("trees");
 $("tabFam").onclick=()=>setTab("families");
 $("tabMean").onclick=()=>setTab("meanings");
 $("figOnly").onchange=renderMean;
+$("hideKnown").checked=prefs.hideKnown;
+$("sortMode").value=prefs.sort;
+$("hideKnown").onchange=e=>{prefs.hideKnown=e.target.checked;savePrefs();renderGrid();};
+$("sortMode").onchange=e=>{prefs.sort=e.target.value;savePrefs();renderGrid();};
 $("prog").addEventListener("change",()=>saveState());
 $("dClose").onclick=closeDetail;$("scrim").onclick=closeDetail;
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetail();});
