@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Core 2000 Kanji Trees</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#3b5bdb">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kanji Trees">
 <script>
 /* anti-flash theme: apply saved theme before first paint */
 (function(){try{var t=localStorage.getItem("c2k_theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
@@ -69,6 +74,7 @@ input[type=range]{width:100%;accent-color:var(--accent);height:26px}
 .tile .kn{position:absolute;top:6px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--known);opacity:0;transition:opacity .12s}
 .tile.known .kn{opacity:1}
 .tile.known{border-color:color-mix(in srgb,var(--known) 55%,var(--line))}
+.tile.cursor{outline:2px solid var(--accent);outline-offset:1px}
 .tile .pos{position:absolute;top:6px;left:8px;font-size:.6rem;color:var(--muted);opacity:.7}
 .empty{margin-top:40px;text-align:center;color:var(--muted)}
 
@@ -101,6 +107,7 @@ input[type=range]{width:100%;accent-color:var(--accent);height:26px}
 .leaf .le{font-size:.9rem;flex-basis:100%;color:var(--ink)}
 .leaf .lp{font-size:.68rem;color:var(--muted);opacity:.85;white-space:nowrap}
 .leaf .spk{margin-left:auto}
+.freq{font-size:.62rem;color:var(--muted);opacity:.8;white-space:nowrap;border:1px solid var(--line);border-radius:6px;padding:1px 5px}
 mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 
 /* tabs */
@@ -167,6 +174,25 @@ mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;b
 .fignote{flex-basis:100%;margin-top:6px;font-size:.86rem;color:var(--ink);background:var(--irr-bg);border-left:3px solid var(--irr);border-radius:0 8px 8px 0;padding:8px 11px;display:none}
 .fignote.show{display:block}
 .mword.figrow .me{color:var(--ink)}
+
+/* unified detail extras (component siblings + figurative notes) */
+.xsection{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.xhead{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--muted);margin-bottom:11px}
+.xfam{margin-bottom:14px}
+.xcomp{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.xcomp .xc{font-size:1.3rem;font-weight:600}
+.xcomp .xm{font-size:.82rem;color:var(--muted)}
+.xchips{display:flex;flex-wrap:wrap;gap:7px}
+.xchip{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:54px;padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:var(--panel);cursor:pointer;color:var(--ink)}
+.xchip:hover{border-color:var(--accent);transform:translateY(-1px)}
+.xchip.cur{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel));cursor:default}
+.xchip.known{border-color:color-mix(in srgb,var(--known) 55%,var(--line))}
+.xchip .xk{font-size:1.25rem;line-height:1.1}
+.xchip .xkm{font-size:.58rem;color:var(--muted);max-width:66px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xfig{background:var(--irr-bg);border-left:3px solid var(--irr);border-radius:0 8px 8px 0;padding:9px 12px;margin-bottom:8px}
+.xfigw b{font-size:1.02rem}
+.xfigw span{font-size:.84rem;color:var(--muted)}
+.xfignote{font-size:.86rem;margin-top:5px}
 
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:.88rem;opacity:0;pointer-events:none;transition:.2s;z-index:60}
 .toast.show{opacity:1;transform:translateX(-50%)}
@@ -431,6 +457,10 @@ for(const r of parseCSV($("cf-data").textContent)){
 }
 const FAMILIES=[...FAM.values()].sort((a,b)=>a.minPos-b.minPos);
 for(const f of FAMILIES){let s=f.comp+" "+f.meaning.toLowerCase();for(const ke of f.kanji.values()){s+=" "+ke.kanji+" "+ke.meaning.toLowerCase();for(const w of ke.words)s+=" "+w.word+" "+(w.reading||"")+" "+kanaToRomaji(w.reading||"")+" "+w.mean.toLowerCase();}f.search=s;}
+// reverse index: kanji -> [families that contain it] (for the unified detail panel)
+const KANJI_FAM=new Map();
+for(const f of FAMILIES)for(const k of f.kanji.keys()){if(!KANJI_FAM.has(k))KANJI_FAM.set(k,[]);KANJI_FAM.get(k).push(f);}
+const freqOf=pos=>{const v=POS_FREQ.get(pos);return v!=null?v:null;};
 
 /* ---------- bonus: meaning cheatsheet ---------- */
 const MEAN=new Map();
@@ -488,9 +518,15 @@ function posBadge(pos,cls){
   p.onclick=ev=>{ev.stopPropagation();const w=WORD_AT.get(pos);setProgress(pos,w?w.word:"");};
   return p;
 }
+function freqTag(pos){
+  const f=freqOf(pos);if(f==null)return null;
+  const s=document.createElement("span");s.className="freq";s.textContent="freq "+f;
+  s.title="How common this word is in Japanese generally (lower = more common)";
+  return s;
+}
 
 /* ---------- rendering ---------- */
-let query="",selected=null;
+let query="",selected=null,gridCursor=-1;
 function reachable(e){return e.minPos<=state.progress;}
 /* match raw query OR its romaji-normalized form; raw keeps English/kana intact, norm enables romaji */
 function hit(blob,q,nq){return !q||blob.indexOf(q)>=0||(nq!==q&&blob.indexOf(nq)>=0);}
@@ -512,7 +548,7 @@ function renderGrid(){
     t.onclick=()=>openDetail(e.kanji);
     frag.appendChild(t);
   }
-  const g=$("grid");g.innerHTML="";g.appendChild(frag);
+  const g=$("grid");g.innerHTML="";g.appendChild(frag);gridCursor=-1;
   $("visCount").textContent=vis;
   $("searchStat").textContent=q?("matching: "+shown):"";
   const emp=$("empty");
@@ -560,12 +596,55 @@ function openDetail(k){
         if(lf.reading){const r=document.createElement("span");r.className="lr";r.appendChild(hl(lf.reading,q));leaf.appendChild(r);}
         leaf.appendChild(spkBtn(lf.reading||lf.word,lf.word));
         leaf.appendChild(posBadge(lf.pos));
+        {const ft=freqTag(lf.pos);if(ft)leaf.appendChild(ft);}
         const en=document.createElement("span");en.className="le";en.appendChild(hl(lf.mean,q));leaf.appendChild(en);
         br.appendChild(leaf);
       }
       grp.appendChild(br);
     }
     tree.appendChild(grp);
+  }
+  // --- unified extra 1: component families this kanji belongs to ---
+  const famReach=(KANJI_FAM.get(k)||[]).map(f=>({f,sibs:[...f.kanji.values()].filter(ke=>ke.minPos<=state.progress)})).filter(x=>x.sibs.length);
+  if(famReach.length){
+    const sec=document.createElement("div");sec.className="xsection";
+    const h=document.createElement("div");h.className="xhead";h.textContent="Shares a component";sec.appendChild(h);
+    for(const {f,sibs} of famReach){
+      const fam=document.createElement("div");fam.className="xfam";
+      const lead=document.createElement("div");lead.className="xcomp";
+      lead.innerHTML='<span class="xc"></span><span class="xm"></span>';
+      lead.querySelector(".xc").textContent=f.comp;lead.querySelector(".xm").textContent=f.meaning;
+      fam.appendChild(lead);
+      const chips=document.createElement("div");chips.className="xchips";
+      for(const ke of sibs.sort((a,b)=>a.minPos-b.minPos)){
+        const chip=document.createElement("button");chip.type="button";
+        chip.className="xchip"+(ke.kanji===k?" cur":"")+(state.known[ke.kanji]?" known":"");
+        chip.innerHTML='<span class="xk"></span><span class="xkm"></span>';
+        chip.querySelector(".xk").textContent=ke.kanji;chip.querySelector(".xkm").textContent=ke.meaning;
+        if(ke.kanji!==k)chip.onclick=()=>{KMAP.has(ke.kanji)?openDetail(ke.kanji):openFamKanji(f,ke);};
+        chips.appendChild(chip);
+      }
+      fam.appendChild(chips);sec.appendChild(fam);
+    }
+    tree.appendChild(sec);
+  }
+  // --- unified extra 2: figurative meaning notes for this kanji ---
+  const minfo=MEAN.get(k);
+  if(minfo){
+    const figs=minfo.words.filter(w=>w.fig&&w.note&&w.pos<=state.progress).sort((a,b)=>a.pos-b.pos);
+    if(figs.length){
+      const sec=document.createElement("div");sec.className="xsection";
+      const h=document.createElement("div");h.className="xhead";h.textContent="Figurative meaning"+(figs.length>1?"s":"");sec.appendChild(h);
+      figs.forEach(w=>{
+        const fig=document.createElement("div");fig.className="xfig";
+        const t=document.createElement("div");t.className="xfigw";
+        const b=document.createElement("b");b.textContent=w.word;const sp=document.createElement("span");sp.textContent=" "+(w.reading?w.reading+" · ":"")+w.mean;
+        t.appendChild(b);t.appendChild(sp);fig.appendChild(t);
+        const n=document.createElement("div");n.className="xfignote";n.textContent=w.note;fig.appendChild(n);
+        sec.appendChild(fig);
+      });
+      tree.appendChild(sec);
+    }
   }
   $("scrim").classList.add("show");
   $("detail").classList.add("show");$("detail").setAttribute("aria-hidden","false");
@@ -663,6 +742,7 @@ function openFamKanji(f,ke){
     if(w.reading){const lr=document.createElement("span");lr.className="lr";lr.textContent=w.reading;leaf.appendChild(lr);}
     leaf.appendChild(spkBtn(w.reading||w.word,w.word));
     leaf.appendChild(posBadge(w.pos));
+    {const ft=freqTag(w.pos);if(ft)leaf.appendChild(ft);}
     const le=document.createElement("span");le.className="le";le.textContent=w.mean;leaf.appendChild(le);
     br.appendChild(leaf);
   });
@@ -694,6 +774,7 @@ function renderMean(){
       const ee=document.createElement("span");ee.className="me";ee.appendChild(hl(w.mean,q));row.appendChild(ee);
       row.appendChild(spkBtn(w.reading||w.word,w.word));
       row.appendChild(posBadge(w.pos,"mp"));
+      {const ft=freqTag(w.pos);if(ft)row.appendChild(ft);}
       if(w.fig&&w.note){
         const badge=document.createElement("span");badge.className="figbadge";badge.textContent="figurative ▾";row.appendChild(badge);
         const note=document.createElement("span");note.className="fignote";note.appendChild(hl(w.note,q));row.appendChild(note);
@@ -761,6 +842,28 @@ $("sortMode").onchange=e=>{prefs.sort=e.target.value;savePrefs();renderGrid();};
 $("prog").addEventListener("change",()=>saveState());
 $("dClose").onclick=closeDetail;$("scrim").onclick=closeDetail;
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetail();});
+
+/* ---------- desktop keyboard navigation ---------- */
+function gridTiles(){return [...document.querySelectorAll("#grid .tile")];}
+function gridCols(){const s=getComputedStyle($("grid")).gridTemplateColumns;return Math.max(1,(s.match(/px|fr|%|minmax/g)?s.split(" ").filter(Boolean).length:1));}
+function moveCursor(delta){
+  const tiles=gridTiles();if(!tiles.length)return;
+  let i=gridCursor<0?0:Math.max(0,Math.min(gridCursor+delta,tiles.length-1));
+  tiles.forEach(t=>t.classList.remove("cursor"));
+  tiles[i].classList.add("cursor");tiles[i].scrollIntoView({block:"nearest"});
+  gridCursor=i;
+}
+document.addEventListener("keydown",e=>{
+  const tag=(e.target.tagName||"").toLowerCase(),typing=tag==="input"||tag==="textarea"||tag==="select";
+  if(e.key==="/"&&!typing){e.preventDefault();$("q").focus();return;}
+  if(e.key==="Escape"&&typing){e.target.blur();return;}
+  if(activeTab!=="trees"||$("detail").classList.contains("show")||typing)return;
+  if(e.key==="ArrowRight"){e.preventDefault();moveCursor(gridCursor<0?0:1);}
+  else if(e.key==="ArrowLeft"){e.preventDefault();moveCursor(gridCursor<0?0:-1);}
+  else if(e.key==="ArrowDown"){e.preventDefault();moveCursor(gridCursor<0?0:gridCols());}
+  else if(e.key==="ArrowUp"){e.preventDefault();moveCursor(gridCursor<0?0:-gridCols());}
+  else if(e.key==="Enter"&&gridCursor>=0){const t=gridTiles()[gridCursor];if(t){e.preventDefault();t.click();}}
+});
 $("dKnown").onclick=()=>{if(!selected)return;if(state.known[selected])delete state.known[selected];else state.known[selected]=true;updateKnownBtn();renderActive();saveState();};
 
 $("themeBtn").onclick=()=>{const d=document.documentElement.getAttribute("data-theme")==="dark";const nx=d?"light":"dark";document.documentElement.setAttribute("data-theme",nx);try{localStorage.setItem("c2k_theme",nx);}catch(e){}applyThemeIcon();};
@@ -810,6 +913,11 @@ setTimeout(()=>{if(!window.__c2kCloud)window.__c2kCloudStatus("Cloud sync isn't 
 
 /* ---------- init ---------- */
 renderSlider();renderActive();
+
+/* ---------- PWA: register service worker (hosted https only) ---------- */
+if("serviceWorker"in navigator&&location.protocol==="https:"){
+  window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});
+}
 </script>
 
 <!-- ============ CLOUD SYNC (Firebase Realtime DB) — reuses Eric's bon-echo project ============ -->

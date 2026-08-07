@@ -1,0 +1,14 @@
+{
+  "name": "Core 2000 Kanji Trees",
+  "short_name": "Kanji Trees",
+  "description": "Companion reference for the Japanese Core 2000 deck: reading trees, component families, and meaning notes.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1216",
+  "theme_color": "#3b5bdb",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
