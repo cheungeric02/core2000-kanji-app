@@ -1,8 +1,8 @@
 /* Core 2000 Kanji Trees — service worker.
    Network-first for same-origin (so updates arrive when online), cache fallback (offline shell).
    Cross-origin requests (e.g. the Firebase CDN) are left to the network. */
-const CACHE = "c2k-v1";
-const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg"];
+const CACHE = "c2k-v2";
+const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(
